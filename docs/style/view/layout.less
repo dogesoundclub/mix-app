@@ -1,0 +1,165 @@
+.layout {
+    width: 100%;
+
+    >header {
+        background-color: #161616;
+        position        : static;
+        left            : 0;
+        top             : 0;
+        z-index         : 999;
+        width           : 100%;
+        display         : flex;
+        align-items     : center;
+        height          : 60px;
+        padding         : 0px 40px;
+
+        >.nav {
+            display    : flex;
+            align-items: center;
+            width      : 100%;
+            height     : 100%;
+            margin     : auto;
+
+            >a {
+                flex-grow   : 1;
+                margin-right: 16px;
+
+                >.logo {
+                    display: flex;
+                }
+            }
+
+            >.right {
+                display    : flex;
+                align-items: center;
+
+                >.pc-menu {
+                    @media @phone {
+                        display: none;
+                    }
+                }
+
+                >.user-menu {
+                    float: right;
+
+                    @media @phone {
+                        display: none;
+                    }
+                }
+
+                >.mix-button {
+                    float       : right;
+                    margin-top  : 2px;
+                    margin-right: 16px;
+
+                    @media @phone {
+                        margin-top  : 6px;
+                        margin-right: 10px;
+                    }
+                }
+
+                >.menu-button {
+                    float  : right;
+                    display: none;
+                    padding: 10px;
+                    color  : #fff;
+
+                    @media @phone {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    >main {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        margin         : auto;
+        padding        : 20px;
+    }
+
+    >footer {
+        margin-top: 60px;
+        background: #0D0D0D;
+
+        >.sidebar {
+            background-color: #222222;
+
+            >.content {
+                display        : flex;
+                align-items    : center;
+                justify-content: space-between;
+                max-width      : 1156px;
+                margin         : auto;
+
+                >.term {
+                    display    : flex;
+                    align-items: center;
+                    height     : 44px;
+
+                    >a {
+                        font-family: Noto Sans KR;
+                        font-style : normal;
+                        font-weight: normal;
+                        font-size  : 12px;
+                        line-height: 20px;
+                    }
+
+                    >span {
+                        color : #474747;
+                        margin: 10px 10px;
+                    }
+                }
+
+                >.social {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+                    height         : 44px;
+
+                    >a {
+                        display        : flex;
+                        align-items    : center;
+                        height         : 44px;
+                        margin         : 0px 10px;
+                        font-size      : 12px;
+                        text-decoration: underline;
+                        color          : white;
+                    }
+                }
+            }
+        }
+
+        >.provider {
+            display       : flex;
+            flex-direction: column;
+            max-width     : 1156px;
+            margin        : auto;
+            margin-top    : 30px;
+            padding-bottom: 30px;
+
+            @media @phone {
+                padding: 20px;
+            }
+
+            >img {
+                width : 70px;
+                height: 60px;
+            }
+
+            >p {
+                font-family: Noto Sans KR;
+                font-style : normal;
+                font-weight: normal;
+                font-size  : 12px;
+                line-height: 20px;
+                margin-top : 20px;
+
+
+                color: #838383;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.mobile-menu {
+    position        : fixed;
+    width           : 170px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding         : 10px;
+
+    >ul {
+        >li {
+            >a {
+                display  : block;
+                padding  : 12px 5px;
+                font-size: 18px;
+
+                &:hover {
+                    color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%)
+                }
+
+                &:active {
+                    color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%)
+                }
+            }
+
+            >ul {
+                margin-left: 10px;
+
+                >li {
+                    >a {
+                        display: block;
+                        padding: 8px 5px;
+                        color  : #ccc;
+
+                        &:hover {
+                            color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%)
+                        }
+
+                        &:active {
+                            color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%)
+                        }
+                    }
+
+                    &.parent {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    >.user-menu {
+        margin    : auto;
+        margin-top: 16px;
+    }
+}

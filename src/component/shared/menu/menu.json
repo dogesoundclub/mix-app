@@ -1,0 +1,24 @@
+{
+    "menu": [
+        {
+            "uri": "",
+            "name": "ABOUT"
+        },
+        {
+            "uri": "governance",
+            "name": "MIX POOL"
+        },
+        {
+            "uri": "burn",
+            "name": "BURN"
+        },
+        {
+            "uri": "governance",
+            "name": "GOVERNANCE"
+        },
+        {
+            "uri": "booth",
+            "name": "Staking/Pool Vote"
+        }
+    ]
+}

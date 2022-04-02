@@ -1,0 +1,58 @@
+.proposal {
+    width          : 100%;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 64px;
+    border-bottom  : 1px solid #3C3C3C;
+    box-sizing     : border-box;
+    border-radius  : 0px;
+
+    >h5 {
+        @media @phone {
+            font-size    : 1rem;
+            white-space  : nowrap;
+            overflow     : hidden;
+            text-overflow: ellipsis;
+        }
+
+        font-weight: 400;
+        font-size  : 16px;
+        line-height: 23px;
+    }
+
+    >.status {
+        font-weight            : 500;
+        font-size              : 16px;
+        line-height            : 23px;
+        background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip        : text;
+        text-fill-color        : transparent;
+        border                 : 1px solid #F3C754;
+        box-sizing             : border-box;
+        border-radius          : 8px;
+        padding                : 8px 30px;
+    }
+
+    &.rejected,
+    &.passed,
+    &.ended {
+        color: #747373;
+
+        >.status {
+            background             : #747373;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip        : text;
+            text-fill-color        : transparent;
+            color                  : #747373;
+            background-color       : #747373;
+            border                 : 1px solid #3C3C3C;
+            box-sizing             : border-box;
+            border-radius          : 8px;
+            padding                : 8px 30px;
+        }
+    }
+}

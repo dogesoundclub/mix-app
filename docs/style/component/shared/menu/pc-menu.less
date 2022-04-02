@@ -1,0 +1,56 @@
+.pc-menu {
+    >ul {
+        display       : flex;
+        // font-family: 'Roboto', sans-serif;
+
+        >li {
+            position: relative;
+            color   : #fff;
+
+            >a {
+                font-size    : 16px;
+                padding-right: 50px;
+
+                &:hover {
+                    color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%)
+                }
+
+                &:active {
+                    color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%)
+                }
+            }
+
+            >ul {
+                position: absolute;
+                left    : 0;
+                top     : 20px;
+                width   : 100px;
+                display : none;
+                padding : 10px 0;
+
+                >li {
+                    >a {
+                        display   : block;
+                        text-align: center;
+                        padding   : 10px;
+
+                        &:hover {
+                            color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                        }
+
+                        &:active {
+                            color      : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                >ul {
+                    display: block;
+                }
+            }
+        }
+    }
+}
