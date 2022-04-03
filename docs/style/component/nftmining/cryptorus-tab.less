@@ -1,0 +1,109 @@
+.cryptorus-tab {
+    margin-top: 50px;
+
+    >header {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        margin         : auto;
+
+        >.total-mix {
+            text-align: center;
+
+            >h4 {
+                font-weight            : 500;
+                font-size              : 14px;
+                line-height            : 24px;
+                background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip        : text;
+                text-fill-color        : transparent;
+            }
+
+            >span {
+                font-weight: 500;
+                font-size  : 32px;
+                line-height: 38px;
+            }
+        }
+
+        >button {
+            background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip        : text;
+            text-fill-color        : transparent;
+            border                 : 1px solid #F3C754;
+            border-radius          : 8px;
+            max-width              : 280px;
+            padding                : 16px 0px;
+            width                  : 100%;
+            margin-top             : 20px;
+        }
+    }
+
+    >.cryptorus-list {
+        display              : grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap             : 20px;
+        margin-top           : 50px;
+
+        >.cryptorus-item {
+            >.content {
+                >.info {
+                    margin-top    : 14px;
+                    display       : flex;
+                    flex-direction: column;
+                    text-align    : center;
+
+                    >h5 {
+                        background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip        : text;
+                        text-fill-color        : transparent;
+                    }
+
+                    >.amount {
+                        font-weight: 500;
+                        font-size  : 20px;
+                        line-height: 24px;
+                    }
+                }
+
+                >.controller {
+
+                    >button {
+                        background   : #222222;
+                        border       : 1px solid #3C3C3C;
+                        box-sizing   : border-box;
+                        border-radius: 8px;
+                        font-weight  : 400;
+                        font-size    : 16px;
+                        line-height  : 24px;
+                        color        : #FFFFFF;
+                        width        : 100%;
+                        padding      : 9px 0px;
+                        margin-top   : 14px;
+
+                        &:hover {
+                            background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip        : text;
+                            text-fill-color        : transparent;
+                            border                 : 1px solid #F3C754;
+                        }
+                    }
+                }
+
+                >img {
+                    max-width : 236px;
+                    max-height: 236px;
+                }
+            }
+        }
+    }
+}

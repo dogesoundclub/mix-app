@@ -1,0 +1,64 @@
+.mining-view {
+    display       : flex;
+    flex-direction: column;
+    margin        : auto;
+    max-width     : 1360px;
+    background    : #1D1D1D;
+    border        : 1px solid #3C3C3C;
+    box-sizing    : border-box;
+    border-radius : 8px;
+    margin-top    : 60px;
+    margin-bottom : 60px;
+    padding       : 40px 50px;
+
+    >h1 {
+        font-weight: 500;
+        font-size  : 28px;
+        line-height: 41px;
+    }
+
+    >p {
+        font-weight: 400;
+        font-size  : 12px;
+        line-height: 17px;
+        color      : #747373;
+    }
+
+    >.warning {
+        font-weight            : 400;
+        font-size              : 12px;
+        line-height            : 17px;
+        background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip        : text;
+        text-fill-color        : transparent;
+    }
+
+    >.tabs {
+        display        : flex;
+        justify-content: space-between;
+        margin-top     : 30px;
+
+        >a {
+            font-family  : 'Roboto';
+            font-weight  : 400;
+            font-size    : 16px;
+            line-height  : 24px;
+            background   : #222222;
+            border       : 1px solid #3C3C3C;
+            box-sizing   : border-box;
+            border-radius: 8px;
+            padding      : 13px 50px;
+
+            &:hover,
+            &:active {
+                background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip        : text;
+                text-fill-color        : transparent;
+            }
+        }
+    }
+}

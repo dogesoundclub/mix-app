@@ -6,6 +6,8 @@ import Proposal from "./view/governance/Proposal";
 import Propose from "./view/governance/Propose";
 import Home from "./view/Home";
 import Layout from "./view/Layout";
+import Mining from "./view/Mining";
+
 (async () => {
 
     SkyRouter.route("**", Layout);
@@ -17,6 +19,7 @@ import Layout from "./view/Layout";
     ]);
     SkyRouter.route("governance/propose", Propose);
 
+    SkyRouter.route("mining", Mining);
     SkyRouter.route("burn", Burn);
 
     if (sessionStorage.__spa_path) {

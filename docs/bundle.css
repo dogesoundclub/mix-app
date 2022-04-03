@@ -762,6 +762,546 @@ body {
   border-radius: 8px;
   padding: 8px 30px;
 }
+.mates-tab {
+  margin-top: 50px;
+}
+.mates-tab > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.mates-tab > header > .total-mix {
+  text-align: center;
+}
+.mates-tab > header > .total-mix > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.mates-tab > header > .total-mix > span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+.mates-tab > header > button {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  max-width: 280px;
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.mates-tab > .mate-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.mates-tab > .mate-list > .mate-item > .content > .info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.mates-tab > .mate-list > .mate-item > .content > .info > h5 {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.mates-tab > .mate-list > .mate-item > .content > .info > .amount {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+.mates-tab > .mate-list > .mate-item > .content > .controller > button {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 9px 0px;
+  margin-top: 14px;
+}
+.mates-tab > .mate-list > .mate-item > .content > .controller > button:hover {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+}
+.mates-tab > .mate-list > .mate-item > .content > img {
+  max-width: 236px;
+  max-height: 236px;
+}
+.cases-by-kate-tab {
+  margin-top: 50px;
+}
+.cases-by-kate-tab > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.cases-by-kate-tab > header > .total-mix {
+  text-align: center;
+}
+.cases-by-kate-tab > header > .total-mix > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.cases-by-kate-tab > header > .total-mix > span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+.cases-by-kate-tab > header > button {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  max-width: 280px;
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.cases-by-kate-tab > .case-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .info > h5 {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .info > .amount {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .controller > button {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 9px 0px;
+  margin-top: 14px;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > .controller > button:hover {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+}
+.cases-by-kate-tab > .case-list > .case-item > .content > img {
+  max-width: 236px;
+  max-height: 236px;
+}
+.animals-punks-v2-tab {
+  margin-top: 50px;
+}
+.animals-punks-v2-tab > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.animals-punks-v2-tab > header > .total-mix {
+  text-align: center;
+}
+.animals-punks-v2-tab > header > .total-mix > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.animals-punks-v2-tab > header > .total-mix > span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+.animals-punks-v2-tab > header > button {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  max-width: 280px;
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.animals-punks-v2-tab > .punk-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.animals-punks-v2-tab > .punk-list > .punk-item > .content > .info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.animals-punks-v2-tab > .punk-list > .punk-item > .content > .info > h5 {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.animals-punks-v2-tab > .punk-list > .punk-item > .content > .info > .amount {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+.animals-punks-v2-tab > .punk-list > .punk-item > .content > .controller > button {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 9px 0px;
+  margin-top: 14px;
+}
+.animals-punks-v2-tab > .punk-list > .punk-item > .content > .controller > button:hover {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+}
+.animals-punks-v2-tab > .punk-list > .punk-item > .content > img {
+  max-width: 236px;
+  max-height: 236px;
+}
+.cryptorus-tab {
+  margin-top: 50px;
+}
+.cryptorus-tab > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.cryptorus-tab > header > .total-mix {
+  text-align: center;
+}
+.cryptorus-tab > header > .total-mix > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.cryptorus-tab > header > .total-mix > span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+.cryptorus-tab > header > button {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  max-width: 280px;
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.cryptorus-tab > .cryptorus-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.cryptorus-tab > .cryptorus-list > .cryptorus-item > .content > .info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cryptorus-tab > .cryptorus-list > .cryptorus-item > .content > .info > h5 {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.cryptorus-tab > .cryptorus-list > .cryptorus-item > .content > .info > .amount {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+.cryptorus-tab > .cryptorus-list > .cryptorus-item > .content > .controller > button {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 9px 0px;
+  margin-top: 14px;
+}
+.cryptorus-tab > .cryptorus-list > .cryptorus-item > .content > .controller > button:hover {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+}
+.cryptorus-tab > .cryptorus-list > .cryptorus-item > .content > img {
+  max-width: 236px;
+  max-height: 236px;
+}
+.klits-tab {
+  margin-top: 50px;
+}
+.klits-tab > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.klits-tab > header > .total-mix {
+  text-align: center;
+}
+.klits-tab > header > .total-mix > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.klits-tab > header > .total-mix > span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+.klits-tab > header > button {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  max-width: 280px;
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.klits-tab > .klits-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.klits-tab > .klits-list > .klits-item > .content > .info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.klits-tab > .klits-list > .klits-item > .content > .info > h5 {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.klits-tab > .klits-list > .klits-item > .content > .info > .amount {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+.klits-tab > .klits-list > .klits-item > .content > .controller > button {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 9px 0px;
+  margin-top: 14px;
+}
+.klits-tab > .klits-list > .klits-item > .content > .controller > button:hover {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+}
+.klits-tab > .klits-list > .klits-item > .content > img {
+  max-width: 236px;
+  max-height: 236px;
+}
+.pixel-cat-tab {
+  margin-top: 50px;
+}
+.pixel-cat-tab > header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.pixel-cat-tab > header > .total-mix {
+  text-align: center;
+}
+.pixel-cat-tab > header > .total-mix > h4 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.pixel-cat-tab > header > .total-mix > span {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38px;
+}
+.pixel-cat-tab > header > button {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  max-width: 280px;
+  padding: 16px 0px;
+  width: 100%;
+  margin-top: 20px;
+}
+.pixel-cat-tab > .case-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.pixel-cat-tab > .case-list > .case-item > .content > .info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.pixel-cat-tab > .case-list > .case-item > .content > .info > h5 {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.pixel-cat-tab > .case-list > .case-item > .content > .info > .amount {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+.pixel-cat-tab > .case-list > .case-item > .content > .controller > button {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 9px 0px;
+  margin-top: 14px;
+}
+.pixel-cat-tab > .case-list > .case-item > .content > .controller > button:hover {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+}
+.pixel-cat-tab > .case-list > .case-item > .content > img {
+  max-width: 236px;
+  max-height: 236px;
+}
 .layout {
   width: 100%;
 }
@@ -1119,6 +1659,64 @@ body {
 }
 .burn-view > section > .warning {
   margin-top: 20px;
+}
+.mining-view {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1360px;
+  background: #1D1D1D;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 40px 50px;
+}
+.mining-view > h1 {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 41px;
+}
+.mining-view > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #747373;
+}
+.mining-view > .warning {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.mining-view > .tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.mining-view > .tabs > a {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 13px 50px;
+}
+.mining-view > .tabs > a:hover,
+.mining-view > .tabs > a:active {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .governance-view {
   display: flex;
