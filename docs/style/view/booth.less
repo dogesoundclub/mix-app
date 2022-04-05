@@ -1,0 +1,143 @@
+.booth-view {
+    display        : flex;
+    justify-content: space-around;
+    margin         : auto;
+    max-width      : 1360px;
+    background     : #1D1D1D;
+    border         : 1px solid #3C3C3C;
+    box-sizing     : border-box;
+    border-radius  : 8px;
+    margin-top     : 60px;
+    margin-bottom  : 60px;
+    padding        : 40px 50px;
+
+
+    >.staking {
+        margin-left: 45px;
+    }
+
+    >section {
+
+        >.content {
+            >.title {
+                color        : #747373;
+                font-weight  : 400;
+                font-size    : 14px;
+                line-height  : 16px;
+                margin-bottom: 10px;
+            }
+
+            >span {
+                font-weight: 400;
+                font-size  : 24px;
+                line-height: 28px;
+                color      : #FFFFFF;
+            }
+        }
+
+        >.grid-container {
+            display              : grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            >.content {
+                margin-top  : 30px;
+                margin-right: 90px;
+
+                >.title {
+                    color        : #747373;
+                    font-weight  : 400;
+                    font-size    : 14px;
+                    line-height  : 16px;
+                    margin-bottom: 10px;
+                }
+
+                >span {
+                    font-weight: 400;
+                    font-size  : 24px;
+                    line-height: 28px;
+                    color      : #FFFFFF;
+                }
+            }
+        }
+
+        >h2 {
+            font-weight: 500;
+            font-size  : 28px;
+            line-height: 41px;
+            text-align : center;
+        }
+
+        >p {
+            font-weight: 400;
+            font-size  : 12px;
+            line-height: 17px;
+            color      : #747373;
+            text-align : center;
+        }
+
+        >.form {
+            >input {
+                padding      : 16px 20px;
+                background   : #222222;
+                border       : 1px solid #3C3C3C;
+                box-sizing   : border-box;
+                border-radius: 8px;
+                color        : white;
+                width        : 100%;
+                margin-top   : 30px;
+                margin-bottom: 20px;
+            }
+
+            >button {
+                background   : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                border-radius: 8px;
+                font-weight  : 500;
+                font-size    : 16px;
+                line-height  : 23px;
+                color        : #161616;
+                width        : 100%;
+                padding      : 14px 0px;
+                margin-bottom: 14px;
+            }
+
+            >.container {
+                display        : flex;
+                justify-content: space-between;
+                margin-bottom  : 20px;
+
+                >.caption {
+                    background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip        : text;
+                    text-fill-color        : transparent;
+                }
+
+                >button {
+                    background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip        : text;
+                    text-fill-color        : transparent;
+                    text-decoration-line   : underline;
+                }
+            }
+        }
+
+        >.warning {
+            font-style   : normal;
+            font-weight  : 400;
+            font-size    : 14px;
+            line-height  : 20px;
+            color        : #747373;
+            margin-bottom: 30px;
+        }
+    }
+
+    >hr {
+        border          : none;
+        background-color: #3C3C3C;
+        width           : 1px;
+        max-height      : 690px;
+    }
+}
