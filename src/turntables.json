@@ -1,6 +1,6 @@
 [{
     "name": "Normal Grade",
-    "color": "#000000",
+    "color": "#ffffff",
     "img": "/images/components/turntables/normal.png",
     "volume": 1000,
     "price": 1000,
