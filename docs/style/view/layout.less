@@ -13,6 +13,10 @@
         height          : 60px;
         padding         : 0px 40px;
 
+        @media @phone {
+            padding: 0px 20px;
+        }
+
         >.nav {
             display    : flex;
             align-items: center;
@@ -29,6 +33,18 @@
                 }
             }
 
+            >.menu-button {
+                float  : right;
+                display: none;
+                padding: 10px;
+                color  : #fff;
+
+                @media @phone {
+                    max-height: 30px;
+                    display   : block;
+                }
+            }
+
             >.right {
                 display    : flex;
                 align-items: center;
@@ -41,10 +57,6 @@
 
                 >.user-menu {
                     float: right;
-
-                    @media @phone {
-                        display: none;
-                    }
                 }
 
                 >.mix-button {
@@ -57,17 +69,6 @@
                         margin-right: 10px;
                     }
                 }
-
-                >.menu-button {
-                    float  : right;
-                    display: none;
-                    padding: 10px;
-                    color  : #fff;
-
-                    @media @phone {
-                        display: block;
-                    }
-                }
             }
         }
     }
@@ -78,6 +79,10 @@
         justify-content: center;
         margin         : auto;
         padding        : 20px;
+
+        @media @phone {
+            padding: 0px;
+        }
     }
 
     >footer {

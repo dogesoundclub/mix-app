@@ -1,63 +1,93 @@
 .mining-view {
-    display       : flex;
-    flex-direction: column;
-    margin        : auto;
-    max-width     : 1360px;
-    background    : #1D1D1D;
-    border        : 1px solid #3C3C3C;
-    box-sizing    : border-box;
-    border-radius : 8px;
-    margin-top    : 60px;
-    margin-bottom : 60px;
-    padding       : 40px 50px;
 
-    >h1 {
-        font-weight: 500;
-        font-size  : 28px;
-        line-height: 41px;
-    }
+    >section {
+        display       : flex;
+        flex-direction: column;
+        margin        : auto;
+        max-width     : 1360px;
+        height        : 100%;
+        background    : #1D1D1D;
+        border        : 1px solid #3C3C3C;
+        box-sizing    : border-box;
+        border-radius : 8px;
+        margin        : 60px 0px;
+        padding       : 40px 50px;
 
-    >p {
-        font-weight: 400;
-        font-size  : 12px;
-        line-height: 17px;
-        color      : #747373;
-    }
+        @media @phone {
+            padding: 20px;
+            margin : 20px;
+        }
 
-    >.warning {
-        font-weight            : 400;
-        font-size              : 12px;
-        line-height            : 17px;
-        background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip        : text;
-        text-fill-color        : transparent;
-    }
+        >h1 {
+            font-weight: 500;
+            font-size  : 28px;
+            line-height: 41px;
+        }
 
-    >.tabs {
-        display        : flex;
-        justify-content: space-between;
-        margin-top     : 30px;
+        >p {
+            font-weight: 400;
+            font-size  : 12px;
+            line-height: 17px;
+            color      : #747373;
+        }
 
-        >a {
-            font-family  : 'Roboto';
-            font-weight  : 400;
-            font-size    : 16px;
-            line-height  : 24px;
-            background   : #222222;
-            border       : 1px solid #3C3C3C;
-            box-sizing   : border-box;
-            border-radius: 8px;
-            padding      : 13px 50px;
+        >.warning {
+            font-weight            : 400;
+            font-size              : 12px;
+            line-height            : 17px;
+            background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip        : text;
+            text-fill-color        : transparent;
 
-            &:hover,
-            &:active {
-                background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+            @media @phone {
+                margin-top             : 6px;
+                font-weight            : 400;
+                font-size              : 12px;
+                line-height            : 17px;
+                background             : #FFFFFF;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip        : text;
                 text-fill-color        : transparent;
+            }
+        }
+
+        >.tabs {
+            display        : flex;
+            justify-content: space-between;
+            margin-top     : 30px;
+
+            @media @phone {
+                overflow: scroll;
+            }
+
+            >a {
+                font-family  : 'Roboto';
+                font-weight  : 400;
+                font-size    : 16px;
+                line-height  : 24px;
+                background   : #222222;
+                border       : 1px solid #3C3C3C;
+                box-sizing   : border-box;
+                border-radius: 8px;
+                padding      : 13px 50px;
+
+                @media @phone {
+                    background: none;
+                    border    : none;
+                    padding   : 20px;
+                }
+
+                &:hover,
+                &:active {
+                    background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip        : text;
+                    text-fill-color        : transparent;
+                }
             }
         }
     }

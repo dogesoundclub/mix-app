@@ -50,6 +50,10 @@
         grid-gap             : 20px;
         margin-top           : 50px;
 
+        @media @phone {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         >.punk-item {
             >.content {
                 >.info {
@@ -102,6 +106,11 @@
                 >img {
                     max-width : 236px;
                     max-height: 236px;
+
+                    @media @phone {
+                        width : 130px;
+                        height: 130px;
+                    }
                 }
             }
         }

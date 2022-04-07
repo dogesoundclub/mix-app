@@ -1,5 +1,6 @@
 .proposal {
     width          : 100%;
+    display        : block;
     display        : flex;
     justify-content: space-between;
     align-items    : center;
@@ -7,13 +8,24 @@
     border-bottom  : 1px solid #3C3C3C;
     box-sizing     : border-box;
     border-radius  : 0px;
+    white-space    : nowrap;
+    overflow       : hidden;
+    text-overflow  : ellipsis;
+
+    @media @phone {
+        height         : 96px;
+        flex-direction : column;
+        justify-content: flex-start;
+        align-items    : flex-start;
+    }
 
     >h5 {
         @media @phone {
-            font-size    : 1rem;
-            white-space  : nowrap;
-            overflow     : hidden;
-            text-overflow: ellipsis;
+            margin-top : 16px;
+            font-size  : 1rem;
+            font-weight: 400;
+            font-size  : 16px;
+            line-height: 23px;
         }
 
         font-weight: 400;
@@ -34,6 +46,15 @@
         box-sizing             : border-box;
         border-radius          : 8px;
         padding                : 8px 30px;
+
+        @media @phone {
+            font-weight  : 500;
+            font-size    : 12px;
+            line-height  : 17px;
+            margin-top   : 10px;
+            margin-bottom: 16px;
+            padding      : 5px 16px;
+        }
     }
 
     &.rejected,
@@ -53,6 +74,15 @@
             box-sizing             : border-box;
             border-radius          : 8px;
             padding                : 8px 30px;
+
+            @media @phone {
+                font-weight  : 500;
+                font-size    : 12px;
+                line-height  : 17px;
+                margin-top   : 10px;
+                margin-bottom: 16px;
+                padding      : 5px 16px;
+            }
         }
     }
 }

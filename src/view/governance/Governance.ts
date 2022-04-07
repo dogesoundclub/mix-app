@@ -15,12 +15,14 @@ export default class Governance implements View {
         Layout.current.title = "거버넌스";
         Layout.current.content.append(
             this.container = el(".governance-view",
-                el("h1", "MIX 거버넌스"),
-                el("p", "MIX를 위한 제안을 적극 환영합니다"),
-                el(".top-nav", el("button", "제안 생성", {
-                    click: () => new Alert("MIX 백서 v2 실행이 완료될 때 까지 거버넌스 제안 생성이 불가능합니다."),
-                })),
-                this.proposalList = el(".proposal-list"),
+                el("section",
+                    el("h1", "MIX 거버넌스"),
+                    el("p", "MIX를 위한 제안을 적극 환영합니다"),
+                    el(".top-nav", el("button", "제안 생성", {
+                        click: () => new Alert("MIX 백서 v2 실행이 완료될 때 까지 거버넌스 제안 생성이 불가능합니다."),
+                    })),
+                    this.proposalList = el(".proposal-list"),
+                ),
             )
         );
         this.load();

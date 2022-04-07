@@ -17,6 +17,12 @@ export default class Layout implements View {
             (this.container = el(".layout",
                 el("header",
                     el(".nav",
+                        el("a.menu-button", el("img", { src: "/images/shared/icn/menu.svg" }), {
+                            click: (event, button) => {
+                                const rect = button.rect;
+                                new MobileMenu({ left: 0, top: rect.bottom }).appendTo(BodyNode);
+                            },
+                        }),
                         el("a", { click: () => ViewUtil.go("/") },
                             el(".logo",
                                 el("img", { src: "/images/shared/logo/mix-text.svg" }),
@@ -25,12 +31,6 @@ export default class Layout implements View {
                         el(".right",
                             new PCMenu(),
                             new UserInfo(),
-                            el("a.menu-button", el("i.fas.fa-bars"), {
-                                click: (event, button) => {
-                                    const rect = button.rect;
-                                    new MobileMenu({ left: rect.right - 170, top: rect.bottom }).appendTo(BodyNode);
-                                },
-                            })
                         ),
                     )),
                 el("main", (this.content = el(".content"))),

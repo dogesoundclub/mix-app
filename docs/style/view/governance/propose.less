@@ -50,6 +50,10 @@
             grid-template-columns: repeat(2, 1fr);
             grid-gap             : 20px;
 
+            @media @phone {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
             >label {
                 display       : flex;
                 flex-direction: column;

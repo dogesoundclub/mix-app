@@ -26,91 +26,93 @@ export default class Booth implements View {
     private mixsetDisplay: DomNode;
 
     constructor() {
-        Layout.current.title = "부스";
+        Layout.current.title = "MIX 스테이킹";
         Layout.current.content.append(
             this.container = el(".booth-view",
                 el("section",
-                    el(".content",
-                        el(".title", "1 MIXSET"),
-                        this.priceDisplay = el("span", new Loading()),
-                        el("span", " MIX"),
-                    ),
-                    el(".grid-container",
+                    el("section",
                         el(".content",
-                            el(".title", "지난 24시간 동안의 APR",),
-                            this.aprDisplay = el("span.bold", new Loading()),
-                            el("span", " %"),
-                        ),
-                        el(".content",
-                            el(".title", "예치된 총 MIX"),
-                            this.totalBalanceDisplay = el("span.bold", new Loading()),
+                            el(".title", "1 MIXSET"),
+                            this.priceDisplay = el("span", new Loading()),
                             el("span", " MIX"),
                         ),
-                        el(".content",
-                            el(".title", "지난 24시간 동안 소각된 MIX"),
-                            this.burn24Display = el("span.bold", new Loading()),
-                            el("span", " MIX"),
-                        ),
-                        el(".content",
-                            el(".title", "지난 24시간 동안 분배된 MIX"),
-                            this.reward24Display = el("span.bold", new Loading()),
-                            el("span", " MIX"),
-                        ),
-                    ),
-                ),
-                el("hr"),
-                el("section.staking",
-                    el("h2", "MIX 스테이킹"),
-                    el("p", "MIX가 소각될 때 마다 소각량의 0.3%가 부스에 대한 지분에 따라 분배됩니다."),
-                    el(".form",
-                        this.stakeInput = el("input", { placeholder: "예치할 액수를 넣어주세요." }),
-                        el("button", "예치하기", {
-                            click: async () => {
-                                await BoothContract.stake(utils.parseEther(this.stakeInput.domElement.value));
-                                ViewUtil.waitTransactionAndRefresh();
-                            },
-                        }),
-                        el(".container",
-                            el(".caption",
-                                el("label", "MIX: "),
-                                this.balanceDisplay = el("span", new Loading())),
-                            el("button.max-btn", "최대 수량", {
-                                click: async () => {
-                                    const walletAddress = await Wallet.loadAddress();
-                                    if (walletAddress !== undefined) {
-                                        const balance = await MixContract.balanceOf(walletAddress);
-                                        this.stakeInput.domElement.value = utils.formatEther(balance);
-                                    }
-                                },
-                            }))),
-                    el(".warning", "예치 시에는 2번의 트랜잭션이 발생합니다. 한번은 토큰 사용 허락을 위한 것이며, 다른 하나는 실제 예치를 위한 것입니다."),
-                    el("h2", "MIX 스테이킹 해제"),
-                    el(".form",
-                        this.unstakeInput = el("input", { placeholder: "예치할 액수를 넣어주세요." }),
-                        el("button", "해제하기", {
-                            click: async () => {
-                                await BoothContract.unstake(utils.parseEther(this.unstakeInput.domElement.value));
-                                ViewUtil.waitTransactionAndRefresh();
-                            },
-                        }),
-                        el(".container",
-                            el(".caption",
-                                el("label", "MIXSET: "),
-                                this.mixsetDisplay = el("span", new Loading()),
+                        el(".grid-container",
+                            el(".content",
+                                el(".title", "지난 24시간 동안의 APR",),
+                                this.aprDisplay = el("span.bold", new Loading()),
+                                el("span", " %"),
                             ),
-                            el("button.max-btn", "최대 수량", {
-                                click: async () => {
-                                    const walletAddress = await Wallet.loadAddress();
-                                    if (walletAddress !== undefined) {
-                                        const staked = await BoothContract.balanceOf(walletAddress);
-                                        this.unstakeInput.domElement.value = utils.formatEther(staked);
-                                    }
-                                },
-                            })
-                        )
+                            el(".content",
+                                el(".title", "예치된 총 MIX"),
+                                this.totalBalanceDisplay = el("span.bold", new Loading()),
+                                el("span", " MIX"),
+                            ),
+                            el(".content",
+                                el(".title", "지난 24시간 동안 소각된 MIX"),
+                                this.burn24Display = el("span.bold", new Loading()),
+                                el("span", " MIX"),
+                            ),
+                            el(".content",
+                                el(".title", "지난 24시간 동안 분배된 MIX"),
+                                this.reward24Display = el("span.bold", new Loading()),
+                                el("span", " MIX"),
+                            ),
+                        ),
                     ),
-                ),
-            )
+                    el("hr"),
+                    el("section.staking",
+                        el("h2", "MIX 스테이킹"),
+                        el("p", "MIX가 소각될 때 마다 소각량의 0.3%가 부스에 대한 지분에 따라 분배됩니다."),
+                        el(".form",
+                            this.stakeInput = el("input", { placeholder: "예치할 액수를 넣어주세요." }),
+                            el("button", "예치하기", {
+                                click: async () => {
+                                    await BoothContract.stake(utils.parseEther(this.stakeInput.domElement.value));
+                                    ViewUtil.waitTransactionAndRefresh();
+                                },
+                            }),
+                            el(".container",
+                                el(".caption",
+                                    el("label", "MIX: "),
+                                    this.balanceDisplay = el("span", new Loading())),
+                                el("button.max-btn", "최대 수량", {
+                                    click: async () => {
+                                        const walletAddress = await Wallet.loadAddress();
+                                        if (walletAddress !== undefined) {
+                                            const balance = await MixContract.balanceOf(walletAddress);
+                                            this.stakeInput.domElement.value = utils.formatEther(balance);
+                                        }
+                                    },
+                                }))),
+                        el(".warning", "예치 시에는 2번의 트랜잭션이 발생합니다. 한번은 토큰 사용 허락을 위한 것이며, 다른 하나는 실제 예치를 위한 것입니다."),
+                        el("h2", "MIX 스테이킹 해제"),
+                        el(".form",
+                            this.unstakeInput = el("input", { placeholder: "예치할 액수를 넣어주세요." }),
+                            el("button", "해제하기", {
+                                click: async () => {
+                                    await BoothContract.unstake(utils.parseEther(this.unstakeInput.domElement.value));
+                                    ViewUtil.waitTransactionAndRefresh();
+                                },
+                            }),
+                            el(".container",
+                                el(".caption",
+                                    el("label", "MIXSET: "),
+                                    this.mixsetDisplay = el("span", new Loading()),
+                                ),
+                                el("button.max-btn", "최대 수량", {
+                                    click: async () => {
+                                        const walletAddress = await Wallet.loadAddress();
+                                        if (walletAddress !== undefined) {
+                                            const staked = await BoothContract.balanceOf(walletAddress);
+                                            this.unstakeInput.domElement.value = utils.formatEther(staked);
+                                        }
+                                    },
+                                })
+                            )
+                        ),
+                    ),
+                )
+            ),
         );
         this.loadInfo();
         this.loadBalance();
