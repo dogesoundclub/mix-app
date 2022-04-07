@@ -13,12 +13,12 @@ export default class ConnectWalletPopup extends Popup {
                 el("p", "Klubs는 클레이튼 블록체인과의 연결이 필요합니다. 카이카스 혹은 카카오톡 클립에서 연결해주시기 바랍니다."),
                 el(".button-container",
                     el("button.connect-kaikas-button",
-                        el("img", { src: "/images/logo/kaikas.svg" }),
+                        el("img", { src: "/images/shared/logo/kaikas.svg" }),
                         "카이카스 설치",
                         { href: "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi", target: "_blank" },
                     ),
                     el("button.connect-klip-button",
-                        el("img", { src: "/images/logo/klip.svg" }),
+                        el("img", { src: "/images/shared/logo/klip.svg" }),
                         "카카오톡 클립으로 연결",
                         {
                             click: async () => {
