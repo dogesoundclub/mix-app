@@ -2026,6 +2026,14 @@ body {
     text-align: center;
   }
 }
+.mining-view {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 0px;
+}
 .mining-view > section {
   display: flex;
   flex-direction: column;
