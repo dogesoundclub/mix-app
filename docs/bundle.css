@@ -2335,17 +2335,251 @@ body {
   font-size: 28px;
   line-height: 41px;
 }
-.governance-proposal-view > .content > h6 {
+.governance-proposal-view > .proposer-container {
+  margin-top: 6px;
+}
+.governance-proposal-view > .proposer-container > .proposer {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 20px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.governance-proposal-view > .proposer-container > .address {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+.governance-proposal-view > .content > h6 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   margin-top: 20px;
+  margin-bottom: 4px;
 }
 .governance-proposal-view > .content > p {
-  margin-top: 6px;
+  font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 19px;
+}
+.governance-proposal-view > .content a {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration-line: underline;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.governance-proposal-view > .content > hr {
+  border: 0;
+  height: 1px;
+  background: #747373;
+  margin: 20px 0px;
+}
+.governance-proposal-view > .vote-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+@media only screen and (max-width: 719px) {
+  .governance-proposal-view > .vote-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.governance-proposal-view > .vote-container > .assets > h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 14px;
+}
+.governance-proposal-view > .vote-container > .assets > .assets-display {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 30px 40px;
+}
+@media only screen and (max-width: 719px) {
+  .governance-proposal-view > .vote-container > .assets > .assets-display {
+    padding: 20px;
+  }
+}
+.governance-proposal-view > .vote-container > .assets > .assets-display > .asset {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+@media only screen and (max-width: 719px) {
+  .governance-proposal-view > .vote-container > .assets > .assets-display > .asset {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0px;
+  }
+  .governance-proposal-view > .vote-container > .assets > .assets-display > .asset > h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+.governance-proposal-view > .vote-container > .assets > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > header {
+  display: flex;
+  margin-bottom: 14px;
+  align-items: baseline;
+}
+@media only screen and (max-width: 719px) {
+  .governance-proposal-view > .vote-container > .options-wrapper > header {
+    display: none;
+  }
+}
+.governance-proposal-view > .vote-container > .options-wrapper > header > h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  margin-right: 8px;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > header > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #747373;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options {
+  background: #222222;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 30px 40px;
+}
+@media only screen and (max-width: 719px) {
+  .governance-proposal-view > .vote-container > .options-wrapper > .options {
+    padding: 20px;
+  }
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list {
+  margin-bottom: 16px;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .title,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .title,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .voters,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .voters,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .percent,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .percent,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .controller,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .controller {
+  display: flex;
+  padding: 4px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  max-width: 900px;
+  height: 64px;
+  border: 1px solid #3C3C3C;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .percent-container,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .percent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  min-width: 80px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  border: 1px solid #3C3C3C;
+  height: 64px;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .percent-container > .mobile-percent,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .percent-container > .mobile-percent {
+  padding-left: 4px;
+  padding-right: 4px;
+  height: 18px;
+  display: none;
+  font-weight: 300;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .title,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .title {
+  width: auto;
+  flex-grow: 1;
+  text-align: left;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .controller,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .controller {
+  display: flex;
+  align-items: center;
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .controller > button,
+.governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .controller > button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  width: 100%;
+  padding: 7px 0px;
+}
+@media only screen and (max-width: 719px) {
+  .governance-proposal-view > .vote-container > .options-wrapper > .options > .list > header > .controller > button,
+  .governance-proposal-view > .vote-container > .options-wrapper > .options > .list > ul > li > .controller > button {
+    border: none;
+  }
+}
+.governance-proposal-view > .vote-container > .options-wrapper > .options > button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  width: 100%;
+  padding: 16px 0px;
+  margin-top: 30px;
 }
 .governance-propose-view {
   background: #1D1D1D;
