@@ -1762,7 +1762,10 @@ body {
   }
 }
 .home-view > header > .desc-container > .button-container > a {
+  display: flex;
+  justify-content: center;
   display: block;
+  text-align: center;
   max-width: 177px;
   width: 100%;
   margin-right: 20px;
