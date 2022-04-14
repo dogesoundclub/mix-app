@@ -19,6 +19,10 @@
         {
             "uri": "turntable",
             "name": "TURNTABLE"
+        },
+        {
+            "uri": "booth",
+            "name": "BOOTH"
         }
     ]
 }
