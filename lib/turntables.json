@@ -1,0 +1,43 @@
+[{
+        "name": "Normal Grade",
+        "color": "#ffffff",
+        "img": "/images/components/turntables/normal.png",
+        "volume": 1000,
+        "price": 1000,
+        "lifetime": 2592000
+    }, {
+        "name": "Fine Grade",
+        "color": "#6cb2e3",
+        "img": "/images/components/turntables/fine.png",
+        "volume": 3300,
+        "price": 3000,
+        "lifetime": 2592000
+    }, {
+        "name": "Rare Grade",
+        "color": "#dbcf74",
+        "img": "/images/components/turntables/rare.png",
+        "volume": 5500,
+        "price": 5000,
+        "lifetime": 2592000
+    }, {
+        "name": "Epic Grade",
+        "color": "#f5a360",
+        "img": "/images/components/turntables/epic.png",
+        "volume": 8000,
+        "price": 7000,
+        "lifetime": 2592000
+    }, {
+        "name": "None",
+        "color": "#666666",
+        "img": "/images/components/turntables/normal.png",
+        "volume": 10000,
+        "price": 12000,
+        "lifetime": 2592000
+    }, {
+        "name": "Supremacy Grade",
+        "color": "#e6500e",
+        "img": "/images/components/turntables/supremacy.png",
+        "volume": 12000,
+        "price": 10000,
+        "lifetime": 2592000
+    }]

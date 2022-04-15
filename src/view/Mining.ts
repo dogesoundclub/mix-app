@@ -7,6 +7,9 @@ import PixelCatTab from "../component/nftmining/pixelcat/PixelCatTab";
 import KLITSTab from "../component/nftmining/klits/KLITSTab";
 import Layout from "./Layout";
 import CryptorusTab from "../component/nftmining/cryptorus/CryptorusTab";
+import ViewUtil from "./ViewUtil";
+import EMatesTab from "../component/nftmining/emates/EMatesTab";
+import BMCSTab from "../component/nftmining/bmcs/BMCSTab";
 
 export default class Mining implements View {
 
@@ -27,29 +30,19 @@ export default class Mining implements View {
                                 this.tabContainer.empty().append(new MatesTab());
                             },
                         }),
-                        el("a", "Cases by Kate", {
+                        el("a", "DSC E-Mates", {
                             click: () => {
-                                this.tabContainer.empty().append(new CasesByKateTab());
+                                this.tabContainer.empty().append(new EMatesTab());
                             },
                         }),
-                        el("a", "Animals Punks V2", {
+                        el("a", "DSC BMCS", {
                             click: () => {
-                                this.tabContainer.empty().append(new AnimalsPunksV2Tab());
+                                this.tabContainer.empty().append(new BMCSTab());
                             },
                         }),
-                        el("a", "Pixel Cat", {
+                        el("a", "V1", {
                             click: () => {
-                                this.tabContainer.empty().append(new PixelCatTab());
-                            },
-                        }),
-                        el("a", "KLITS", {
-                            click: () => {
-                                this.tabContainer.empty().append(new KLITSTab());
-                            },
-                        }),
-                        el("a", "Cryptorus Land", {
-                            click: () => {
-                                this.tabContainer.empty().append(new CryptorusTab());
+                                ViewUtil.go("mining/v1");
                             },
                         }),
                     ),

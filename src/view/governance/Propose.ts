@@ -11,7 +11,6 @@ import ViewUtil from "../ViewUtil";
 export default class Propose implements View {
 
     private container: DomNode;
-    private proposer: DomNode;
 
     constructor() {
         Layout.current.title = "제안하기";
@@ -85,7 +84,7 @@ export default class Propose implements View {
                                                     proposer: walletAddress,
                                                     options: optionTitles,
                                                     signedMessage: result.signedMessage,
-                                                    klipSignKey: result.klipSignKey,
+                                                    klipAddress: result.klipAddress,
                                                 }),
                                             });
                                             ViewUtil.go("/governance");
@@ -110,7 +109,7 @@ export default class Propose implements View {
     private async loadAddress() {
         const walletAddress = await Wallet.loadAddress();
         if (walletAddress !== undefined) {
-            this.proposer.empty().appendText(walletAddress);
+            //this.proposer.empty().appendText(walletAddress);
         }
     }
 

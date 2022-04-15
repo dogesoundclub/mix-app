@@ -16,6 +16,7 @@ import RemoveMates from "./view/turntable/RemoveMates";
 import AddMates from "./view/turntable/AddMates";
 import MiningMates from "./view/turntable/MiningMates";
 import MateHolders from "./view/turntable/MateHolders";
+import MiningV1 from "./view/MiningV1";
 
 (async () => {
 
@@ -29,6 +30,7 @@ import MateHolders from "./view/turntable/MateHolders";
     SkyRouter.route("governance/propose", Propose);
 
     SkyRouter.route("mining", Mining);
+    SkyRouter.route("mining/v1", MiningV1);
     SkyRouter.route("burn", Burn);
     SkyRouter.route("booth", Booth);
 

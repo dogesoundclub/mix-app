@@ -95,7 +95,7 @@ export default class Proposal implements View {
                                                 option: optionTitle,
                                                 voter: walletAddress,
                                                 signedMessage: signResult.signedMessage,
-                                                klipSignKey: signResult.klipSignKey,
+                                                klipAddress: signResult.klipAddress,
                                             }),
                                         });
                                         if (result.ok === true) {
@@ -144,7 +144,7 @@ export default class Proposal implements View {
                                                             optionIndex: proposal.options.indexOf(option),
                                                             voter: walletAddress,
                                                             signedMessage: signResult.signedMessage,
-                                                            klipSignKey: signResult.klipSignKey,
+                                                            klipAddress: signResult.klipAddress,
                                                         }),
                                                     });
                                                     if (result.ok === true) {
@@ -189,7 +189,7 @@ export default class Proposal implements View {
                                                     optionIndex,
                                                     voter: walletAddress,
                                                     signedMessage: signResult.signedMessage,
-                                                    klipSignKey: signResult.klipSignKey,
+                                                    klipAddress: signResult.klipAddress,
                                                 }),
                                             });
                                             if (result.ok === true) {
@@ -228,7 +228,7 @@ export default class Proposal implements View {
                                 body: JSON.stringify({
                                     proposalId,
                                     signedMessage: result.signedMessage,
-                                    klipSignKey: result.klipSignKey,
+                                    klipAddress: result.klipAddress,
                                 }),
                             });
                             SkyRouter.refresh();
@@ -244,7 +244,7 @@ export default class Proposal implements View {
                                         proposalId,
                                         rejectReason,
                                         signedMessage: result.signedMessage,
-                                        klipSignKey: result.klipSignKey,
+                                        klipAddress: result.klipAddress,
                                     }),
                                 });
                                 SkyRouter.refresh();
@@ -268,7 +268,7 @@ export default class Proposal implements View {
                                 body: JSON.stringify({
                                     proposalId,
                                     signedMessage: result.signedMessage,
-                                    klipSignKey: result.klipSignKey,
+                                    klipAddress: result.klipAddress,
                                 }),
                             });
                             SkyRouter.refresh();

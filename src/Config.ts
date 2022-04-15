@@ -11,6 +11,9 @@ export default {
     contracts: TESTNET ? {
         // Testnet
         Mate: "0xCa7894953066B8C0a05e123454f586CDe4B42Fa7",
+        EMates: "",
+        Bias: "",
+
         DogeSoundContest: "0x5BE7BFee608b2aa0c022D11EFDCCC0bD3477C6Cf",
         Name: "0xBC514ba706604DbADF34D640367DCEA7A46983Df",
         NameV2: "",
@@ -29,6 +32,9 @@ export default {
         DevFundToken: "0xf3635EF377D690D034530ca78EdC9c1028188896",
         DevFundPool: "0x43793E818aC2ba1De69C279d571D3e8d7d9Bfb15",
         MatesPool: "0x6f49D139359D0c7Bf44Df4520494A6ABB39434dD",
+        EMatesPool: "",
+        BiasPool: "",
+
         Booth: "0xb45fC0Ff500cFb4deF3b5148B597884B797fF4Fd",
         BurnPool: "0xC7995B29d95006f737861DC5288920FAF16e5Ff7",
         Turntables: "0xB1EFA1E4b2E666cAB233E2241B9DA11d9EA97504",
@@ -59,6 +65,9 @@ export default {
     } : {
         // Mainnet
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
+        EMates: "0x2b303fd0082e4b51e5a6c602f45545204bbbb4dc",
+        Bias: "0xdedd727ab86bce5d416f9163b2448860bbde86d4",
+
         DogeSoundContest: "0x90B1a227A69b3A907167fFE7956dc965117CBF20",
         Name: "0x12C591fCd89B83704541B1Eac6b4aA18063A6954",
         NameV2: "0xd095c72B42547c7097089E36908d60d13347823a",
@@ -77,6 +86,9 @@ export default {
         DevFundToken: "0x6a7b98B2c69AE29a14857E033D16A714A3206B89",
         DevFundPool: "0x91471263590FB259bf6208ba414bf17B0126Bbb7",
         MatesPool: "0xbc9C42267037786f42831d4f36D629A3888c9b4a",
+        EMatesPool: "0x4316feE26c85c7a19063dA597b4DdF1476d0C986",
+        BiasPool: "0x83BD2Fa1806b36bC7B0747e37482544Bed56529e",
+
         Booth: "0x8a654D485AaEed652500B5F18A7e4bb58Ac8ef9F",
         BurnPool: "0x4b1e4c30B12B8564686FF30F608a18Abfbd7adBc",
         Turntables: "0xFe605356e99e8662Da61dF32e237D03BEd6A8D54",
