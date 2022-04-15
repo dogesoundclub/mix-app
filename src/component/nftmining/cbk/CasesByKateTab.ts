@@ -26,6 +26,9 @@ export default class CasesByKateTab extends DomNode {
                     el("h4", "쌓인 총 MIX"),
                     this.totalMixDisplay = el("span", "Loading..."),
                 ),
+                new Confirm("믹스 구매", "NFT로부터 MIX를 수령받기 위해서는 수령받을 MIX의 10%의 MIX를 선납해야 합니다.", "구매", () => {
+                    open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
+                }),
                 el("button.take-all-button", "한꺼번에 받기", {
                     click: async () => {
                         if (await Wallet.connected() !== true) {

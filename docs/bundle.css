@@ -625,44 +625,49 @@ body {
 }
 .dialogue.confirm {
   position: relative;
-  max-width: 600px;
-  width: 90%;
+  max-width: 440px;
+  width: 100%;
   margin: auto;
-  border-radius: 4px;
-  background-color: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #161616;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
 }
-.dialogue.confirm > h2 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 16px;
-}
-.dialogue.confirm > p {
-  padding-left: 16px;
-  padding-top: 8px;
-  color: white;
-  font-size: 0.875rem;
-  line-height: 1.2em;
-}
-.dialogue.confirm > .button-container {
+.dialogue.confirm > .close-container {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 16px;
+  padding: 27px;
+  padding-bottom: 13px;
+  cursor: pointer;
+}
+.dialogue.confirm > h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.dialogue.confirm > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 0px 50px 50px 50px;
+}
+.dialogue.confirm > .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 .dialogue.confirm > .button-container > button {
-  background-color: transparent;
-  color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
-  padding: 8px 16px;
-  font-size: 0.75rem;
-  border-radius: 4px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 12px 0px;
+  color: #161616;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  border-radius: 0px 0px 8px 8px;
 }
 .dialogue.confirm > .button-container > button:hover {
-  color: white;
-  background-color: rgba(242, 120, 12, 0.8);
-}
-.dialogue.confirm > .button-container > button:active {
-  color: white;
-  background-color: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  background: white;
 }
 .dialogue.prompt {
   position: relative;
@@ -913,6 +918,7 @@ body {
   margin-top: 20px;
 }
 .mates-tab > .mate-list {
+  overflow: auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
@@ -1821,7 +1827,6 @@ body {
 }
 .home-view > article {
   background-color: #161616;
-  padding: 20px;
 }
 .home-view > article > .pool-container {
   max-width: 1440px;
@@ -2824,7 +2829,6 @@ body {
 }
 .turntable-detail-view {
   margin: 60px 0px;
-  padding: 40px 50px;
 }
 @media only screen and (max-width: 719px) {
   .turntable-detail-view {
@@ -2841,6 +2845,7 @@ body {
   border: 1px solid #3C3C3C;
   box-sizing: border-box;
   border-radius: 8px;
+  padding: 40px 50px;
 }
 @media only screen and (max-width: 719px) {
   .turntable-detail-view > section {
