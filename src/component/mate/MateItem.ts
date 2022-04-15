@@ -1,5 +1,5 @@
-import { DomNode, el } from "@hanul/skynode";
-import { SkyRouter } from "skyrouter";
+import { DomNode, el } from "skydapp-browser";
+import { SkyRouter } from "skydapp-common";
 import SkyUtil from "skyutil";
 import MateList from "./MateList";
 import rarity from "../../rarity.json";

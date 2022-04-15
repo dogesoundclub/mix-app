@@ -1,7 +1,7 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import { utils } from "ethers";
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 import superagent from "superagent";
 import CommonUtil from "../../CommonUtil";
 import Loading from "../../component/shared/loading/Loading";
@@ -28,10 +28,10 @@ export default class MiningMates implements View {
             el("h1", "턴테이블의 메이트로부터 채굴하기"),
             el("header",
                 el(".total-mix",
-                    el("h4", "쌓인 총 MIX"),
+                    el("h4", msg("MINING_TAB_TITLE")),
                     this.totalMixDisplay = el("span", "Loading..."),
                 ),
-                el("button.take-all-button", "한꺼번에 받기", {
+                el("button.take-all-button", msg("MINING_TAB_BUTTON"), {
                     click: async () => {
                         await MatesListenersContract.claim(turntableId, this.mates);
                     },

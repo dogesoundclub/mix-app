@@ -1,5 +1,5 @@
 import { BigNumberish } from "@ethersproject/bignumber";
-import { constants } from "ethers";
+import { BigNumber, constants } from "ethers";
 import Config from "../../Config";
 import Wallet from "../../klaytn/Wallet";
 import KIP7Contract from "../standard/KIP7Contract";
@@ -8,6 +8,10 @@ class MixContract extends KIP7Contract {
 
     constructor() {
         super(Config.contracts.Mix, require("./MixContractABI.json"));
+    }
+
+    public async totalSupply(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("totalSupply"));
     }
 
     public async burn(amount: BigNumberish) {

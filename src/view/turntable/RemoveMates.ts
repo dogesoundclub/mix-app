@@ -1,6 +1,6 @@
-import { DomNode, el } from "@hanul/skynode";
-import msg from "msg.js";
-import { View, ViewParams } from "skyrouter";
+
+import { DomNode, el } from "skydapp-browser";
+import { View, ViewParams } from "skydapp-common";
 import MateList from "../../component/mate/MateList";
 import MateContract from "../../contracts/nft/MateContract";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";

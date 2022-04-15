@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import EMatesTab from "./EMatesTab";
 export default class EMateItem extends DomNode {
     private tab;

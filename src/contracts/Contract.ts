@@ -1,6 +1,6 @@
 import { BigNumber } from "@ethersproject/bignumber";
 import { utils } from "ethers";
-import EventContainer from "eventcontainer";
+import { EventContainer } from "skydapp-common";
 import Config from "../Config";
 import ExtWallet from "../klaytn/ExtWallet";
 import Klaytn from "../klaytn/Klaytn";

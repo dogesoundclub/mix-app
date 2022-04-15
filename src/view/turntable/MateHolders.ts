@@ -1,5 +1,5 @@
-import { DomNode, el } from "@hanul/skynode";
-import { View, ViewParams } from "skyrouter";
+import { DomNode, el } from "skydapp-browser";
+import { View, ViewParams } from "skydapp-common";
 import Loading from "../../component/shared/loading/Loading";
 import MateContract from "../../contracts/nft/MateContract";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";

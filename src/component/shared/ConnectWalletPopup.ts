@@ -1,4 +1,4 @@
-import { DomNode, el, Popup } from "@hanul/skynode";
+import { DomNode, el, Popup } from "skydapp-browser";
 import Klip from "../../klaytn/Klip";
 
 export default class ConnectWalletPopup extends Popup {

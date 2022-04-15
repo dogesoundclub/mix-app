@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import MiningMates from "../../view/turntable/MiningMates";
 export default class MateItem extends DomNode {
     private view;

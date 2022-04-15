@@ -1,4 +1,4 @@
-import { ClosableFloatingDomNode, Position } from "@hanul/skynode";
+import { ClosableFloatingDomNode, Position } from "skydapp-browser";
 import menu from "./menu.json";
 import MenuTreeBuilder from "./MenuTreeBuilder";
 import UserInfo from "./UserInfo";

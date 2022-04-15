@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import AnimalsPunksV2Tab from "./AnimalsPunksV2Tab";
 export default class PunkItem extends DomNode {
     private tab;

@@ -1,6 +1,6 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import msg from "msg.js";
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
 import Config from "../../Config";

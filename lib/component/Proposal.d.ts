@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 interface GovernanceProposalOption {
     title: string;
     voters: string[];
@@ -23,5 +23,5 @@ interface GovernanceProposal {
 export default class Proposal extends DomNode {
     constructor(proposal: GovernanceProposal);
 }
-export {};
+export { };
 //# sourceMappingURL=Proposal.d.ts.map

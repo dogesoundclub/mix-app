@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import CasesByKateTab from "./CasesByKateTab";
 export default class CaseItem extends DomNode {
     private tab;

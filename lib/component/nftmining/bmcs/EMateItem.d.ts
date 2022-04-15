@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import MatesTab from "./MatesTab";
 export default class MateItem extends DomNode {
     private tab;

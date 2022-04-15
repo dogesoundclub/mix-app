@@ -1,4 +1,4 @@
-import { ScrollItemDomNode } from "@hanul/skynode";
+import { ScrollItemDomNode } from "skydapp-browser";
 import MateItem from "./MateItem";
 import MateList from "./MateList";
 

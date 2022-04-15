@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 export default class PCMenu extends DomNode {
     constructor();
 }

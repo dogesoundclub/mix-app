@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import MateList from "./MateList";
 export default class MateItem extends DomNode {
     private checkbox;

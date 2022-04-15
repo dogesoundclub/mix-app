@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import { TurntableInfo } from "../../contracts/turntable/TurntablesContract";
 export default class TurntableItem extends DomNode {
     private id;

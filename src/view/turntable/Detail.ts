@@ -1,6 +1,6 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el, msg } from "skydapp-browser";
 import { constants, utils } from "ethers";
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 import CommonUtil from "../../CommonUtil";
 import MateList from "../../component/mate/MateList";
 import Config from "../../Config";
@@ -32,14 +32,14 @@ export default class Detail implements View {
 
     constructor(params: ViewParams) {
         const turntableId = parseInt(params.id, 10);
-        Layout.current.title = `턴테이블 #${turntableId}`;
+        Layout.current.title = `${msg("TURNTABLE_DETAIL_TITLE")}${turntableId}`;
         Layout.current.content.append(this.container = el(".turntable-detail-view",
             el("section",
                 el("header",
                     this.imgDisplay = el("img"),
                     el("section",
                         this.socailDisplay = el(".social-container"),
-                        this.title = el("h1", `턴테이블 #${turntableId}`),
+                        this.title = el("h1", `${msg("TURNTABLE_DETAIL_TITLE")}${turntableId}`),
                         this.infoDisplay = el(".info"),
                     ),
                 ),
@@ -47,26 +47,26 @@ export default class Detail implements View {
                 this.controller = el(".controller"),
                 this.controller2 = el(".controller2"),
                 el("section",
-                    el("h2", "리스닝 메이트"),
-                    el("button", "MIX 수령받기", { click: () => ViewUtil.go(`/turntable/${turntableId}/miningmates`) }),
+                    el("h2", msg("TURNTABLE_DETAIL_TITLE1")),
+                    el("button", msg("TURNTABLE_DETAIL_BUTTON1"), { click: () => ViewUtil.go(`/turntable/${turntableId}/miningmates`) }),
                     this.mateRewardInfo = el(".mate-reward-info"),
                     this.listeningMateList = new MateList(false, false),
                 ),
                 el(".controller",
-                    el("button.add-mates-button", "메이트 등록", {
+                    el("button.add-mates-button", msg("TURNTABLE_DETAIL_BUTTON2"), {
                         click: () => ViewUtil.go(`/turntable/${turntableId}/addmates`),
                     }),
-                    el("button.remove-mates-button", "메이트 제외", {
+                    el("button.remove-mates-button", msg("TURNTABLE_DETAIL_BUTTON3"), {
                         click: () => ViewUtil.go(`/turntable/${turntableId}/removemates`),
                     }),
                 ),
-                el("a.mate-holders-button", "메이트 홀더 지갑 보기", {
+                el("a.mate-holders-button", msg("TURNTABLE_DETAIL_BUTTON4"), {
                     click: () => ViewUtil.go(`/turntable/${turntableId}/mateholders`),
                 }),
                 el("hr"),
                 el("section",
-                    el("h2", "리스닝 LP 토큰"),
-                    el("p.warning", "LP 토큰을 리스너로 등록할 수 있습니다. 리스너로 등록된 동안에는 Klayswap 에어드롭 풀로부터 MIX를 분배받을 수 없습니다. 따라서 반드시 Klayswap 에어드롭 풀과 수익률을 비교하시기 바랍니다."),
+                    el("h2", msg("TURNTABLE_DETAIL_TITLE2")),
+                    el("p.warning", msg("TURNTABLE_DETAIL_DESC2")),
                     el(".listeners",
                         new LPTokenListenersV2(
                             "Klay-MIX Listeners V2",
@@ -94,7 +94,7 @@ export default class Detail implements View {
 
         const turntable = await TurntablesContract.turntables(turntableId);
         if (turntable.owner === constants.AddressZero) {
-            this.infoDisplay.empty().appendText("폐쇄된 턴테이블입니다.");
+            this.infoDisplay.empty().appendText(msg("TURNTABLE_DETAIL_DESC3"));
         } else {
             const lifetime = turntable.endBlock - currentBlock;
             const claimable = await TurntablesContract.claimableOf(turntableId);
@@ -153,28 +153,28 @@ export default class Detail implements View {
             }
 
             this.infoDisplay.append(
-                el(".owner", `소유자: ${turntable.owner}`),
-                turntable.owner !== walletAddress ? undefined : el(".mix", `- 쌓인 MIX: ${CommonUtil.numberWithCommas(utils.formatEther(claimable), 5)}`),
+                el(".owner", `${msg("TURNTABLE_DETAIL_DESC4")}: ${turntable.owner}`),
+                turntable.owner !== walletAddress ? undefined : el(".mix", `${msg("TURNTABLE_DETAIL_DESC5")}: ${CommonUtil.numberWithCommas(utils.formatEther(claimable), 5)}`),
                 el(".lifetime", `Lifetime: ${CommonUtil.numberWithCommas(String(lifetime < 0 ? 0 : lifetime))} Blocks`),
             );
 
             if (turntable.owner === walletAddress) {
 
                 this.controller.empty().append(
-                    el("button.charge-button", "충전하기", {
+                    el("button.charge-button", msg("TURNTABLE_DETAIL_BUTTON5"), {
                         click: () => {
-                            new Prompt("충전하기", "얼마만큼의 MIX를 충전하시겠습니까? 배터리 충전 가격은 턴테이블의 가격의 1/5와 비례하며, 턴테이블의 가격과 같은 액수의 MIX로 배터리를 충전하면 턴테이블 수명의 5배의 수명이 더해집니다.", "충전하기", async (amount) => {
+                            new Prompt(msg("TURNTABLE_DETAIL_PROMPT_TITLE1"), msg("TURNTABLE_DETAIL_PROMPT_DESC1"), msg("TURNTABLE_DETAIL_PROMPT_BUTTON1"), async (amount) => {
                                 const mix = utils.parseEther(amount);
                                 await TurntablesContract.charge(turntableId, mix);
                                 ViewUtil.waitTransactionAndRefresh();
                             });
                         },
                     }),
-                    el("button.update-button", "수정하기", { click: () => ViewUtil.go(`/turntable/${turntableId}/update`) }),
+                    el("button.update-button", msg("TURNTABLE_DETAIL_BUTTON6"), { click: () => ViewUtil.go(`/turntable/${turntableId}/update`) }),
                 );
 
                 this.controller2.empty().append(
-                    el("button.claim-button", "MIX 수령", { click: () => TurntablesContract.claim([turntableId]) }),
+                    el("button.claim-button", msg("TURNTABLE_DETAIL_BUTTON7"), { click: () => TurntablesContract.claim([turntableId]) }),
                 );
             }
         }
@@ -186,7 +186,7 @@ export default class Detail implements View {
         const tokenPerDay = poolInfo.allocPoint / 10000 / 2 * 86400 * 0.7;
         const totalShares = (await MatesListenersContract.totalShares()).toNumber();
         this.mateRewardInfo.empty().append(
-            el("p", `메이트 1개당 하루에 받는 MIX 수량: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`)
+            el("p", `${msg("TURNTABLE_DETAIL_DESC6")}: ${CommonUtil.numberWithCommas(String(tokenPerDay / totalShares))}`)
         );
 
         const mateBalance = (await MatesListenersContract.listenerCount(turntableId)).toNumber();

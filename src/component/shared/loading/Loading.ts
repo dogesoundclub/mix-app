@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import Lottie from "lottie-web";
 
 export default class Loading extends DomNode {

@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 export default class CasesByKateTab extends DomNode {
     private cases;
     private totalMix;

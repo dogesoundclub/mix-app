@@ -1,4 +1,4 @@
-import { DomNode, Popup } from "@hanul/skynode";
+import { DomNode, Popup } from "skydapp-browser";
 export default class KlipQRPopup extends Popup {
     content: DomNode;
     constructor(dataURL: string);

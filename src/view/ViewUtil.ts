@@ -1,4 +1,4 @@
-import { SkyRouter } from "skyrouter";
+import { SkyRouter } from "skydapp-common";
 
 class ViewUtil {
 

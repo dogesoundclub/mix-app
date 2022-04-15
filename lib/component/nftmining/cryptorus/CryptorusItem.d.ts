@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import CryptorusTab from "./CryptorusTab";
 export default class CryptorusItem extends DomNode {
     private tab;

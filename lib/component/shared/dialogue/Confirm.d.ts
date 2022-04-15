@@ -1,4 +1,4 @@
-import { DomNode, Popup } from "@hanul/skynode";
+import { DomNode, Popup } from "skydapp-browser";
 export default class Confirm extends Popup {
     content: DomNode;
     constructor(title: string, message: string, confirmTitle: string, confirm: () => void);

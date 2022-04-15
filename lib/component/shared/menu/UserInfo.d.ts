@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 export default class UserInfo extends DomNode {
     private mobile?;
     private connectWalletButton;

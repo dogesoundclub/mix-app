@@ -1,8 +1,6 @@
-import { DomNode, el } from "@hanul/skynode";
-import { SkyRouter, View, ViewParams } from "skyrouter";
-import SkyUtil from "skyutil";
+import { DomNode, el, msg } from "skydapp-browser";
+import { View, ViewParams } from "skydapp-common";
 import Confirm from "../../component/shared/dialogue/Confirm";
-import Prompt from "../../component/shared/dialogue/Prompt";
 import Config from "../../Config";
 import Wallet from "../../klaytn/Wallet";
 import Layout from "../Layout";
@@ -13,7 +11,7 @@ export default class Propose implements View {
     private container: DomNode;
 
     constructor() {
-        Layout.current.title = "제안하기";
+        Layout.current.title = msg("GOVERNANCE_PROPOSE_TITLE");
 
         let titleInput: DomNode<HTMLInputElement>;
         let summaryInput: DomNode<HTMLTextAreaElement>;
@@ -28,49 +26,49 @@ export default class Propose implements View {
 
         Layout.current.content.append(
             this.container = el(".governance-propose-view",
-                el("h1", "제안하기"),
+                el("h1", msg("GOVERNANCE_PROPOSE_TITLE")),
                 el(".form",
                     el("label",
-                        el("span", "제목"),
-                        titleInput = el("input", { placeholder: "제안 제목을 입력하세요." }),
+                        el("span", msg("GOVERNANCE_PROPOSE_TITLE1")),
+                        titleInput = el("input", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT1") }),
                     ),
                     el("label",
-                        el("span", "요약"),
-                        summaryInput = el("textarea", { placeholder: "제안의 핵심적인 부분만 적어주세요." }),
+                        el("span", msg("GOVERNANCE_PROPOSE_TITLE2")),
+                        summaryInput = el("textarea", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT2") }),
                     ),
                     el("label",
-                        el("span", "본문"),
-                        contentInput = el("textarea.content", { placeholder: "제안을 설명해주세요." }),
+                        el("span", msg("GOVERNANCE_PROPOSE_TITLE3")),
+                        contentInput = el("textarea.content", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT3") }),
                     ),
                     el("label",
-                        el("span", "비고"),
-                        noteInput = el("textarea", { placeholder: "비고를 적어주세요." }),
+                        el("span", msg("GOVERNANCE_PROPOSE_TITLE4")),
+                        noteInput = el("textarea", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT4") }),
                     ),
                     el(".nft-container",
                         el("label",
-                            el("span", "제안자"),
-                            proposerInput = el("input", { placeholder: "제안자를 적어주세요." }),
+                            el("span", msg("GOVERNANCE_PROPOSE_TITLE5")),
+                            proposerInput = el("input", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT5") }),
                         ),
                         el("label",
-                            el("span", "NFT 이름"),
-                            nftInput = el("input", { placeholder: "NFT이름을 적어주세요." }),
+                            el("span", msg("GOVERNANCE_PROPOSE_TITLE6")),
+                            nftInput = el("input", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT6") }),
                         ),
                     ),
                     el("label",
-                        el("span", "제안NFT"),
-                        proposalNftInput = el("input", { placeholder: "제안 NFT를 적어주세요." }),
+                        el("span", msg("GOVERNANCE_PROPOSE_TITLE7")),
+                        proposalNftInput = el("input", { placeholder: msg("GOVERNANCE_PROPOSE_INPUT7") }),
                     ),
                     el(".term",
                         el("label",
                             termCheckbox = el("input", { type: "checkbox" }),
-                            el("p", "NFT 프로젝트들 중에 MIX 분배 풀에 들어오고싶은 NFT 프로젝트는 언제든 거버넌스에 제안할 수 있습니다. 제안을 위해서는 vMIX 0.1%를 보유하고 있어야 하며, 1,000 MIX가 소모됩니다. 제안을 통과하기 위한 최소 참여 기준은 vMIX 30% 이상입니다."),
+                            el("p", msg("GOVERNANCE_PROPOSE_CHECKBOX")),
                         ),
                     ),
                     el(".controller",
-                        el("button", "생성하기", {
+                        el("button", msg("GOVERNANCE_PROPOSE_BUTTON"), {
                             click: () => {
                                 if (termCheckbox.domElement.checked === true) {
-                                    new Confirm("제안하기", "제안을 등록하시겠습니까? 제안 후에는 내용을 수정할 수 없사오니 다시 한 번 확인해주시기 바랍니다.", "제안 등록", async () => {
+                                    new Confirm(msg("GOVERNANCE_PROPOSE_POPUP_TITLE"), msg("GOVERNANCE_PROPOSE_POPUP_DESC"), msg("GOVERNANCE_PROPOSE_POPUP_BUTTON"), async () => {
                                         const walletAddress = await Wallet.loadAddress();
                                         if (walletAddress !== undefined) {
                                             const result = await Wallet.signMessage("Governance Proposal");

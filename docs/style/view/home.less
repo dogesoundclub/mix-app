@@ -1,9 +1,8 @@
 .home-view {
-
     >header {
         max-width: 1440px;
         margin   : auto;
-        height   : 890px;
+        height   : 100vh;
 
         @media @phone {
             height : 560px;
@@ -155,6 +154,11 @@
 
     >article {
         background-color: #161616;
+
+        @media @phone {
+            padding: 8px;
+        }
+
 
         >.pool-container {
             max-width: 1440px;

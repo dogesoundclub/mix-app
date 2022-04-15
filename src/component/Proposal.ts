@@ -1,4 +1,4 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import Constants from "../Constants";
 import ViewUtil from "../view/ViewUtil";
 

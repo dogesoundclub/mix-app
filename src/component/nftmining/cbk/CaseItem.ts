@@ -1,4 +1,4 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el, msg } from "skydapp-browser";
 import { BigNumber, constants, utils } from "ethers";
 import CommonUtil from "../../../CommonUtil";
 import CasesByKatePoolContract from "../../../contracts/mix/CasesByKatePoolContract";
@@ -19,11 +19,11 @@ export default class CaseItem extends DomNode {
             el(".content",
                 el("img", { src: `https://storage.googleapis.com/cbk-nft/v2/${id}.png`, alt: `cbk-${id}` }),
                 el(".info",
-                    el("h5", "쌓인 MIX"),
+                    el("h5", msg("MINING_ITEM_TITLE")),
                     this.mixAmount = el(".amount", "Loading..."),
                 ),
                 el(".controller",
-                    el("button.claim-button", "받기", {
+                    el("button.claim-button", msg("MINING_ITEM_BUTTON"), {
                         click: async () => {
                             if (await Wallet.connected() !== true) {
                                 await Wallet.connect();
@@ -33,7 +33,7 @@ export default class CaseItem extends DomNode {
                                 const balance = await MixContract.balanceOf(owner);
                                 const fee = this.claimable.div(9);
                                 if (balance.lt(fee)) {
-                                    new Confirm("믹스 구매", "NFT로부터 MIX를 수령받기 위해서는 수령받을 MIX의 10%의 MIX를 선납해야 합니다.", "구매", () => {
+                                    new Confirm(msg("MINING_ITEM_CONFIRM_TITLE1"), msg("MINING_ITEM_CONFIRM_DESC1"), msg("MINING_ITEM_CONFIRM_BUTTON1"), () => {
                                         open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
                                     });
                                 } else {

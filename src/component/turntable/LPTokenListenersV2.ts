@@ -1,4 +1,4 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import { utils } from "ethers";
 import superagent from "superagent";
 import CommonUtil from "../../CommonUtil";

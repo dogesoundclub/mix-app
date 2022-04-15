@@ -1,4 +1,4 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import { BigNumber, utils } from "ethers";
 import CommonUtil from "../../CommonUtil";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";
@@ -20,7 +20,7 @@ export default class MateItem extends DomNode {
                     el("span.name", name),
                 ),
                 el(".info",
-                    el("h5", "쌓인 MIX"),
+                    el("h5", msg("MINING_ITEM_TITLE")),
                     this.mixAmount = el(".amount", "Loading..."),
                 ),
                 el(".controller",

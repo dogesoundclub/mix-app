@@ -1,4 +1,4 @@
-import { DomNode, Popup } from "@hanul/skynode";
+import { DomNode, Popup } from "skydapp-browser";
 export default class Alert extends Popup {
     content: DomNode;
     constructor(message: string, confirmTitle?: string);

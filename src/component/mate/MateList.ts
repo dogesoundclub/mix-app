@@ -1,4 +1,4 @@
-import { ScrollableDomNode } from "@hanul/skynode";
+import { ScrollableDomNode } from "skydapp-browser";
 import SkyUtil from "skyutil";
 import superagent from "superagent";
 import MateLine from "./MateLine";

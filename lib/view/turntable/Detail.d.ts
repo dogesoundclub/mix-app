@@ -1,4 +1,4 @@
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 export default class Detail implements View {
     private container;
     private title;

@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import PixelCatTab from "./PixelCatTab";
 export default class PixelCatItem extends DomNode {
     private tab;

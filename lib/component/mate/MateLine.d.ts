@@ -1,4 +1,4 @@
-import { ScrollItemDomNode } from "@hanul/skynode";
+import { ScrollItemDomNode } from "skydapp-browser";
 import MateList from "./MateList";
 export default class MateLine extends ScrollItemDomNode<number[]> {
     private ids;

@@ -1,4 +1,4 @@
-import { ScrollableDomNode } from "@hanul/skynode";
+import { ScrollableDomNode } from "skydapp-browser";
 export default class MateList extends ScrollableDomNode<number[]> {
     selectedMateIds: number[];
     votedMates: number[];

@@ -1,5 +1,5 @@
-import { DomNode } from "@hanul/skynode";
-import { View, ViewParams } from "skyrouter";
+import { DomNode } from "skydapp-browser";
+import { View, ViewParams } from "skydapp-common";
 export default class Layout implements View {
     static current: Layout;
     private container;

@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el, msg } from "skydapp-browser";
 import { constants, utils } from "ethers";
 import superagent from "superagent";
 import CommonUtil from "../../../CommonUtil";
@@ -24,10 +24,10 @@ export default class EMatesTab extends DomNode {
         this.append(
             el("header",
                 el(".total-mix",
-                    el("h4", "쌓인 총 MIX"),
+                    el("h4", msg("MINING_TAB_TITLE")),
                     this.totalMixDisplay = el("span", "Loading..."),
                 ),
-                el("button.take-all-button", "한꺼번에 받기", {
+                el("button.take-all-button", msg("MINING_TAB_BUTTON"), {
                     click: async () => {
                         if (await Wallet.connected() !== true) {
                             await Wallet.connect();
@@ -37,7 +37,7 @@ export default class EMatesTab extends DomNode {
                             const balance = await MixContract.balanceOf(owner);
                             const fee = this.totalMix.div(9);
                             if (balance.lt(fee)) {
-                                new Confirm("믹스 구매", "NFT로부터 MIX를 수령받기 위해서는 수령받을 MIX의 10%의 MIX를 선납해야 합니다.", "구매", () => {
+                                new Confirm(msg("MINING_TAB_CONFIRM_TITLE1"), msg("MINING_TAB_CONFIRM_DESC1"), msg("MINING_TAB_CONFIRM_BUTTON1"), () => {
                                     open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
                                 });
                             } else {

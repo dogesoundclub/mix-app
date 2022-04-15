@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import menu from "./menu.json";
 import MenuTreeBuilder from "./MenuTreeBuilder";
 

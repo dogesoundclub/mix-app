@@ -1,4 +1,4 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import CommonUtil from "../../../CommonUtil";
 import Klip from "../../../klaytn/Klip";
 import Wallet from "../../../klaytn/Wallet";

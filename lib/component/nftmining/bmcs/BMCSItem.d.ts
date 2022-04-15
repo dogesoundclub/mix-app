@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import BMCSTab from "./BMCSTab";
 export default class BMCSItem extends DomNode {
     private tab;

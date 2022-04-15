@@ -1,4 +1,4 @@
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 export default class MiningV1 implements View {
     private container;
     private tabContainer;

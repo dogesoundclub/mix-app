@@ -1,4 +1,4 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el } from "skydapp-browser";
 import { utils } from "ethers";
 import CommonUtil from "../../CommonUtil";
 import TurntableExtrasContract from "../../contracts/turntable/TurntableExtrasContract";

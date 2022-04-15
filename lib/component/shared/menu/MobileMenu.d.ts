@@ -1,4 +1,4 @@
-import { ClosableFloatingDomNode, Position } from "@hanul/skynode";
+import { ClosableFloatingDomNode, Position } from "skydapp-browser";
 export default class MobileMenu extends ClosableFloatingDomNode {
     constructor(position: Position);
 }

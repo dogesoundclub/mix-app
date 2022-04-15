@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import KLITSTab from "./KLITSTab";
 export default class KLITSItem extends DomNode {
     private tab;

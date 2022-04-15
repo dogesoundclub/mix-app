@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 export default class MiningMates implements View {
     private container;
     private mates;

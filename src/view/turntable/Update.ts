@@ -1,5 +1,5 @@
-import { DomNode, el } from "@hanul/skynode";
-import { View, ViewParams } from "skyrouter";
+import { DomNode, el, msg } from "skydapp-browser";
+import { View, ViewParams } from "skydapp-common";
 import Confirm from "../../component/shared/dialogue/Confirm";
 import TurntableExtrasContract from "../../contracts/turntable/TurntableExtrasContract";
 import TurntablesContract from "../../contracts/turntable/TurntablesContract";
@@ -17,34 +17,34 @@ export default class Update implements View {
 
     constructor(params: ViewParams) {
         const turntableId = parseInt(params.id, 10);
-        Layout.current.title = "턴테이블 정보 수정";
+        Layout.current.title = msg("TURNTABLE_UPDATE_TITLE");
         Layout.current.content.append(this.container = el(".update-turntable-view",
-            el("h1", "턴테이블 정보 수정"),
-            el("a.back-button", "< 뒤로가기", {
+            el("h1", msg("TURNTABLE_UPDATE_TITLE")),
+            el("a.back-button", msg("TURNTABLE_UPDATE_BACK_BUTTON"), {
                 click: () => ViewUtil.go(`/turntable/${turntableId}`),
             }),
             el(".form",
                 el("label",
-                    el("h4", "턴테이블 이름"),
-                    this.nameInput = el("input", { placeholder: "턴테이블 이름" }),
+                    el("h4", msg("TURNTABLE_UPDATE_TITLE1")),
+                    this.nameInput = el("input", { placeholder: msg("TURNTABLE_UPDATE_INPUT1") }),
                 ),
                 el("label",
-                    el("h4", "턴테이블 설명"),
-                    this.descriptionTextarea = el("textarea", { placeholder: "턴테이블 설명" }),
+                    el("h4", msg("TURNTABLE_UPDATE_TITLE2")),
+                    this.descriptionTextarea = el("textarea", { placeholder: msg("TURNTABLE_UPDATE_INPUT2") }),
                 ),
                 el("label",
-                    el("h4", "BGM 유튜브 링크"),
-                    this.bgmInput = el("input", { placeholder: "BGM 유튜브 링크" }),
+                    el("h4", msg("TURNTABLE_UPDATE_TITLE3")),
+                    this.bgmInput = el("input", { placeholder: msg("TURNTABLE_UPDATE_INPUT3") }),
                 ),
                 el("label",
-                    el("h4", "관련 트위터"),
-                    this.twitterInput = el("input", { type: "url", placeholder: "관련 트위터" }),
+                    el("h4", msg("TURNTABLE_UPDATE_TITLE4")),
+                    this.twitterInput = el("input", { type: "url", placeholder: msg("TURNTABLE_UPDATE_INPUT4") }),
                 ),
                 el("label",
-                    el("h4", "관련 카카오톡 오픈 채팅방"),
-                    this.kakaotalkInput = el("input", { type: "url", placeholder: "관련 카카오톡 오픈 채팅방" }),
+                    el("h4", msg("TURNTABLE_UPDATE_TITLE5")),
+                    this.kakaotalkInput = el("input", { type: "url", placeholder: msg("TURNTABLE_UPDATE_INPUT5") }),
                 ),
-                el("button.save-button", "저장하기", {
+                el("button.save-button", msg("TURNTABLE_UPDATE_BUTTON1"), {
                     click: async () => {
                         const extra = {
                             name: this.nameInput.domElement.value,
@@ -57,9 +57,9 @@ export default class Update implements View {
                         setTimeout(() => ViewUtil.go(`/turntable/${turntableId}`), 2000);
                     },
                 }),
-                el("button.destroy-button", "폐쇄하기", {
+                el("button.destroy-button", msg("TURNTABLE_UPDATE_BUTTON2"), {
                     click: () => {
-                        new Confirm("폐쇄하기", "턴테이블을 폐쇄하시겠습니까? 턴테이블을 폐쇄하면 턴테이블 구매 비용의 80%를 되돌려받습니다. 이 작업은 돌이킬 수 없습니다.", "폐쇄하기", async () => {
+                        new Confirm(msg("TURNTABLE_UPDATE_CONFIRM_TITLE"), msg("TURNTABLE_UPDATE_CONFIRM_DESC"), msg("TURNTABLE_UPDATE_CONFIRM_BUTTON"), async () => {
                             await TurntablesContract.destroy(turntableId);
                             setTimeout(() => ViewUtil.go("/turntable"), 2000);
                         });

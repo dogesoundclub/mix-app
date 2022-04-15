@@ -1,4 +1,6 @@
-import { SkyRouter } from "skyrouter";
+import { BrowserInfo, msg } from "skydapp-browser";
+import { SkyRouter } from "skydapp-common";
+import superagent from "superagent";
 import Wallet from "./klaytn/Wallet";
 import Burn from "./view/Burn";
 import Governance from "./view/governance/Governance";
@@ -19,6 +21,8 @@ import MateHolders from "./view/turntable/MateHolders";
 import MiningV1 from "./view/MiningV1";
 
 (async () => {
+    msg.language = BrowserInfo.language;
+    msg.parseCSV((await superagent.get("/msg.csv")).text);
 
     SkyRouter.route("**", Layout);
     SkyRouter.route("", Home);

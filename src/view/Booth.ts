@@ -1,6 +1,6 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el, msg } from "skydapp-browser";
 import { BigNumber, utils } from "ethers";
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 import CommonUtil from "../CommonUtil";
 import Loading from "../component/shared/loading/Loading";
 import BoothContract from "../contracts/mix/BoothContract";
@@ -26,7 +26,7 @@ export default class Booth implements View {
     private mixsetDisplay: DomNode;
 
     constructor() {
-        Layout.current.title = "MIX 스테이킹";
+        Layout.current.title = msg("BOOTH_TITLE");
         Layout.current.content.append(
             this.container = el(".booth-view",
                 el("section",
@@ -38,22 +38,22 @@ export default class Booth implements View {
                         ),
                         el(".grid-container",
                             el(".content",
-                                el(".title", "지난 24시간 동안의 APR",),
+                                el(".title", msg("BOOTH_TITLE1"),),
                                 this.aprDisplay = el("span.bold", new Loading()),
                                 el("span", " %"),
                             ),
                             el(".content",
-                                el(".title", "예치된 총 MIX"),
+                                el(".title", msg("BOOTH_TITLE2")),
                                 this.totalBalanceDisplay = el("span.bold", new Loading()),
                                 el("span", " MIX"),
                             ),
                             el(".content",
-                                el(".title", "지난 24시간 동안 소각된 MIX"),
+                                el(".title", msg("BOOTH_TITLE3")),
                                 this.burn24Display = el("span.bold", new Loading()),
                                 el("span", " MIX"),
                             ),
                             el(".content",
-                                el(".title", "지난 24시간 동안 분배된 MIX"),
+                                el(".title", msg("BOOTH_TITLE4")),
                                 this.reward24Display = el("span.bold", new Loading()),
                                 el("span", " MIX"),
                             ),
@@ -61,11 +61,11 @@ export default class Booth implements View {
                     ),
                     el("hr"),
                     el("section.staking",
-                        el("h2", "MIX 스테이킹"),
-                        el("p", "MIX가 소각될 때 마다 소각량의 0.3%가 부스에 대한 지분에 따라 분배됩니다."),
+                        el("h2", msg("BOOTH_TITLE")),
+                        el("p", msg("BOOTH_DESC1")),
                         el(".form",
-                            this.stakeInput = el("input", { placeholder: "예치할 액수를 넣어주세요." }),
-                            el("button", "예치하기", {
+                            this.stakeInput = el("input", { placeholder: msg("BOOTH_INPUT1") }),
+                            el("button", msg("BOOTH_BUTTON1"), {
                                 click: async () => {
                                     await BoothContract.stake(utils.parseEther(this.stakeInput.domElement.value));
                                     ViewUtil.waitTransactionAndRefresh();
@@ -75,7 +75,7 @@ export default class Booth implements View {
                                 el(".caption",
                                     el("label", "MIX: "),
                                     this.balanceDisplay = el("span", new Loading())),
-                                el("button.max-btn", "최대 수량", {
+                                el("button.max-btn", msg("BOOTH_BUTTON2"), {
                                     click: async () => {
                                         const walletAddress = await Wallet.loadAddress();
                                         if (walletAddress !== undefined) {
@@ -84,11 +84,11 @@ export default class Booth implements View {
                                         }
                                     },
                                 }))),
-                        el(".warning", "예치 시에는 2번의 트랜잭션이 발생합니다. 한번은 토큰 사용 허락을 위한 것이며, 다른 하나는 실제 예치를 위한 것입니다."),
-                        el("h2", "MIX 스테이킹 해제"),
+                        el(".warning", msg("BOOTH_DESC2")),
+                        el("h2", msg("BOOTH_TITLE5")),
                         el(".form",
-                            this.unstakeInput = el("input", { placeholder: "예치할 액수를 넣어주세요." }),
-                            el("button", "해제하기", {
+                            this.unstakeInput = el("input", { placeholder: msg("BOOTH_INPUT2") }),
+                            el("button", msg("BOOTH_BUTTON3"), {
                                 click: async () => {
                                     await BoothContract.unstake(utils.parseEther(this.unstakeInput.domElement.value));
                                     ViewUtil.waitTransactionAndRefresh();
@@ -99,7 +99,7 @@ export default class Booth implements View {
                                     el("label", "MIXSET: "),
                                     this.mixsetDisplay = el("span", new Loading()),
                                 ),
-                                el("button.max-btn", "최대 수량", {
+                                el("button.max-btn", msg("BOOTH_BUTTON2"), {
                                     click: async () => {
                                         const walletAddress = await Wallet.loadAddress();
                                         if (walletAddress !== undefined) {

@@ -1,6 +1,6 @@
-import { DomNode, el } from "@hanul/skynode";
+import { DomNode, el, msg } from "skydapp-browser";
 import { constants } from "ethers";
-import { View, ViewParams } from "skyrouter";
+import { View, ViewParams } from "skydapp-common";
 import CommonUtil from "../../CommonUtil";
 import TurntableItem from "../../component/turntable/TurntableItem";
 import MateContract from "../../contracts/nft/MateContract";
@@ -22,24 +22,24 @@ export default class Turntable implements View {
     private totalTurntableList: DomNode;
 
     constructor() {
-        Layout.current.title = "턴테이블";
+        Layout.current.title = msg("TURNTABLE_TITLE");
         Layout.current.content.append(
             this.container = el(".turntable-view",
                 el("section",
-                    el("h1", "턴테이블"),
-                    el("p", "턴테이블은 MIX를 중-장기로 스테이킹하고자 하는 사용자들을 위한 시스템입니다. 턴테이블의 볼륨에 따라 MIX를 분배받는 비율이 결정됩니다. 턴테이블의 등급에 따라 가격과 볼륨이 다르며, 턴테이블에는 배터리가 존재합니다. \n배터리가 모두 소모된 턴테이블은 다시 MIX를 통해 배터리를 충전해야 지속적으로 MIX를 얻을 수 있습니다. 턴테이블은 분해가 가능하며, 분해함녀 조립시 사용된 MIX의 80%를 돌려받습니다."),
+                    el("h1", msg("TURNTABLE_TITLE")),
+                    el("p", msg("TURNTABLE_DESC")),
                     el(".my-turntable",
-                        el("h2", "나의 턴테이블"),
+                        el("h2", msg("TURNTABLE_TITLE1")),
                         // el("button", "턴테이블 구매하기", { click: () => ViewUtil.go("/turntable/buy") }),
                         this.myTurntableList = el(".turntable-list"),
                     ),
                     el(".listening-turntable",
-                        el("h2", "리스닝 중인 턴테이블"),
-                        el("p", "현재 리스닝 중인 턴테이블이 없습니다."),
+                        el("h2", msg("TURNTABLE_TITLE2")),
+                        el("p", msg("TURNTABLE_DESC2")),
                         this.listeningTurntableList = el(".turntable-list"),
                     ),
                     el(".all-turntable",
-                        el("h2", "전체 턴테이블"),
+                        el("h2", msg("TURNTABLE_TITLE3")),
                         this.totalVolumeDisplay = el("p"),
                         this.totalTurntableList = el(".turntable-list"),
                     ),
@@ -54,7 +54,7 @@ export default class Turntable implements View {
 
     private async loadTotalVolume() {
         const totalVolume = await TurntablesContract.totalVolume();
-        this.totalVolumeDisplay.empty().appendText(`총 볼륨: ${CommonUtil.numberWithCommas(totalVolume.toString())}`);
+        this.totalVolumeDisplay.empty().appendText(`${msg("총 볼륨")}: ${CommonUtil.numberWithCommas(totalVolume.toString())}`);
     }
 
     private async loadTurntables() {

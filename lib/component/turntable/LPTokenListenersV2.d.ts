@@ -1,4 +1,4 @@
-import { DomNode } from "@hanul/skynode";
+import { DomNode } from "skydapp-browser";
 import TurntableKIP7ListenersContractV2 from "../../contracts/turntable/TurntableKIP7ListenersContractV2";
 export default class LPTokenListenersV2 extends DomNode {
     private contract;
