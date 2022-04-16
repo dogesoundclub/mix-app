@@ -23,5 +23,5 @@ interface GovernanceProposal {
 export default class Proposal extends DomNode {
     constructor(proposal: GovernanceProposal);
 }
-export { };
+export {};
 //# sourceMappingURL=Proposal.d.ts.map

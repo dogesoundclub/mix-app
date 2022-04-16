@@ -1,4 +1,4 @@
-import { DomNode, el } from "skydapp-browser";
+import { DomNode, el, msg } from "skydapp-browser";
 import { BigNumber, constants, utils } from "ethers";
 import CommonUtil from "../../../CommonUtil";
 import AnimalsPunksV2PoolContract from "../../../contracts/mix/AnimalsPunksV2PoolContract";

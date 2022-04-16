@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { DomNode, el } from "skydapp-browser";
+import { DomNode, el, msg } from "skydapp-browser";
 import { utils } from "ethers";
 import { View, ViewParams } from "skydapp-common";
 import superagent from "superagent";
@@ -22,7 +22,7 @@ export default class MiningMates implements View {
     private list: DomNode;
 
     constructor(params: ViewParams) {
-        const turntableId = parseInt(params.id, 10);
+        const turntableId = parseInt(params.id as string, 10);
         Layout.current.title = "턴테이블의 메이트로부터 채굴";
         Layout.current.content.append(this.container = el(".mining-mates-from-turntable-view",
             el("h1", "턴테이블의 메이트로부터 채굴하기"),

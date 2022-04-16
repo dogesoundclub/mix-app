@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { DomNode, el } from "skydapp-browser";
+import { DomNode, el, msg } from "skydapp-browser";
 import { constants, utils } from "ethers";
 import CommonUtil from "../../../CommonUtil";
 import CryptorusPoolContract from "../../../contracts/mix/CryptorusPoolContract";

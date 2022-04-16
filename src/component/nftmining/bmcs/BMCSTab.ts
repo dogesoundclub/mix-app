@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import { DomNode, el } from "skydapp-browser";
+import { DomNode, el, msg } from "skydapp-browser";
 import { constants, utils } from "ethers";
 import superagent from "superagent";
 import CommonUtil from "../../../CommonUtil";

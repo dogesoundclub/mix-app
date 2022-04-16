@@ -15,7 +15,7 @@ export default class RemoveMates implements View {
     private mateList: MateList;
 
     constructor(params: ViewParams) {
-        const turntableId = parseInt(params.id, 10);
+        const turntableId = parseInt(params.id as string, 10);
         Layout.current.title = "턴테이블에 메이트 등록 취소";
         Layout.current.content.append(this.container = el(".add-mates-to-turntable-view",
             el("h1", "턴테이블에 메이트 등록 취소하기"),

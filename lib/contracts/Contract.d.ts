@@ -1,5 +1,5 @@
 import { BigNumber } from "@ethersproject/bignumber";
-import EventContainer from "eventcontainer";
+import { EventContainer } from "skydapp-common";
 export default abstract class Contract extends EventContainer {
     address: string;
     private abi;

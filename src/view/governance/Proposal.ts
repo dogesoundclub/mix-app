@@ -22,7 +22,7 @@ export default class Proposal implements View {
         Layout.current.content.append(
             this.container = el(".governance-proposal-view"),
         );
-        this.load(params.proposalId);
+        this.load(params.proposalId as string);
     }
 
     private async load(proposalId: string) {
@@ -280,7 +280,7 @@ export default class Proposal implements View {
     }
 
     public changeParams(params: ViewParams, uri: string): void {
-        this.load(params.proposalId);
+        this.load(params.proposalId as string);
     }
 
     public close(): void {

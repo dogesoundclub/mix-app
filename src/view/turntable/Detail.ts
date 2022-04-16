@@ -31,7 +31,7 @@ export default class Detail implements View {
     private listeningMateList: MateList;
 
     constructor(params: ViewParams) {
-        const turntableId = parseInt(params.id, 10);
+        const turntableId = parseInt(params.id as string, 10);
         Layout.current.title = `${msg("TURNTABLE_DETAIL_TITLE")}${turntableId}`;
         Layout.current.content.append(this.container = el(".turntable-detail-view",
             el("section",

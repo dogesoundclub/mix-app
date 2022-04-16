@@ -14,7 +14,7 @@ export default class MateHolders implements View {
     private list: DomNode;
 
     constructor(params: ViewParams) {
-        const turntableId = parseInt(params.id, 10);
+        const turntableId = parseInt(params.id as string, 10);
         Layout.current.title = "턴테이블의 메이트 홀더들";
         Layout.current.content.append(this.container = el(".turntable-mate-holders-view",
             el("h1", "턴테이블의 메이트 홀더들"),

@@ -1,5 +1,5 @@
 import { BigNumberish } from "@ethersproject/bignumber";
-import EventContainer from "eventcontainer";
+import { EventContainer } from "skydapp-common";
 import Store from "../Store";
 declare class Klip extends EventContainer {
     private static readonly BAPP_NAME;

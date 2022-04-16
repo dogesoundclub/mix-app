@@ -16,7 +16,7 @@ export default class Update implements View {
     private kakaotalkInput: DomNode<HTMLInputElement>;
 
     constructor(params: ViewParams) {
-        const turntableId = parseInt(params.id, 10);
+        const turntableId = parseInt(params.id as string, 10);
         Layout.current.title = msg("TURNTABLE_UPDATE_TITLE");
         Layout.current.content.append(this.container = el(".update-turntable-view",
             el("h1", msg("TURNTABLE_UPDATE_TITLE")),

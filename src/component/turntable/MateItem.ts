@@ -1,4 +1,4 @@
-import { DomNode, el } from "skydapp-browser";
+import { DomNode, el, msg } from "skydapp-browser";
 import { BigNumber, utils } from "ethers";
 import CommonUtil from "../../CommonUtil";
 import MatesListenersContract from "../../contracts/turntable/MatesListenersContract";
