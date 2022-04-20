@@ -32,6 +32,10 @@ class BiasContract extends Contract {
     public async setApprovalForAll(operator: string, approved: boolean) {
         await this.runWalletMethod("setApprovalForAll", operator, approved);
     }
+
+    public async tokenURI(id: BigNumberish): Promise<string> {
+        return await this.runMethod("tokenURI", id);
+    }
 }
 
 export default new BiasContract();

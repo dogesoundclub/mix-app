@@ -6,18 +6,20 @@ import MixContract from "../../../contracts/mix/MixContract";
 import Wallet from "../../../klaytn/Wallet";
 import Confirm from "../../shared/dialogue/Confirm";
 import BMCSTab from "./BMCSTab";
+import BiasContract from "../../../contracts/nft/BiasContract";
 
 export default class BMCSItem extends DomNode {
 
     private mixAmount: DomNode;
     private claimable: BigNumber = BigNumber.from(0);
+    private image: DomNode<HTMLImageElement>;
     private refreshInterval: any;
 
     constructor(private tab: BMCSTab, private id: number, name: string | undefined) {
         super(".mate-item");
         this.append(
             el(".content",
-                el("img", { src: `https://storage.googleapis.com/dsc-bias/bias/bmcs/bia-${id}.png`, alt: `bias-${id}` }),
+                this.image = el("img", { alt: `bias-${id}` }),
                 el(".info",
                     el("h5", msg("MINING_ITEM_TITLE")),
                     this.mixAmount = el(".amount", "Loading..."),
@@ -57,6 +59,10 @@ export default class BMCSItem extends DomNode {
     }
 
     private async load() {
+        const uri = await BiasContract.tokenURI(this.id);
+        const json = await (await fetch(uri)).json();
+        this.image.domElement.src = json.image;
+
         const claimable = await BiasPoolContract.claimableOf(this.id);
         if (this.deleted !== true) {
             this.mixAmount.empty().appendText(CommonUtil.numberWithCommas(utils.formatEther(claimable), 5));
