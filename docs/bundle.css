@@ -632,6 +632,7 @@ body {
   border: 1px solid #3C3C3C;
   box-sizing: border-box;
   border-radius: 8px;
+  text-align: center;
 }
 .dialogue.confirm > .close-container {
   width: 100%;
@@ -666,8 +667,19 @@ body {
   background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
   border-radius: 0px 0px 8px 8px;
 }
-.dialogue.confirm > .button-container > button:hover {
-  background: white;
+.dialogue.confirm > .button-container > .cancel {
+  border: 1px solid #F3C754;
+  background: #1D1D1D;
+  border-radius: 0px 0px 0px 8px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.dialogue.confirm > .button-container > .ok {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  border-radius: 0px 0px 8px 0px;
 }
 .dialogue.prompt {
   position: relative;
@@ -2954,6 +2966,21 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #747373;
+}
+.turntable-detail-view > section > header > section > a {
+  display: block;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+  padding: 16px 0px;
+  margin-top: 25px;
+  border: 1px solid #F3C754;
+  border-radius: 8px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .turntable-detail-view > section > hr {
   border: 0;
