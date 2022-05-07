@@ -38,14 +38,13 @@ export default class Layout implements View {
                     el(".sidebar",
                         el(".content",
                             el(".term",
-                                // el("a", "서비스이용약관"),
-                                // el("span", "|"),
+                                el("a", { href: "/terms" }, "서비스이용약관"),
+                                el("a", "support@ayias.io"),
                                 // el("a", "개인정보처리방침"),
-                                // el("span", "|"),
                                 // el("a", "회사소개"),
                             ),
                             el(".social",
-                                el("img", { src: "/images/shared/icn/linktree.svg" }),
+                                el("img", { src: "/images/shared/icn/icn_linktree.svg" }),
                                 el("a", "링크트리 바로가기", {
                                     href: "https://linktr.ee/dogesoundclub",
                                     target: "_blank",
@@ -54,8 +53,8 @@ export default class Layout implements View {
                         ),
                     ),
                     el(".provider",
-                        el("p", "주식회사 디에스씨레이블 | 대표이사 :권태홍 | 사업자번호 :838-86-02498 | 개인정보보호책임자:권태홍\n주소: 대전광역시 유성구 대학로 82, 5층 505호 | mix-works@ayias.io",),
-                        el("p", "Copyright @2021 DSCLabel Inc. ALL RIGHTS RESERVED.")
+                        el("h6", "AYIYAS PTE, Ltd"),
+                        el("p", "Copyright @2022 AYIAS PTE. LTD. ALL RIGHTS RESERVED.")
                     ),
                 ),
             ))
