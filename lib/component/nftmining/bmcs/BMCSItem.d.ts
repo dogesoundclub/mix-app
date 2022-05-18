@@ -5,6 +5,7 @@ export default class BMCSItem extends DomNode {
     private id;
     private mixAmount;
     private claimable;
+    private image;
     private refreshInterval;
     constructor(tab: BMCSTab, id: number, name: string | undefined);
     private load;
