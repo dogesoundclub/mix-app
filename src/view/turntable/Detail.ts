@@ -17,6 +17,7 @@ import ViewUtil from "../ViewUtil";
 import LPTokenListenersV2 from "../../component/turntable/LPTokenListenersV2";
 import KlayMIXListenersContractV2 from "../../contracts/turntable/KlayMIXListenersContractV2";
 import KSPMIXListenersContractV2 from "../../contracts/turntable/KSPMIXListenersContractV2";
+import Confirm from "../../component/shared/dialogue/Confirm";
 
 export default class Detail implements View {
 
@@ -41,6 +42,13 @@ export default class Detail implements View {
                         this.socailDisplay = el(".social-container"),
                         this.title = el("h1", `${msg("TURNTABLE_DETAIL_TITLE")}${turntableId}`),
                         this.infoDisplay = el(".info"),
+                        el("a", "턴테이블 해제하기", {
+                            click: () => {
+                                new Confirm("", "턴테이블을 해제하시겠습니까?", "확인", () => {
+                                    TurntablesContract.destroy(turntableId);
+                                });
+                            }
+                        }),
                     ),
                 ),
                 el("hr"),
