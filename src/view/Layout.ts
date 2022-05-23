@@ -1,4 +1,4 @@
-import { BodyNode, DomNode, el } from "skydapp-browser";
+import { BodyNode, DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
 import MobileMenu from "../component/shared/menu/MobileMenu";
 import PCMenu from "../component/shared/menu/PCMenu";
@@ -38,12 +38,14 @@ export default class Layout implements View {
                     el(".sidebar",
                         el(".content",
                             el(".term",
-                                el("a", { href: "/terms" }, "서비스이용약관"),
-                                el("a", "support@ayias.io"),
+                                // el("a", "서비스이용약관"),
+                                // el("span", "|"),
                                 // el("a", "개인정보처리방침"),
+                                // el("span", "|"),
                                 // el("a", "회사소개"),
                             ),
                             el(".social",
+                                el("img", { src: "/images/shared/icn/linktree.svg" }),
                                 el("a", "링크트리 바로가기", {
                                     href: "https://linktr.ee/dogesoundclub",
                                     target: "_blank",
@@ -52,8 +54,9 @@ export default class Layout implements View {
                         ),
                     ),
                     el(".provider",
-                        el("h6", "AYIAS PTE. LTD."),
-                        el("p", "Copyright @2022 AYIAS PTE. LTD. ALL RIGHTS RESERVED.")
+                        el("img", { src: "/images/shared/logo/dsc.svg" }),
+                        el("p", msg("FOOTER_DESC")),
+                        el("p", "Copyright @2021 DSCLabel Inc. ALL RIGHTS RESERVED.")
                     ),
                 ),
             ))
