@@ -19,6 +19,7 @@ import AddMates from "./view/turntable/AddMates";
 import MiningMates from "./view/turntable/MiningMates";
 import MateHolders from "./view/turntable/MateHolders";
 import MiningV1 from "./view/MiningV1";
+import Stage from "./view/Stage";
 
 (async () => {
     msg.language = BrowserInfo.language;
@@ -46,6 +47,8 @@ import MiningV1 from "./view/MiningV1";
     SkyRouter.route("turntable/{id}/removemates", RemoveMates);
     SkyRouter.route("turntable/{id}/miningmates", MiningMates);
     SkyRouter.route("turntable/{id}/mateholders", MateHolders);
+
+    SkyRouter.route("stage", Stage);
 
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);

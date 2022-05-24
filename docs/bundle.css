@@ -988,6 +988,70 @@ body {
 .mate-list > .mate-line > .mate-item.off {
   opacity: 0.5;
 }
+.stage-mate-item {
+  max-width: 194px;
+  position: relative;
+}
+.stage-mate-item:hover {
+  display: block;
+}
+.stage-mate-item:hover > .mix {
+  display: block;
+}
+.stage-mate-item:hover > img {
+  border: 6px solid #D7433B;
+  box-sizing: border-box;
+}
+.stage-mate-item > .mix {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  background: #D7433B;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.stage-mate-item > img {
+  max-width: 194px;
+  max-height: 194px;
+}
+.stage-mate-item > .checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+}
+.stage-mate-item > .checkbox-container input[type=checkbox] {
+  display: none;
+}
+.stage-mate-item > .checkbox-container > input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+.stage-mate-item > .checkbox-container input[type=checkbox] + label:before {
+  content: "\2714";
+  margin-bottom: 4px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #FFF;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: sub;
+  color: transparent;
+  transition: 0.2s;
+}
+.stage-mate-item > .checkbox-container input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+.stage-mate-item > .checkbox-container input[type=checkbox]:checked + label:before {
+  background-color: #F9D833;
+  border-color: #F9D833;
+  color: #131313;
+}
 .mates-tab {
   margin-top: 50px;
 }
@@ -3274,5 +3338,203 @@ body {
   border: 1px solid #F3C754;
   padding: 16px 0px;
   margin-bottom: 16px;
+}
+.stage-view {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  margin: 30px 0px;
+}
+.stage-view > section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1360px;
+  height: 100%;
+  background: #1D1D1D;
+  border: 1px solid #3C3C3C;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin: 60px 0px;
+  padding: 40px 50px;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+.stage-view > section > header {
+  display: flex;
+  align-items: baseline;
+}
+.stage-view > section > header > h1 {
+  font-weight: 500;
+  font-size: 28px;
+}
+.stage-view > section > header > p {
+  margin-left: 4px;
+}
+.stage-view > section > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: #747373;
+  margin-bottom: 4px;
+}
+.stage-view > section > .warning {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .warning {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    background: #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+.stage-view > section > .dancing-mate-container {
+  margin-top: 30px;
+}
+.stage-view > section > .dancing-mate-container > header {
+  display: flex;
+  align-items: baseline;
+}
+.stage-view > section > .dancing-mate-container > header > h6 {
+  font-weight: 400;
+  font-size: 18px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.stage-view > section > .dancing-mate-container > header > p {
+  font-size: 12px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-left: 4px;
+}
+.stage-view > section > .dancing-mate-container > .mate-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+.stage-view > section > .dancing-mate-container > .button-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.stage-view > section > .dancing-mate-container > .button-container > a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: #F3C754 solid 1px;
+  border-radius: 8px;
+  width: 100%;
+  height: 52px;
+  max-width: 420px;
+  margin-top: 40px;
+}
+.stage-view > section > .dancing-mate-container > .button-container > a > img {
+  margin-right: 8px;
+}
+.stage-view > section > .dancing-mate-container > .button-container > .up {
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+}
+.stage-view > section > .dancing-mate-container > .button-container > .up > p {
+  border-radius: 8px;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  text-fill-color: #161616;
+  color: #161616;
+}
+.stage-view > section > hr {
+  border: 0;
+  width: 100%;
+  height: 1px;
+  background: #3C3C3C;
+  margin: 60px 0px;
+}
+.stage-view > section > .resting-mate-container {
+  margin-top: 30px;
+}
+.stage-view > section > .resting-mate-container > header {
+  display: flex;
+  align-items: baseline;
+}
+.stage-view > section > .resting-mate-container > header > h6 {
+  font-weight: 400;
+  font-size: 18px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.stage-view > section > .resting-mate-container > header > p {
+  font-size: 12px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-left: 4px;
+}
+.stage-view > section > .resting-mate-container > .mate-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+.stage-view > section > .resting-mate-container > .button-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.stage-view > section > .resting-mate-container > .button-container > a {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  color: #161616;
+  border: #F3C754 solid 1px;
+  border-radius: 8px;
+  width: 100%;
+  height: 52px;
+  max-width: 420px;
+  margin-top: 40px;
+}
+.stage-view > section > .resting-mate-container > .button-container > a > img {
+  margin-right: 8px;
 }
 
