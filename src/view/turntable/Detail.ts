@@ -169,15 +169,15 @@ export default class Detail implements View {
             if (turntable.owner === walletAddress) {
 
                 this.controller.empty().append(
-                    el("button.charge-button", msg("TURNTABLE_DETAIL_BUTTON5"), {
-                        click: () => {
-                            new Prompt(msg("TURNTABLE_DETAIL_PROMPT_TITLE1"), msg("TURNTABLE_DETAIL_PROMPT_DESC1"), msg("TURNTABLE_DETAIL_PROMPT_BUTTON1"), async (amount) => {
-                                const mix = utils.parseEther(amount);
-                                await TurntablesContract.charge(turntableId, mix);
-                                ViewUtil.waitTransactionAndRefresh();
-                            });
-                        },
-                    }),
+                    // el("button.charge-button", msg("TURNTABLE_DETAIL_BUTTON5"), {
+                    //     click: () => {
+                    //         new Prompt(msg("TURNTABLE_DETAIL_PROMPT_TITLE1"), msg("TURNTABLE_DETAIL_PROMPT_DESC1"), msg("TURNTABLE_DETAIL_PROMPT_BUTTON1"), async (amount) => {
+                    //             const mix = utils.parseEther(amount);
+                    //             await TurntablesContract.charge(turntableId, mix);
+                    //             ViewUtil.waitTransactionAndRefresh();
+                    //         });
+                    //     },
+                    // }),
                     el("button.update-button", msg("TURNTABLE_DETAIL_BUTTON6"), { click: () => ViewUtil.go(`/turntable/${turntableId}/update`) }),
                 );
 
