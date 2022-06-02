@@ -31,8 +31,8 @@ export default class Stage implements View {
                             el("p", "(10개)"),
                         ),
                         el(".mate-list",
-                            new StageMateItem(1, 300, "Undefined"),
-                            new StageMateItem(2, 300, "Undefined"),
+                            new StageMateItem(1, 300, "Undefined", false),
+                            new StageMateItem(2, 300, "Undefined", true),
                         ),
                         el(".button-container",
                             el("a", {
@@ -52,8 +52,8 @@ export default class Stage implements View {
                             el("p", "10개"),
                         ),
                         el(".mate-list",
-                            new StageMateItem(1, 300, "Undefined"),
-                            new StageMateItem(2, 300, "Undefined"),
+                            new StageMateItem(1, 300, "Undefined", false),
+                            new StageMateItem(2, 300, "Undefined", false),
                         ),
                         el(".button-container",
                             el("a", {
