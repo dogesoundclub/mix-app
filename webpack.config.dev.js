@@ -1,11 +1,11 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { ProvidePlugin } = require("webpack");
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { ProvidePlugin } = require('webpack');
 
 module.exports = {
   entry: {
-    bundle: "./src/main.ts",
-    __less: "./docs/style/main.less",
+    'bundle': './src/main.ts',
+    __less: './docs/style/main.less',
   },
   module: {
     rules: [
@@ -13,7 +13,7 @@ module.exports = {
         test: /\.ts/,
         use: [
           {
-            loader: "ts-loader",
+            loader: 'ts-loader',
             options: {
               transpileOnly: true,
               experimentalWatchApi: true,
@@ -24,21 +24,17 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              url: false,
-            },
-          },
-          "less-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, {
+          loader: 'css-loader',
+          options: {
+            url: false,
+          }
+        }, 'less-loader'],
       },
     ],
   },
   resolve: {
-    extensions: [".ts", ".js", ".less"],
+    extensions: ['.ts', '.js', '.less'],
     fallback: {
       url: require.resolve("url/"),
       os: require.resolve("os-browserify/browser"),
@@ -46,20 +42,20 @@ module.exports = {
       https: require.resolve("https-browserify"),
       stream: require.resolve("stream-browserify"),
       assert: require.resolve("assert/"),
-      crypto: require.resolve("crypto-browserify"),
+      crypto: require.resolve("crypto-browserify")
     },
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "docs"),
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'docs'),
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "bundle.css",
+      filename: 'bundle.css'
     }),
     new ProvidePlugin({
-      Buffer: ["buffer", "Buffer"],
-      process: "process/browser",
+      Buffer: ['buffer', 'Buffer'],
+      process: 'process/browser',
     }),
   ],
 };

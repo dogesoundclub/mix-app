@@ -23,7 +23,7 @@ export default class Stage implements View {
                         el("h1", "MIX 채굴"),
                         el("p", "(v2)"),
                     ),
-                    el("p", "아래 NFT를 보유하고 있으면 MIX를 분배받게 됩니다. NFT 홀더들은 쌓여진 MIX를 인출하기 위해 쌓여진 MIX 수량의 10%를 선납해야합니다. 이를 통해 MIX의 유통량이 늘어납니다."),
+                    el("p", "보유하고 있는 캐릭터를 클럽 스테이지 위로 올려 춤을 추게 하거나, 스테이지 아래에서 쉬게 할 수 있습니다. 무대 위로 올라간 캐릭터는 인싸가 되어 도지사운드클럽에서 진행하는 모든 거버넌스에서 기존보다 2배의 보팅 파워를 얻게 됩니다.\n\n도지사운드클럽의 커뮤니티 토큰인 MIX를 일정 기간 예치해야 캐릭터를 스테이지에 올릴 수 있습니다. 예치에 필요한 MIX의 양은 전체 믹스의 발행량, 락업되어있는 믹스의 양, 발행된 도지사운드클럽의 PFP 개수를 통해 계산됩니다. 예치 기간은 현재 1개월입니다. 예치 기간은 DSC 거버넌스를 통해 변경될 수 있습니다. 예치한 시점에서 정해진 예치 기간이 끝나면 믹스를 돌려받을 수 있습니다."),
                     el(".warning", msg("MINING_V1_DESC3")),
                     el(".dancing-mate-container",
                         el("header",
@@ -35,7 +35,11 @@ export default class Stage implements View {
                             new StageMateItem(2, 300, "Undefined"),
                         ),
                         el(".button-container",
-                            el("a",
+                            el("a", {
+                                click: () => {
+                                    new Confirm("클럽 무대에서 내려 쉬게 하기", "예치한 믹스를 돌려받고 무대 아래에서 쉬게 합니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", () => { })
+                                }
+                            },
                                 el("img", { src: "/images/shared/icn/stage-down.svg", alt: "stage down" }),
                                 "STAGE DOWN",
                             ),
@@ -54,7 +58,7 @@ export default class Stage implements View {
                         el(".button-container",
                             el("a", {
                                 click: () => {
-                                    new Confirm("NFT 활성화하기", "총 XXX mix 스테이킹을 진행합니다.\n스테이킹된 mix는 언제라도 다시 회수할 수 있습니다. 다만 거래시 클레이튼 기본 수수료가 청구될 수 있습니다.", "확인", () => { })
+                                    new Confirm("클럽 무대 위로 올리기", "총 XXX 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", () => { })
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-up.svg", alt: "stage up" }),

@@ -1023,6 +1023,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   align-content: center;
+  margin-top: 20px;
 }
 .stage-mate-item > .checkbox-container input[type=checkbox] {
   display: none;
@@ -1032,7 +1033,7 @@ body {
   cursor: pointer;
 }
 .stage-mate-item > .checkbox-container input[type=checkbox] + label:before {
-  content: "\2714";
+  content: "\2713";
   margin-bottom: 4px;
   display: inline-block;
   width: 16px;
