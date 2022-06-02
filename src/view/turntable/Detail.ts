@@ -17,6 +17,7 @@ import ViewUtil from "../ViewUtil";
 import LPTokenListenersV2 from "../../component/turntable/LPTokenListenersV2";
 import KlayMIXListenersContractV2 from "../../contracts/turntable/KlayMIXListenersContractV2";
 import KSPMIXListenersContractV2 from "../../contracts/turntable/KSPMIXListenersContractV2";
+import Confirm from "../../component/shared/dialogue/Confirm";
 
 export default class Detail implements View {
 
@@ -41,6 +42,13 @@ export default class Detail implements View {
                         this.socailDisplay = el(".social-container"),
                         this.title = el("h1", `${msg("TURNTABLE_DETAIL_TITLE")}${turntableId}`),
                         this.infoDisplay = el(".info"),
+                        el("a", "턴테이블 해제하기", {
+                            click: () => {
+                                new Confirm("", "턴테이블을 해제하시겠습니까?", "확인", () => {
+                                    TurntablesContract.destroy(turntableId);
+                                });
+                            }
+                        }),
                     ),
                 ),
                 el("hr"),
@@ -161,15 +169,15 @@ export default class Detail implements View {
             if (turntable.owner === walletAddress) {
 
                 this.controller.empty().append(
-                    el("button.charge-button", msg("TURNTABLE_DETAIL_BUTTON5"), {
-                        click: () => {
-                            new Prompt(msg("TURNTABLE_DETAIL_PROMPT_TITLE1"), msg("TURNTABLE_DETAIL_PROMPT_DESC1"), msg("TURNTABLE_DETAIL_PROMPT_BUTTON1"), async (amount) => {
-                                const mix = utils.parseEther(amount);
-                                await TurntablesContract.charge(turntableId, mix);
-                                ViewUtil.waitTransactionAndRefresh();
-                            });
-                        },
-                    }),
+                    // el("button.charge-button", msg("TURNTABLE_DETAIL_BUTTON5"), {
+                    //     click: () => {
+                    //         new Prompt(msg("TURNTABLE_DETAIL_PROMPT_TITLE1"), msg("TURNTABLE_DETAIL_PROMPT_DESC1"), msg("TURNTABLE_DETAIL_PROMPT_BUTTON1"), async (amount) => {
+                    //             const mix = utils.parseEther(amount);
+                    //             await TurntablesContract.charge(turntableId, mix);
+                    //             ViewUtil.waitTransactionAndRefresh();
+                    //         });
+                    //     },
+                    // }),
                     el("button.update-button", msg("TURNTABLE_DETAIL_BUTTON6"), { click: () => ViewUtil.go(`/turntable/${turntableId}/update`) }),
                 );
 

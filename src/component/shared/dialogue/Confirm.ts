@@ -19,10 +19,10 @@ export default class Confirm extends Popup {
                 el("h2", title),
                 el("p", message),
                 el(".button-container",
-                    // el("button", "취소", {
-                    //     click: () => this.delete(),
-                    // }),
-                    el("button", confirmTitle, {
+                    el("button.cancel", "취소", {
+                        click: () => this.delete(),
+                    }),
+                    el("button.ok", confirmTitle, {
                         click: () => {
                             confirm();
                             this.delete();

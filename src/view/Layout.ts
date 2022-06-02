@@ -1,4 +1,4 @@
-import { BodyNode, DomNode, el } from "skydapp-browser";
+import { BodyNode, DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
 import MobileMenu from "../component/shared/menu/MobileMenu";
 import PCMenu from "../component/shared/menu/PCMenu";
@@ -52,8 +52,9 @@ export default class Layout implements View {
                         ),
                     ),
                     el(".provider",
-                        el("h6", "AYIAS PTE. LTD."),
-                        el("p", "Copyright @2022 AYIAS PTE. LTD. ALL RIGHTS RESERVED.")
+                        el("h6", "DSC LABEL Inc."),
+                        el("p", msg("FOOTER_DESC")),
+                        el("p", "Copyright @2021 DSCLabel Inc. ALL RIGHTS RESERVED.")
                     ),
                 ),
             ))
