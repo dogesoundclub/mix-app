@@ -999,8 +999,12 @@ body {
 }
 .stage-mate-item > .dancing-container > img {
   position: absolute;
-  max-width: 194px;
-  max-height: 194px;
+  max-width: 208px;
+  max-height: 208px;
+  left: -8px;
+  top: -8px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .stage-mate-item > .dancing-container > .mix {
   position: absolute;
@@ -1016,6 +1020,7 @@ body {
 .stage-mate-item > img {
   max-width: 194px;
   max-height: 194px;
+  border-radius: 12px;
 }
 .stage-mate-item > .checkbox-container {
   display: flex;
