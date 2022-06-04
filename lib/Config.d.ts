@@ -48,6 +48,7 @@ declare const _default: {
         KLITSPool: string;
         Cryptorus: string;
         CryptorusPool: string;
+        MixStaking: string;
     };
 };
 export default _default;

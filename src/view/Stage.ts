@@ -1,18 +1,22 @@
 import { DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
-import StageMateItem from "../component/mate/StageMateItem";
-import AnimalsPunksV2Tab from "../component/nftmining/ap2/AnimalsPunksV2Tab";
-import CasesByKateTab from "../component/nftmining/cbk/CasesByKateTab";
-import CryptorusTab from "../component/nftmining/cryptorus/CryptorusTab";
-import KLITSTab from "../component/nftmining/klits/KLITSTab";
-import PixelCatTab from "../component/nftmining/pixelcat/PixelCatTab";
-import Alert from "../component/shared/dialogue/Alert";
 import Confirm from "../component/shared/dialogue/Confirm";
+import BiasContract from "../contracts/nft/BiasContract";
+import EMatesContract from "../contracts/nft/EMatesContract";
+import MateContract from "../contracts/nft/MateContract";
+import Wallet from "../klaytn/Wallet";
 import Layout from "./Layout";
 
 export default class Stage implements View {
 
+    private mates: number[] = [];
+    private emates: number[] = [];
+    private bmcss: number[] = [];
+
     private container: DomNode;
+
+    private onStageMates: DomNode;
+    private offStageMates: DomNode;
 
     constructor() {
         Layout.current.title = "Stage";
@@ -30,9 +34,9 @@ export default class Stage implements View {
                             el("h6", "춤추고 있는 클럽메이트"),
                             el("p", "(10개)"),
                         ),
-                        el(".mate-list",
-                            new StageMateItem(1, 300, "Undefined", false),
-                            new StageMateItem(2, 300, "Undefined", true),
+                        this.onStageMates = el(".mate-list",
+                            //new StageMateItem(1, 300, "Undefined", false),
+                            //new StageMateItem(2, 300, "Undefined", true),
                         ),
                         el(".button-container",
                             el("a", {
@@ -51,9 +55,9 @@ export default class Stage implements View {
                             el("h6", "춤추고 있는 클럽메이트"),
                             el("p", "10개"),
                         ),
-                        el(".mate-list",
-                            new StageMateItem(1, 300, "Undefined", false),
-                            new StageMateItem(2, 300, "Undefined", false),
+                        this.offStageMates = el(".mate-list",
+                            //new StageMateItem(1, 300, "Undefined", false),
+                            //new StageMateItem(2, 300, "Undefined", false),
                         ),
                         el(".button-container",
                             el("a", {
@@ -69,9 +73,51 @@ export default class Stage implements View {
                 ),
             )
         );
+        this.load();
     }
 
     public changeParams(params: ViewParams, uri: string): void { }
+
+    private async load() {
+        if (await Wallet.connected() !== true) {
+            await Wallet.connect();
+        }
+        const walletAddress = await Wallet.loadAddress();
+        if (walletAddress !== undefined) {
+            const promises: Promise<void>[] = [];
+
+            const mateBalance = (await MateContract.balanceOf(walletAddress)).toNumber();
+            for (let i = 0; i < mateBalance; i += 1) {
+                const promise = async (index: number) => {
+                    const mateId = await MateContract.tokenOfOwnerByIndex(walletAddress, index);
+                    this.mates.push(mateId.toNumber());
+                };
+                promises.push(promise(i));
+            }
+
+            const emateBalance = (await EMatesContract.balanceOf(walletAddress)).toNumber();
+            for (let i = 0; i < emateBalance; i += 1) {
+                const promise = async (index: number) => {
+                    const emateId = await EMatesContract.tokenOfOwnerByIndex(walletAddress, index);
+                    this.emates.push(emateId.toNumber());
+                };
+                promises.push(promise(i));
+            }
+
+            const bmcsBalance = (await BiasContract.balanceOf(walletAddress)).toNumber();
+            for (let i = 0; i < bmcsBalance; i += 1) {
+                const promise = async (index: number) => {
+                    const bmcsId = await BiasContract.tokenOfOwnerByIndex(walletAddress, index);
+                    this.bmcss.push(bmcsId.toNumber());
+                };
+                promises.push(promise(i));
+            }
+
+            await Promise.all(promises);
+
+            console.log(this.mates, this.emates, this.bmcss);
+        }
+    }
 
     public close(): void {
         this.container.delete();

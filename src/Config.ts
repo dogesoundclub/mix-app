@@ -62,6 +62,8 @@ export default {
         KLITSPool: "",
         Cryptorus: "",
         CryptorusPool: "",
+
+        MixStaking: "",
     } : {
         // Mainnet
         Mate: "0xe47e90c58f8336a2f24bcd9bcb530e2e02e1e8ae",
@@ -116,5 +118,7 @@ export default {
         KLITSPool: "0xAB8f0C87d97b2B2E2C99528Ebb265689F6663D31",
         Cryptorus: "0xf556116c62203424fa0c0c659cadcdd8d9d07675",
         CryptorusPool: "0x47910a706348bf2ae14086e78AC080d31762B171",
+
+        MixStaking: "0x226cA982Bf947e327313472CC60592f93CBca01B",
     },
 };
