@@ -1,6 +1,8 @@
 import { DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
 import Confirm from "../component/shared/dialogue/Confirm";
+import StageBmcsItem from "../component/stage/StageBmcsItem";
+import StageEmateItem from "../component/stage/StageEmateItem";
 import BiasContract from "../contracts/nft/BiasContract";
 import EMatesContract from "../contracts/nft/EMatesContract";
 import MateContract from "../contracts/nft/MateContract";
@@ -37,6 +39,8 @@ export default class Stage implements View {
                         this.onStageMates = el(".mate-list",
                             //new StageMateItem(1, 300, "Undefined", false),
                             //new StageMateItem(2, 300, "Undefined", true),
+                            new StageBmcsItem(1, 300, "Undefined", false),
+                            new StageEmateItem(1, 300, "Undefined", false),
                         ),
                         el(".button-container",
                             el("a", {

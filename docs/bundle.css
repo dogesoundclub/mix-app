@@ -166,228 +166,12 @@ input {
   visibility: hidden;
 }
 @font-face {
-  font-family: "BankGothic";
-  src: url("../fonts/bankgothic.woff2") format("woff2"), url("../fonts/bankgothic.woff") format("woff");
+  font-family: "Roboto";
+  src: url("../fonts/roboto-regular.woff2") format("woff2");
 }
 @font-face {
-  font-family: "NeoDunggeunmo";
-  src: url("../fonts/neodgm.woff2") format("woff2"), url("../fonts/neodgm.woff") format("woff");
-}
-@font-face {
-  font-family: "Cutewritten";
-  src: url("../fonts/cutewritten.woff2") format("woff2");
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrIzc.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu52xP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBhc9.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBBc9.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgWxP.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
-}
-@font-face {
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 100;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby6FmXiEBPT4ITbgNA5CgmOsn7u.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOelzI7g.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/notosanskr/v27/PbykFmXiEBPT4ITbgNA5Cgm20A.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOIl3I7g.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOalvI7g.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/notosanskr/v27/Pby7FmXiEBPT4ITbgNA5CgmOUlnI7g.otf) format('opentype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 100;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrIzc.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu52xP.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 500;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBhc9.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBBc9.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgWxP.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
-  }
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
-  }
+  font-family: "Roboto";
+  src: url("../fonts/noto-sans-kr-regular.woff2") format("woff2");
 }
 body {
   color: white;
@@ -1047,6 +831,132 @@ body {
   background-size: auto 100%;
 }
 .stage-mate-item > .checkbox-container input[type=checkbox]:checked + label {
+  background-image: url('/images/shared/img/check-on.png');
+  background-position: left center;
+  background-size: auto 100%;
+}
+.stage-emate-item {
+  max-width: 194px;
+  position: relative;
+}
+.stage-emate-item > .dancing-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.stage-emate-item > .dancing-container > img {
+  position: absolute;
+  max-width: 208px;
+  max-height: 208px;
+  left: -8px;
+  top: -8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stage-emate-item > .dancing-container > .mix {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  background: #D7433B;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.stage-emate-item > img {
+  max-width: 194px;
+  max-height: 194px;
+  border-radius: 12px;
+}
+.stage-emate-item > .checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+  margin-top: 20px;
+}
+.stage-emate-item > .checkbox-container input[type=checkbox] {
+  display: none;
+}
+.stage-emate-item > .checkbox-container > input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+.stage-emate-item > .checkbox-container input[type=checkbox] + label {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  padding-right: 24px;
+  background-repeat: no-repeat;
+  background-image: url('/images/shared/img/check-off.png');
+  background-position: left center;
+  background-size: auto 100%;
+}
+.stage-emate-item > .checkbox-container input[type=checkbox]:checked + label {
+  background-image: url('/images/shared/img/check-on.png');
+  background-position: left center;
+  background-size: auto 100%;
+}
+.stage-bmcs-item {
+  max-width: 194px;
+  position: relative;
+}
+.stage-bmcs-item > .dancing-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.stage-bmcs-item > .dancing-container > img {
+  position: absolute;
+  max-width: 208px;
+  max-height: 208px;
+  left: -8px;
+  top: -8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.stage-bmcs-item > .dancing-container > .mix {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  background: #D7433B;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.stage-bmcs-item > img {
+  max-width: 194px;
+  max-height: 194px;
+  border-radius: 12px;
+}
+.stage-bmcs-item > .checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: center;
+  margin-top: 20px;
+}
+.stage-bmcs-item > .checkbox-container input[type=checkbox] {
+  display: none;
+}
+.stage-bmcs-item > .checkbox-container > input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+.stage-bmcs-item > .checkbox-container input[type=checkbox] + label {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  padding-right: 24px;
+  background-repeat: no-repeat;
+  background-image: url('/images/shared/img/check-off.png');
+  background-position: left center;
+  background-size: auto 100%;
+}
+.stage-bmcs-item > .checkbox-container input[type=checkbox]:checked + label {
   background-image: url('/images/shared/img/check-on.png');
   background-position: left center;
   background-size: auto 100%;
