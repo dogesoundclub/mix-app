@@ -39,8 +39,8 @@ export default class Stage implements View {
                         this.onStageMates = el(".mate-list",
                             //new StageMateItem(1, 300, "Undefined", false),
                             //new StageMateItem(2, 300, "Undefined", true),
-                            new StageBmcsItem(1, 300, "Undefined", false),
-                            new StageEmateItem(1, 300, "Undefined", false),
+                            // new StageBmcsItem(1, 300, "Undefined", false),
+                            // new StageEmateItem(1, 300, "Undefined", false),
                         ),
                         el(".button-container",
                             el("a", {
