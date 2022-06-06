@@ -5,11 +5,19 @@ export default class StageEmateItem extends DomNode {
 
     private checkbox: DomNode<HTMLInputElement>;
     private dancingDisplay: DomNode;
+    private bar: DomNode;
 
     constructor(public id: number, public mix: number, public name: string, public isDancing: boolean) {
         super(".stage-emate-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),
+            el(".progress-container",
+                el(".progress",
+                    this.bar = el(".bar"),
+                ),
+                el(".title", "MIX 수령까지 남은 Block"),
+                el("p", "1,296,000"),
+            ),
             el("img", { src: `https://storage.googleapis.com/emates/klaytn/Emates-${id}.png`, alt: "mate-mock" }),
             el(".checkbox-container",
                 this.checkbox = el("input", { type: "checkbox", id: `mate${id}` }, {
@@ -22,6 +30,13 @@ export default class StageEmateItem extends DomNode {
             ),
         );
         this.setDanding();
+        this.loadBar();
+    }
+
+    public loadBar() {
+        this.bar.style({
+            width: `${100}%`,
+        });
     }
 
     public setDanding() {

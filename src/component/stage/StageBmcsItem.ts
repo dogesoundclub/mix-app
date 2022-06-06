@@ -5,13 +5,20 @@ export default class StageBmcsItem extends DomNode {
 
     private checkbox: DomNode<HTMLInputElement>;
     private dancingDisplay: DomNode;
-
+    private bar: DomNode;
     private imageDisplay: DomNode<HTMLImageElement>;
 
     constructor(public id: number, public mix: number, public name: string, public isDancing: boolean) {
         super(".stage-bmcs-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),
+            el(".progress-container",
+                el(".progress",
+                    this.bar = el(".bar"),
+                ),
+                el(".title", "MIX 수령까지 남은 Block"),
+                el("p", "1,296,000"),
+            ),
             this.imageDisplay = el("img", { src: "", alt: "mate-mock" }),
             el(".checkbox-container",
                 this.checkbox = el("input", { type: "checkbox", id: `mate${id}` }, {
@@ -29,6 +36,13 @@ export default class StageBmcsItem extends DomNode {
     public async init() {
         this.loadImage();
         this.setDanding();
+        this.loadBar();
+    }
+
+    public loadBar() {
+        this.bar.style({
+            width: `${100}%`,
+        });
     }
 
     public async loadImage() {

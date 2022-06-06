@@ -2,6 +2,55 @@
     max-width: 194px;
     position : relative;
 
+    >.progress-container {
+        position       : absolute;
+        display        : none;
+        justify-content: center;
+        align-items    : center;
+        text-align     : center;
+        flex-direction : column;
+        width          : 194px;
+        height         : 194px;
+        background     : rgba(0, 0, 0, 0.6);
+
+        >.progress {
+            max-width    : 150px;
+            width        : 100%;
+            margin-top   : 15px;
+            padding      : 1px;
+            height       : 8px;
+            background   : #fff;
+            border-radius: 4px;
+            margin-bottom: 12px;
+
+            >.bar {
+                background-color: #FFDF13;
+                width           : 0;
+                height          : 8px;
+                border-radius   : 4px;
+            }
+        }
+
+        >.title {
+            font-weight: 400;
+            font-size  : 12px;
+            line-height: 12px;
+        }
+
+        >p {
+            margin-top : 4px;
+            font-weight: 400;
+            font-size  : 16px;
+            line-height: 16px;
+        }
+    }
+
+    &:hover {
+        >.progress-container {
+            display: flex;
+        }
+    }
+
 
     >.dancing-container {
         position: absolute;

@@ -776,6 +776,47 @@ body {
   max-width: 194px;
   position: relative;
 }
+.stage-mate-item > .progress-container {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 194px;
+  height: 194px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.stage-mate-item > .progress-container > .progress {
+  max-width: 150px;
+  width: 100%;
+  margin-top: 15px;
+  padding: 1px;
+  height: 8px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.stage-mate-item > .progress-container > .progress > .bar {
+  background-color: #FFDF13;
+  width: 0;
+  height: 8px;
+  border-radius: 4px;
+}
+.stage-mate-item > .progress-container > .title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.stage-mate-item > .progress-container > p {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+.stage-mate-item:hover > .progress-container {
+  display: flex;
+}
 .stage-mate-item > .dancing-container {
   position: absolute;
   width: 100%;
@@ -839,6 +880,47 @@ body {
   max-width: 194px;
   position: relative;
 }
+.stage-emate-item > .progress-container {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 194px;
+  height: 194px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.stage-emate-item > .progress-container > .progress {
+  max-width: 150px;
+  width: 100%;
+  margin-top: 15px;
+  padding: 1px;
+  height: 8px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.stage-emate-item > .progress-container > .progress > .bar {
+  background-color: #FFDF13;
+  width: 0;
+  height: 8px;
+  border-radius: 4px;
+}
+.stage-emate-item > .progress-container > .title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.stage-emate-item > .progress-container > p {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+.stage-emate-item:hover > .progress-container {
+  display: flex;
+}
 .stage-emate-item > .dancing-container {
   position: absolute;
   width: 100%;
@@ -901,6 +983,47 @@ body {
 .stage-bmcs-item {
   max-width: 194px;
   position: relative;
+}
+.stage-bmcs-item > .progress-container {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 194px;
+  height: 194px;
+  background: rgba(0, 0, 0, 0.6);
+}
+.stage-bmcs-item > .progress-container > .progress {
+  max-width: 150px;
+  width: 100%;
+  margin-top: 15px;
+  padding: 1px;
+  height: 8px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.stage-bmcs-item > .progress-container > .progress > .bar {
+  background-color: #FFDF13;
+  width: 0;
+  height: 8px;
+  border-radius: 4px;
+}
+.stage-bmcs-item > .progress-container > .title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.stage-bmcs-item > .progress-container > p {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+.stage-bmcs-item:hover > .progress-container {
+  display: flex;
 }
 .stage-bmcs-item > .dancing-container {
   position: absolute;
