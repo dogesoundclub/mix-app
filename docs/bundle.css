@@ -3441,6 +3441,7 @@ body {
 }
 .stage-view > section > .dancing-mate-container {
   margin-top: 30px;
+  max-height: 650px;
 }
 .stage-view > section > .dancing-mate-container > header {
   display: flex;
@@ -3469,8 +3470,11 @@ body {
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-top: 12px;
+  max-height: 520px !important;
+  overflow: scroll;
 }
 .stage-view > section > .dancing-mate-container > .button-container {
+  position: sticky;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -3516,6 +3520,7 @@ body {
 }
 .stage-view > section > .resting-mate-container {
   margin-top: 30px;
+  max-height: 650px;
 }
 .stage-view > section > .resting-mate-container > header {
   display: flex;
@@ -3544,6 +3549,8 @@ body {
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   margin-top: 12px;
+  max-height: 520px !important;
+  overflow: scroll;
 }
 .stage-view > section > .resting-mate-container > .button-container {
   display: flex;

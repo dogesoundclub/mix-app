@@ -26,6 +26,9 @@ export default class Stage implements View {
     private onStageMates: DomNode;
     private offStageMates: DomNode;
 
+    private stageUpButton: DomNode;
+    private stageDownButton: DomNode;
+
     constructor() {
         Layout.current.title = "Stage";
         Layout.current.content.append(
@@ -43,19 +46,15 @@ export default class Stage implements View {
                             el("p", "(10개)"),
                         ),
                         this.onStageMates = el(".mate-list",
-                            // new StageMateItem(1, 300, "Undefined", true),
-                            //new StageMateItem(2, 300, "Undefined", true),
-                            // new StageBmcsItem(1, 300, "Undefined", false),
-                            // new StageEmateItem(1, 300, "Undefined", false),
                         ),
-                        el(".button-container",
+                        this.stageDownButton = el(".button-container",
                             el("a", {
                                 click: () => {
                                     new Confirm("클럽 무대에서 내려 쉬게 하기", "예치한 믹스를 돌려받고 무대 아래에서 쉬게 합니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", () => { })
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-down.svg", alt: "stage down" }),
-                                "STAGE DOWN",
+                                "STAGE DOWN (5)",
                             ),
                         ),
                     ),
@@ -66,19 +65,15 @@ export default class Stage implements View {
                             el("p", "10개"),
                         ),
                         this.offStageMates = el(".mate-list",
-                            //new StageMateItem(1, 300, "Undefined", false),
-                            //new StageEmateItem(1, 300, "Undefined", false),
-                            //new StageBmcsItem(1, 300, "Undefined", false),
-                            //new StageMateItem(2, 300, "Undefined", false),
                         ),
-                        el(".button-container",
+                        this.stageUpButton = el(".button-container",
                             el("a", {
                                 click: () => {
                                     new Confirm("클럽 무대 위로 올리기", "총 XXX 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", () => { })
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-up.svg", alt: "stage up" }),
-                                el("p", "STAGE UP"),
+                                el("p", "STAGE UP(5)"),
                             ),
                         ),
                     ),
