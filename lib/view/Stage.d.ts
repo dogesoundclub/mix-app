@@ -1,8 +1,11 @@
 import { View, ViewParams } from "skydapp-common";
 export default class Stage implements View {
-    private mates;
-    private emates;
-    private bmcss;
+    private stakingMates;
+    private stakingEmates;
+    private stakingBmcss;
+    private unstakingMates;
+    private unstakingEmates;
+    private unstakingBmcss;
     private container;
     private onStageMates;
     private offStageMates;

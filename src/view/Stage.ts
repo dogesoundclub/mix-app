@@ -4,6 +4,7 @@ import Confirm from "../component/shared/dialogue/Confirm";
 import StageBmcsItem from "../component/stage/StageBmcsItem";
 import StageEmateItem from "../component/stage/StageEmateItem";
 import StageMateItem from "../component/stage/StageMateItem";
+import MixStakingContract from "../contracts/mix/MixStakingContract";
 import BiasContract from "../contracts/nft/BiasContract";
 import EMatesContract from "../contracts/nft/EMatesContract";
 import MateContract from "../contracts/nft/MateContract";
@@ -12,9 +13,13 @@ import Layout from "./Layout";
 
 export default class Stage implements View {
 
-    private mates: number[] = [];
-    private emates: number[] = [];
-    private bmcss: number[] = [];
+    private stakingMates: number[] = [];
+    private stakingEmates: number[] = [];
+    private stakingBmcss: number[] = [];
+
+    private unstakingMates: number[] = [];
+    private unstakingEmates: number[] = [];
+    private unstakingBmcss: number[] = [];
 
     private container: DomNode;
 
@@ -62,6 +67,8 @@ export default class Stage implements View {
                         ),
                         this.offStageMates = el(".mate-list",
                             //new StageMateItem(1, 300, "Undefined", false),
+                            //new StageEmateItem(1, 300, "Undefined", false),
+                            //new StageBmcsItem(1, 300, "Undefined", false),
                             //new StageMateItem(2, 300, "Undefined", false),
                         ),
                         el(".button-container",
@@ -95,7 +102,11 @@ export default class Stage implements View {
             for (let i = 0; i < mateBalance; i += 1) {
                 const promise = async (index: number) => {
                     const mateId = await MateContract.tokenOfOwnerByIndex(walletAddress, index);
-                    this.mates.push(mateId.toNumber());
+                    if ((await MixStakingContract.stakingBlocks(MateContract.address, mateId)).gt(0)) {
+                        this.stakingMates.push(mateId.toNumber());
+                    } else {
+                        this.unstakingMates.push(mateId.toNumber());
+                    }
                 };
                 promises.push(promise(i));
             }
@@ -104,7 +115,11 @@ export default class Stage implements View {
             for (let i = 0; i < emateBalance; i += 1) {
                 const promise = async (index: number) => {
                     const emateId = await EMatesContract.tokenOfOwnerByIndex(walletAddress, index);
-                    this.emates.push(emateId.toNumber());
+                    if ((await MixStakingContract.stakingBlocks(EMatesContract.address, emateId)).gt(0)) {
+                        this.stakingEmates.push(emateId.toNumber());
+                    } else {
+                        this.unstakingEmates.push(emateId.toNumber());
+                    }
                 };
                 promises.push(promise(i));
             }
@@ -113,14 +128,40 @@ export default class Stage implements View {
             for (let i = 0; i < bmcsBalance; i += 1) {
                 const promise = async (index: number) => {
                     const bmcsId = await BiasContract.tokenOfOwnerByIndex(walletAddress, index);
-                    this.bmcss.push(bmcsId.toNumber());
+                    if ((await MixStakingContract.stakingBlocks(BiasContract.address, bmcsId)).gt(0)) {
+                        this.stakingBmcss.push(bmcsId.toNumber());
+                    } else {
+                        this.unstakingBmcss.push(bmcsId.toNumber());
+                    }
                 };
                 promises.push(promise(i));
             }
 
             await Promise.all(promises);
 
-            console.log(this.mates, this.emates, this.bmcss);
+            for (const stakingMate of this.stakingMates) {
+                this.onStageMates.append(new StageMateItem(stakingMate, 300, "Undefined", true));
+            }
+
+            for (const stakingEmate of this.stakingEmates) {
+                this.onStageMates.append(new StageEmateItem(stakingEmate, 300, "Undefined", true));
+            }
+
+            for (const stakingBmcs of this.stakingBmcss) {
+                this.onStageMates.append(new StageBmcsItem(stakingBmcs, 300, "Undefined", true));
+            }
+
+            for (const unstakingMate of this.unstakingMates) {
+                this.offStageMates.append(new StageMateItem(unstakingMate, 300, "Undefined", false));
+            }
+
+            for (const unstakingEmate of this.unstakingEmates) {
+                this.offStageMates.append(new StageEmateItem(unstakingEmate, 300, "Undefined", false));
+            }
+
+            for (const unstakingBmcs of this.unstakingBmcss) {
+                this.offStageMates.append(new StageBmcsItem(unstakingBmcs, 300, "Undefined", false));
+            }
         }
     }
 
