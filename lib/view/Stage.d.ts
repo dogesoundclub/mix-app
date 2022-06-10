@@ -9,6 +9,8 @@ export default class Stage implements View {
     private container;
     private onStageMates;
     private offStageMates;
+    private stageUpButton;
+    private stageDownButton;
     constructor();
     changeParams(params: ViewParams, uri: string): void;
     private load;
