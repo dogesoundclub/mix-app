@@ -13,6 +13,21 @@ export default class StageBmcsItem extends DomNode {
         this.append(
             this.dancingDisplay = el(".dancing-container"),
             el(".progress-container",
+                {
+                    click: () => {
+                        if (this.checkbox.domElement.checked) {
+                            this.imageDisplay.style({
+                                border: "none"
+                            });
+                            this.checkbox.domElement.checked = false;
+                        } else {
+                            this.imageDisplay.style({
+                                border: "5px solid red"
+                            });
+                            this.checkbox.domElement.checked = true;
+                        }
+                    },
+                },
                 el(".progress",
                     this.bar = el(".bar"),
                 ),
@@ -24,6 +39,15 @@ export default class StageBmcsItem extends DomNode {
                 this.checkbox = el("input", { type: "checkbox", id: `mate${id}` }, {
                     change: () => {
                         this.fireEvent(this.checkbox.domElement.checked === true ? "selected" : "deselected");
+                        if (this.checkbox.domElement.checked) {
+                            this.imageDisplay.style({
+                                border: "5px solid red"
+                            });
+                        } else {
+                            this.imageDisplay.style({
+                                border: "none"
+                            });
+                        }
                     },
                 }),
                 el("label", { for: `BMCS${id}` }),

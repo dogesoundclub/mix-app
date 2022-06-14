@@ -816,11 +816,13 @@ body {
 }
 .stage-mate-item:hover > .progress-container {
   display: flex;
+  border-radius: 12px;
 }
 .stage-mate-item > .dancing-container {
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: -999;
 }
 .stage-mate-item > .dancing-container > img {
   position: absolute;
@@ -920,6 +922,7 @@ body {
 }
 .stage-emate-item:hover > .progress-container {
   display: flex;
+  border-radius: 12px;
 }
 .stage-emate-item > .dancing-container {
   position: absolute;
@@ -1024,6 +1027,7 @@ body {
 }
 .stage-bmcs-item:hover > .progress-container {
   display: flex;
+  border-radius: 12px;
 }
 .stage-bmcs-item > .dancing-container {
   position: absolute;
