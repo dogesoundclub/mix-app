@@ -15,7 +15,7 @@ export default class StageMateItem extends DomNode {
                 el(".progress",
                     this.bar = el(".bar"),
                 ),
-                el(".title", "MIX 수령까지 남은 Block"),
+                el(".title", "MIX 되찾기까지 남은 Block"),
                 el("p", "1,296,000"),
             ),
             el("img", { src: `https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png`, alt: "mate-mock" }),

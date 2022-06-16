@@ -16,7 +16,7 @@ export default class StageBmcsItem extends DomNode {
                 el(".progress",
                     this.bar = el(".bar"),
                 ),
-                el(".title", "MIX 수령까지 남은 Block"),
+                el(".title", "MIX 되찾기까지 남은 Block"),
                 el("p", "1,296,000"),
             ),
             this.imageDisplay = el("img", { src: "", alt: "mate-mock" }),
