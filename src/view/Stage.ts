@@ -26,6 +26,9 @@ export default class Stage implements View {
     private onStageMates: DomNode;
     private offStageMates: DomNode;
 
+    private stageUpCount: DomNode;
+    private stageDownCount: DomNode;
+
     private stageUpButton: DomNode;
     private stageDownButton: DomNode;
 
@@ -43,7 +46,7 @@ export default class Stage implements View {
                     el(".dancing-mate-container",
                         el("header",
                             el("h6", "춤추고 있는 클럽메이트"),
-                            el("p", "(10개)"),
+                            this.stageDownCount = el("p", ""),
                         ),
                         this.onStageMates = el(".mate-list",
                         ),
@@ -54,7 +57,7 @@ export default class Stage implements View {
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-down.svg", alt: "stage down" }),
-                                "STAGE DOWN (5)",
+                                "STAGE DOWN",
                             ),
                         ),
                     ),
@@ -62,7 +65,7 @@ export default class Stage implements View {
                     el(".resting-mate-container",
                         el("header",
                             el("h6", "춤추고 있는 클럽메이트"),
-                            el("p", "10개"),
+                            this.stageUpCount = el("p", ""),
                         ),
                         this.offStageMates = el(".mate-list",
                         ),
@@ -73,7 +76,7 @@ export default class Stage implements View {
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-up.svg", alt: "stage up" }),
-                                el("p", "STAGE UP(5)"),
+                                el("p", "STAGE UP"),
                             ),
                         ),
                     ),
@@ -134,29 +137,40 @@ export default class Stage implements View {
 
             await Promise.all(promises);
 
+            let stakingCount = 0;
+            let unstakingCount = 0;
             for (const stakingMate of this.stakingMates) {
                 this.onStageMates.append(new StageMateItem(stakingMate, 300, "Undefined", true));
+                stakingCount += 1;
             }
 
             for (const stakingEmate of this.stakingEmates) {
                 this.onStageMates.append(new StageEmateItem(stakingEmate, 300, "Undefined", true));
+                stakingCount += 1;
             }
 
             for (const stakingBmcs of this.stakingBmcss) {
                 this.onStageMates.append(new StageBmcsItem(stakingBmcs, 300, "Undefined", true));
+                stakingCount += 1;
             }
 
             for (const unstakingMate of this.unstakingMates) {
                 this.offStageMates.append(new StageMateItem(unstakingMate, 300, "Undefined", false));
+                unstakingCount += 1;
             }
 
             for (const unstakingEmate of this.unstakingEmates) {
                 this.offStageMates.append(new StageEmateItem(unstakingEmate, 300, "Undefined", false));
+                unstakingCount += 1;
             }
 
             for (const unstakingBmcs of this.unstakingBmcss) {
                 this.offStageMates.append(new StageBmcsItem(unstakingBmcs, 300, "Undefined", false));
+                unstakingCount += 1;
             }
+
+            this.stageUpCount.empty().appendText(`${unstakingCount}개`);
+            this.stageDownCount.empty().appendText(`${stakingCount}개`);
         }
     }
 
