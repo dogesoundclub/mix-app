@@ -60,16 +60,18 @@ export default class Stage implements View {
                         this.stageDownButton = el(".button-container",
                             el("a", {
                                 click: async () => {
-                                    new Confirm("클럽 무대에서 내려 쉬게 하기", "예치한 믹스를 돌려받고 무대 아래에서 쉬게 합니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", async () => {
-                                        const nfts: string[] = [];
-                                        const ids: number[] = [];
-                                        for (const data of this.selectedStakings) {
-                                            nfts.push(data.address);
-                                            ids.push(data.id);
-                                        }
-                                        await MixStakingContract.withdrawMix(nfts, ids);
-                                        ViewUtil.waitTransactionAndRefresh();
-                                    });
+                                    if (this.selectedStakings.length > 0) {
+                                        new Confirm("클럽 무대에서 내려 쉬게 하기", "예치한 믹스를 돌려받고 무대 아래에서 쉬게 합니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", async () => {
+                                            const nfts: string[] = [];
+                                            const ids: number[] = [];
+                                            for (const data of this.selectedStakings) {
+                                                nfts.push(data.address);
+                                                ids.push(data.id);
+                                            }
+                                            await MixStakingContract.withdrawMix(nfts, ids);
+                                            ViewUtil.waitTransactionAndRefresh();
+                                        });
+                                    }
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-down.svg", alt: "stage down" }),
@@ -88,17 +90,19 @@ export default class Stage implements View {
                         this.stageUpButton = el(".button-container",
                             el("a", {
                                 click: async () => {
-                                    const mix = await MixStakingContract.mixNeeds();
-                                    new Confirm("클럽 무대 위로 올리기", `총 ${CommonUtil.numberWithCommas(utils.formatEther(mix.mul(this.selectedUnstakings.length)))} 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?`, "확인", async () => {
-                                        const nfts: string[] = [];
-                                        const ids: number[] = [];
-                                        for (const data of this.selectedUnstakings) {
-                                            nfts.push(data.address);
-                                            ids.push(data.id);
-                                        }
-                                        await MixStakingContract.stakingMix(nfts, ids);
-                                        ViewUtil.waitTransactionAndRefresh();
-                                    });
+                                    if (this.selectedUnstakings.length > 0) {
+                                        const mix = await MixStakingContract.mixNeeds();
+                                        new Confirm("클럽 무대 위로 올리기", `총 ${CommonUtil.numberWithCommas(utils.formatEther(mix.mul(this.selectedUnstakings.length)))} 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?`, "확인", async () => {
+                                            const nfts: string[] = [];
+                                            const ids: number[] = [];
+                                            for (const data of this.selectedUnstakings) {
+                                                nfts.push(data.address);
+                                                ids.push(data.id);
+                                            }
+                                            await MixStakingContract.stakingMix(nfts, ids);
+                                            ViewUtil.waitTransactionAndRefresh();
+                                        });
+                                    }
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-up.svg", alt: "stage up" }),
