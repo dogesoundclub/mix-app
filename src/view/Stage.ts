@@ -1,5 +1,7 @@
+import { utils } from "ethers";
 import { DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
+import CommonUtil from "../CommonUtil";
 import Confirm from "../component/shared/dialogue/Confirm";
 import StageBmcsItem from "../component/stage/StageBmcsItem";
 import StageEmateItem from "../component/stage/StageEmateItem";
@@ -8,8 +10,10 @@ import MixStakingContract from "../contracts/mix/MixStakingContract";
 import BiasContract from "../contracts/nft/BiasContract";
 import EMatesContract from "../contracts/nft/EMatesContract";
 import MateContract from "../contracts/nft/MateContract";
+import Klaytn from "../klaytn/Klaytn";
 import Wallet from "../klaytn/Wallet";
 import Layout from "./Layout";
+import ViewUtil from "./ViewUtil";
 
 export default class Stage implements View {
 
@@ -32,6 +36,9 @@ export default class Stage implements View {
     private stageUpButton: DomNode;
     private stageDownButton: DomNode;
 
+    private selectedStakings: { address: string, id: number }[] = [];
+    private selectedUnstakings: { address: string, id: number }[] = [];
+
     constructor() {
         Layout.current.title = "Stage";
         Layout.current.content.append(
@@ -52,8 +59,17 @@ export default class Stage implements View {
                         ),
                         this.stageDownButton = el(".button-container",
                             el("a", {
-                                click: () => {
-                                    new Confirm("클럽 무대에서 내려 쉬게 하기", "예치한 믹스를 돌려받고 무대 아래에서 쉬게 합니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", () => { })
+                                click: async () => {
+                                    new Confirm("클럽 무대에서 내려 쉬게 하기", "예치한 믹스를 돌려받고 무대 아래에서 쉬게 합니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", async () => {
+                                        const nfts: string[] = [];
+                                        const ids: number[] = [];
+                                        for (const data of this.selectedStakings) {
+                                            nfts.push(data.address);
+                                            ids.push(data.id);
+                                        }
+                                        await MixStakingContract.withdrawMix(nfts, ids);
+                                        ViewUtil.waitTransactionAndRefresh();
+                                    });
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-down.svg", alt: "stage down" }),
@@ -71,8 +87,18 @@ export default class Stage implements View {
                         ),
                         this.stageUpButton = el(".button-container",
                             el("a", {
-                                click: () => {
-                                    new Confirm("클럽 무대 위로 올리기", "총 XXX 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?", "확인", () => { })
+                                click: async () => {
+                                    const mix = await MixStakingContract.mixNeeds();
+                                    new Confirm("클럽 무대 위로 올리기", `총 ${CommonUtil.numberWithCommas(utils.formatEther(mix.mul(this.selectedUnstakings.length)))} 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?`, "확인", async () => {
+                                        const nfts: string[] = [];
+                                        const ids: number[] = [];
+                                        for (const data of this.selectedUnstakings) {
+                                            nfts.push(data.address);
+                                            ids.push(data.id);
+                                        }
+                                        await MixStakingContract.stakingMix(nfts, ids);
+                                        ViewUtil.waitTransactionAndRefresh();
+                                    });
                                 }
                             },
                                 el("img", { src: "/images/shared/icn/stage-up.svg", alt: "stage up" }),
@@ -87,6 +113,28 @@ export default class Stage implements View {
     }
 
     public changeParams(params: ViewParams, uri: string): void { }
+
+    public selectStaking(address: string, id: number) {
+        this.selectedStakings.push({ address, id });
+    }
+
+    public deselectStaking(address: string, id: number) {
+        const index = this.selectedStakings.findIndex((s) => s.address === address && s.id === id);
+        if (index !== -1) {
+            this.selectedStakings.splice(index, 1);
+        }
+    }
+
+    public selectUnstaking(address: string, id: number) {
+        this.selectedUnstakings.push({ address, id });
+    }
+
+    public deselectUnstaking(address: string, id: number) {
+        const index = this.selectedUnstakings.findIndex((s) => s.address === address && s.id === id);
+        if (index !== -1) {
+            this.selectedUnstakings.splice(index, 1);
+        }
+    }
 
     private async load() {
         if (await Wallet.connected() !== true) {
@@ -138,36 +186,37 @@ export default class Stage implements View {
             await Promise.all(promises);
 
             const mateNames = await (await fetch("https://api.dogesound.club/mate/names")).json();
+            const currentBlock = await Klaytn.loadBlockNumber();
 
             let stakingCount = 0;
             let unstakingCount = 0;
             for (const stakingMate of this.stakingMates) {
-                this.onStageMates.append(new StageMateItem(stakingMate, 300, mateNames[stakingMate], true));
+                this.onStageMates.append(new StageMateItem(this, stakingMate, 300, mateNames[stakingMate], currentBlock, true));
                 stakingCount += 1;
             }
 
             for (const stakingEmate of this.stakingEmates) {
-                this.onStageMates.append(new StageEmateItem(stakingEmate, 300, "", true));
+                this.onStageMates.append(new StageEmateItem(this, stakingEmate, 300, "", currentBlock, true));
                 stakingCount += 1;
             }
 
             for (const stakingBmcs of this.stakingBmcss) {
-                this.onStageMates.append(new StageBmcsItem(stakingBmcs, 300, "", true));
+                this.onStageMates.append(new StageBmcsItem(this, stakingBmcs, 300, "", currentBlock, true));
                 stakingCount += 1;
             }
 
             for (const unstakingMate of this.unstakingMates) {
-                this.offStageMates.append(new StageMateItem(unstakingMate, 300, mateNames[unstakingMate], false));
+                this.offStageMates.append(new StageMateItem(this, unstakingMate, 300, mateNames[unstakingMate], currentBlock, false));
                 unstakingCount += 1;
             }
 
             for (const unstakingEmate of this.unstakingEmates) {
-                this.offStageMates.append(new StageEmateItem(unstakingEmate, 300, "", false));
+                this.offStageMates.append(new StageEmateItem(this, unstakingEmate, 300, "", currentBlock, false));
                 unstakingCount += 1;
             }
 
             for (const unstakingBmcs of this.unstakingBmcss) {
-                this.offStageMates.append(new StageBmcsItem(unstakingBmcs, 300, "", false));
+                this.offStageMates.append(new StageBmcsItem(this, unstakingBmcs, 300, "", currentBlock, false));
                 unstakingCount += 1;
             }
 
