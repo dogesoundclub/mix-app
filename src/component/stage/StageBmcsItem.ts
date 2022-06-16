@@ -57,7 +57,7 @@ export default class StageBmcsItem extends DomNode {
                 this.remains = el("p", ""),
             ) : undefined,
             this.imageDisplay = el("img", {
-                src: "", alt: "mate-mock",
+                alt: "mate-mock",
                 click: () => {
                     if (isDancing === true) {
                         const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
@@ -90,7 +90,7 @@ export default class StageBmcsItem extends DomNode {
                 },
             }),
             el(".checkbox-container",
-                this.checkbox = el("input", { type: "checkbox", id: `mate${id}` }, {
+                this.checkbox = el("input", { type: "checkbox", id: `bmcs${id}` }, {
                     change: () => {
                         if (isDancing === true) {
                             const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
@@ -122,7 +122,7 @@ export default class StageBmcsItem extends DomNode {
                         }
                     },
                 }),
-                el("label", { for: `BMCS${id}` }),
+                el("label", { for: `bmcs${id}` }),
                 el("p", `#${id} ${name}`),
             ),
         );

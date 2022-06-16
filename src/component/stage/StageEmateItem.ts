@@ -91,7 +91,7 @@ export default class StageEmateItem extends DomNode {
                 },
             }),
             el(".checkbox-container",
-                this.checkbox = el("input", { type: "checkbox", id: `mate${id}` }, {
+                this.checkbox = el("input", { type: "checkbox", id: `emate${id}` }, {
                     change: () => {
                         if (isDancing === true) {
                             const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
@@ -123,7 +123,7 @@ export default class StageEmateItem extends DomNode {
                         }
                     },
                 }),
-                el("label", { for: `mate${id}` }),
+                el("label", { for: `emate${id}` }),
                 el("p", `#${id} ${name}`),
             ),
         );
