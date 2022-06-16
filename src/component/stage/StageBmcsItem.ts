@@ -5,14 +5,14 @@ export default class StageBmcsItem extends DomNode {
 
     private checkbox: DomNode<HTMLInputElement>;
     private dancingDisplay: DomNode;
-    private bar: DomNode;
+    private bar: DomNode | undefined;
     private imageDisplay: DomNode<HTMLImageElement>;
 
     constructor(public id: number, public mix: number, public name: string, public isDancing: boolean) {
         super(".stage-bmcs-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),
-            el(".progress-container",
+            isDancing === true ? el(".progress-container",
                 {
                     click: () => {
                         if (this.checkbox.domElement.checked) {
@@ -33,8 +33,23 @@ export default class StageBmcsItem extends DomNode {
                 ),
                 el(".title", "MIX 되찾기까지 남은 Block"),
                 el("p", "1,296,000"),
-            ),
-            this.imageDisplay = el("img", { src: "", alt: "mate-mock" }),
+            ) : undefined,
+            this.imageDisplay = el("img", {
+                src: "", alt: "mate-mock",
+                click: () => {
+                    if (this.checkbox.domElement.checked) {
+                        this.imageDisplay.style({
+                            border: "none"
+                        });
+                        this.checkbox.domElement.checked = false;
+                    } else {
+                        this.imageDisplay.style({
+                            border: "5px solid red"
+                        });
+                        this.checkbox.domElement.checked = true;
+                    }
+                },
+            }),
             el(".checkbox-container",
                 this.checkbox = el("input", { type: "checkbox", id: `mate${id}` }, {
                     change: () => {
@@ -64,14 +79,13 @@ export default class StageBmcsItem extends DomNode {
     }
 
     public loadBar() {
-        this.bar.style({
+        this.bar?.style({
             width: `${100}%`,
         });
     }
 
     public async loadImage() {
-        const uri = await BiasContract.tokenURI(this.id);
-        const metadata = await (await fetch(uri)).json();
+        const metadata = await (await fetch(`https://api.dogesound.club/bmcs/${this.id}`)).json();
 
         this.imageDisplay.domElement.src = metadata.image;
     }

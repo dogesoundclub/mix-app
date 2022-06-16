@@ -64,7 +64,7 @@ export default class Stage implements View {
                     el("hr"),
                     el(".resting-mate-container",
                         el("header",
-                            el("h6", "춤추고 있는 클럽메이트"),
+                            el("h6", "대기중인 클럽메이트"),
                             this.stageUpCount = el("p", ""),
                         ),
                         this.offStageMates = el(".mate-list",
@@ -137,35 +137,37 @@ export default class Stage implements View {
 
             await Promise.all(promises);
 
+            const mateNames = await (await fetch("https://api.dogesound.club/mate/names")).json();
+
             let stakingCount = 0;
             let unstakingCount = 0;
             for (const stakingMate of this.stakingMates) {
-                this.onStageMates.append(new StageMateItem(stakingMate, 300, "Undefined", true));
+                this.onStageMates.append(new StageMateItem(stakingMate, 300, mateNames[stakingMate], true));
                 stakingCount += 1;
             }
 
             for (const stakingEmate of this.stakingEmates) {
-                this.onStageMates.append(new StageEmateItem(stakingEmate, 300, "Undefined", true));
+                this.onStageMates.append(new StageEmateItem(stakingEmate, 300, "", true));
                 stakingCount += 1;
             }
 
             for (const stakingBmcs of this.stakingBmcss) {
-                this.onStageMates.append(new StageBmcsItem(stakingBmcs, 300, "Undefined", true));
+                this.onStageMates.append(new StageBmcsItem(stakingBmcs, 300, "", true));
                 stakingCount += 1;
             }
 
             for (const unstakingMate of this.unstakingMates) {
-                this.offStageMates.append(new StageMateItem(unstakingMate, 300, "Undefined", false));
+                this.offStageMates.append(new StageMateItem(unstakingMate, 300, mateNames[unstakingMate], false));
                 unstakingCount += 1;
             }
 
             for (const unstakingEmate of this.unstakingEmates) {
-                this.offStageMates.append(new StageEmateItem(unstakingEmate, 300, "Undefined", false));
+                this.offStageMates.append(new StageEmateItem(unstakingEmate, 300, "", false));
                 unstakingCount += 1;
             }
 
             for (const unstakingBmcs of this.unstakingBmcss) {
-                this.offStageMates.append(new StageBmcsItem(unstakingBmcs, 300, "Undefined", false));
+                this.offStageMates.append(new StageBmcsItem(unstakingBmcs, 300, "", false));
                 unstakingCount += 1;
             }
 

@@ -59,9 +59,8 @@ export default class BMCSItem extends DomNode {
     }
 
     private async load() {
-        const uri = await BiasContract.tokenURI(this.id);
-        const json = await (await fetch(uri)).json();
-        this.image.domElement.src = json.image;
+        const metadata = await (await fetch(`https://api.dogesound.club/bmcs/${this.id}`)).json();
+        this.image.domElement.src = metadata.image;
 
         const claimable = await BiasPoolContract.claimableOf(this.id);
         if (this.deleted !== true) {
