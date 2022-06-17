@@ -1038,8 +1038,8 @@ body {
 }
 .stage-bmcs-item > .dancing-container > img {
   position: absolute;
-  max-width: 208px;
-  max-height: 208px;
+  min-width: 208px;
+  min-height: 208px;
   left: -8px;
   top: -8px;
   margin-left: auto;
@@ -3434,6 +3434,30 @@ body {
 }
 @media only screen and (max-width: 719px) {
   .stage-view > section > .warning {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    background: #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+.stage-view > section > .info-container {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .info-container {
     margin-top: 6px;
     font-weight: 400;
     font-size: 12px;
