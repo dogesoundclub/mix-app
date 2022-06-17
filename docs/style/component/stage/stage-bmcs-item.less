@@ -61,12 +61,17 @@
 
         >img {
             position    : absolute;
-            min-width   : 208px;
-            min-height  : 208px;
+            width       : 208px;
+            height      : 208px;
             left        : -8px;
             top         : -8px;
             margin-left : auto;
             margin-right: auto;
+
+            @media @phone {
+                width : 144px;
+                height: 144px;
+            }
         }
 
         >.mix {
@@ -86,6 +91,11 @@
         max-width    : 194px;
         max-height   : 194px;
         border-radius: 12px;
+
+        @media @phone {
+            width : 130px;
+            height: 130px;
+        }
     }
 
     >.checkbox-container {

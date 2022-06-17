@@ -833,6 +833,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media only screen and (max-width: 719px) {
+  .stage-mate-item > .dancing-container > img {
+    width: 144px;
+    height: 144px;
+  }
+}
 .stage-mate-item > .dancing-container > .mix {
   position: absolute;
   top: 10px;
@@ -848,6 +854,12 @@ body {
   max-width: 194px;
   max-height: 194px;
   border-radius: 12px;
+}
+@media only screen and (max-width: 719px) {
+  .stage-mate-item > img {
+    width: 130px;
+    height: 130px;
+  }
 }
 .stage-mate-item > .checkbox-container {
   display: flex;
@@ -939,6 +951,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media only screen and (max-width: 719px) {
+  .stage-emate-item > .dancing-container > img {
+    width: 144px;
+    height: 144px;
+  }
+}
 .stage-emate-item > .dancing-container > .mix {
   position: absolute;
   top: 10px;
@@ -954,6 +972,12 @@ body {
   max-width: 194px;
   max-height: 194px;
   border-radius: 12px;
+}
+@media only screen and (max-width: 719px) {
+  .stage-emate-item > img {
+    width: 130px;
+    height: 130px;
+  }
 }
 .stage-emate-item > .checkbox-container {
   display: flex;
@@ -1038,12 +1062,18 @@ body {
 }
 .stage-bmcs-item > .dancing-container > img {
   position: absolute;
-  min-width: 208px;
-  min-height: 208px;
+  width: 208px;
+  height: 208px;
   left: -8px;
   top: -8px;
   margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (max-width: 719px) {
+  .stage-bmcs-item > .dancing-container > img {
+    width: 144px;
+    height: 144px;
+  }
 }
 .stage-bmcs-item > .dancing-container > .mix {
   position: absolute;
@@ -1060,6 +1090,12 @@ body {
   max-width: 194px;
   max-height: 194px;
   border-radius: 12px;
+}
+@media only screen and (max-width: 719px) {
+  .stage-bmcs-item > img {
+    width: 130px;
+    height: 130px;
+  }
 }
 .stage-bmcs-item > .checkbox-container {
   display: flex;
@@ -3581,6 +3617,11 @@ body {
   margin-top: 12px;
   max-height: 520px !important;
   overflow: scroll;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .resting-mate-container > .mate-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .stage-view > section > .resting-mate-container > .button-container {
   display: flex;
