@@ -3443,6 +3443,30 @@ body {
     text-fill-color: transparent;
   }
 }
+.stage-view > section > .info-container {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .info-container {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    background: #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
 .stage-view > section > .dancing-mate-container {
   margin-top: 30px;
   max-height: 650px;
