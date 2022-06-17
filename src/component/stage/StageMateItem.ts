@@ -1,54 +1,125 @@
 import { DomNode, el } from "skydapp-browser";
+import CommonUtil from "../../CommonUtil";
+import MixStakingContract from "../../contracts/mix/MixStakingContract";
+import MateContract from "../../contracts/nft/MateContract";
+import Stage from "../../view/Stage";
+import Alert from "../shared/dialogue/Alert";
 
 
 export default class StageMateItem extends DomNode {
 
     private checkbox: DomNode<HTMLInputElement>;
     private dancingDisplay: DomNode;
-    private bar: DomNode;
+    private bar: DomNode | undefined;
+    private remains: DomNode | undefined;
     private imageDisplay: DomNode;
 
-    constructor(public id: number, public mix: number, public name: string, public isDancing: boolean) {
+    constructor(stage: Stage, public id: number, public mix: number, public name: string, private currentBlock: number, public isDancing: boolean) {
         super(".stage-mate-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),
-            el(".progress-container", {
+            isDancing === true ? el(".progress-container", {
                 click: () => {
+                    if (isDancing === true) {
+                        const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
+                        if (percent < 100) {
+                            new Alert("해당 클럽메이트의 믹스는 아직 되찾을 수 없습니다.");
+                            return;
+                        }
+                    }
                     if (this.checkbox.domElement.checked) {
                         this.imageDisplay.style({
                             border: "none"
                         });
                         this.checkbox.domElement.checked = false;
+                        if (isDancing === true) {
+                            stage.deselectStaking(MateContract.address, id);
+                        } else {
+                            stage.deselectUnstaking(MateContract.address, id);
+                        }
                     } else {
                         this.imageDisplay.style({
                             border: "5px solid red"
                         });
                         this.checkbox.domElement.checked = true;
+                        if (isDancing === true) {
+                            stage.selectStaking(MateContract.address, id);
+                        } else {
+                            stage.selectUnstaking(MateContract.address, id);
+                        }
                     }
                 },
             },
                 el(".progress",
                     this.bar = el(".bar"),
                 ),
-                el(".title", "MIX 수령까지 남은 Block"),
-                el("p", "1,296,000"),
-            ),
+                el(".title", "MIX 되찾기까지 남은 Block"),
+                this.remains = el("p", ""),
+            ) : undefined,
             this.imageDisplay = el("img", {
-                src: `https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png`, alt: "mate-mock"
+                src: `https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png`, alt: "mate-mock",
+                click: () => {
+                    if (isDancing === true) {
+                        const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
+                        if (percent < 100) {
+                            new Alert("해당 클럽메이트의 믹스는 아직 되찾을 수 없습니다.");
+                            return;
+                        }
+                    }
+                    if (this.checkbox.domElement.checked) {
+                        this.imageDisplay.style({
+                            border: "none"
+                        });
+                        this.checkbox.domElement.checked = false;
+                        if (isDancing === true) {
+                            stage.deselectStaking(MateContract.address, id);
+                        } else {
+                            stage.deselectUnstaking(MateContract.address, id);
+                        }
+                    } else {
+                        this.imageDisplay.style({
+                            border: "5px solid red"
+                        });
+                        this.checkbox.domElement.checked = true;
+                        if (isDancing === true) {
+                            stage.selectStaking(MateContract.address, id);
+                        } else {
+                            stage.selectUnstaking(MateContract.address, id);
+                        }
+                    }
+                },
             }),
             el(".checkbox-container",
                 this.checkbox = el("input", {
                     type: "checkbox", id: `mate${id}`,
                     change: () => {
+                        if (isDancing === true) {
+                            const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
+                            if (percent < 100) {
+                                new Alert("해당 클럽메이트의 믹스는 아직 되찾을 수 없습니다.");
+                                this.checkbox.domElement.checked = !this.checkbox.domElement.checked;
+                                return;
+                            }
+                        }
                         this.fireEvent(this.checkbox.domElement.checked === true ? "selected" : "deselected");
                         if (this.checkbox.domElement.checked) {
                             this.imageDisplay.style({
                                 border: "5px solid red"
                             });
+                            if (isDancing === true) {
+                                stage.selectStaking(MateContract.address, id);
+                            } else {
+                                stage.selectUnstaking(MateContract.address, id);
+                            }
                         } else {
                             this.imageDisplay.style({
                                 border: "none"
                             });
+                            if (isDancing === true) {
+                                stage.deselectStaking(MateContract.address, id);
+                            } else {
+                                stage.deselectUnstaking(MateContract.address, id);
+                            }
                         }
                     },
                 }),
@@ -60,11 +131,17 @@ export default class StageMateItem extends DomNode {
         this.loadBar();
     }
 
-    public loadBar() {
+    public stakingBlock: number = 0;
+    public returnMixTimes: number = 0;
 
-        this.bar.style({
-            width: `${100}%`,
-        });
+    public async loadBar() {
+
+        this.stakingBlock = (await MixStakingContract.stakingBlocks(MateContract.address, this.id)).toNumber();
+        this.returnMixTimes = (await MixStakingContract.returnMixTimes(MateContract.address, this.id)).toNumber();
+
+        const percent = (this.currentBlock - this.stakingBlock) / this.returnMixTimes * 100;
+        this.bar?.style({ width: `${percent > 100 ? 100 : percent}%` });
+        this.remains?.empty().appendText(CommonUtil.numberWithCommas(String(this.stakingBlock + this.returnMixTimes - this.currentBlock)));
     }
 
     public setDanding() {

@@ -928,6 +928,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: -999;
 }
 .stage-emate-item > .dancing-container > img {
   position: absolute;
@@ -1033,6 +1034,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: -999;
 }
 .stage-bmcs-item > .dancing-container > img {
   position: absolute;
