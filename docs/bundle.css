@@ -3459,6 +3459,7 @@ body {
   margin-bottom: 4px;
 }
 .stage-view > section > .warning {
+  margin-top: 12px;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
@@ -3482,7 +3483,7 @@ body {
   }
 }
 .stage-view > section > .info-container {
-  margin-top: 4px;
+  margin-top: 6px;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
@@ -3491,6 +3492,9 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.stage-view > section > .info-container > p {
+  margin-top: 2px;
 }
 @media only screen and (max-width: 719px) {
   .stage-view > section > .info-container {
@@ -3506,7 +3510,7 @@ body {
   }
 }
 .stage-view > section > .dancing-mate-container {
-  margin-top: 30px;
+  margin-top: 20px;
   max-height: 650px;
 }
 .stage-view > section > .dancing-mate-container > header {
