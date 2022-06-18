@@ -31,6 +31,13 @@
             >h1 {
                 font-weight: 500;
                 font-size  : 28px;
+
+                @media @phone {
+                    font-size    : 20px;
+                    line-height  : 23px;
+                    color        : #FFFFFF;
+                    margin-bottom: 10px;
+                }
             }
 
             >p {
@@ -58,15 +65,7 @@
             text-fill-color        : transparent;
 
             @media @phone {
-                margin-top             : 6px;
-                font-weight            : 400;
-                font-size              : 12px;
-                line-height            : 17px;
-                background             : #FFFFFF;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip        : text;
-                text-fill-color        : transparent;
+                margin-top: 6px;
             }
         }
 
@@ -86,15 +85,7 @@
             }
 
             @media @phone {
-                margin-top             : 6px;
-                font-weight            : 400;
-                font-size              : 12px;
-                line-height            : 17px;
-                background             : #FFFFFF;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip        : text;
-                text-fill-color        : transparent;
+                margin-top: 6px;
             }
         }
 
@@ -124,6 +115,17 @@
                     background-clip        : text;
                     text-fill-color        : transparent;
                     margin-left            : 4px;
+                }
+
+                >i {
+                    margin: 0px 8px;
+                    color : #747373;
+                }
+
+                >span {
+                    font-weight: 400;
+                    font-size  : 12px;
+                    color      : #747373;
                 }
             }
 
@@ -226,6 +228,17 @@
                     background-clip        : text;
                     text-fill-color        : transparent;
                     margin-left            : 4px;
+                }
+
+                >i {
+                    margin: 0px 8px;
+                    color : #747373;
+                }
+
+                >span {
+                    font-weight: 400;
+                    font-size  : 12px;
+                    color      : #747373;
                 }
             }
 

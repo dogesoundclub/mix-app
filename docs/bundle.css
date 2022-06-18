@@ -1904,6 +1904,11 @@ body {
   padding: 4px 10px;
   margin-right: 8px;
 }
+@media only screen and (max-width: 719px) {
+  .layout > footer > .sidebar > .content > .social > a {
+    margin-top: 20px;
+  }
+}
 .layout > footer > .provider {
   display: flex;
   flex-direction: column;
@@ -3448,6 +3453,14 @@ body {
   font-weight: 500;
   font-size: 28px;
 }
+@media only screen and (max-width: 719px) {
+  .stage-view > section > header > h1 {
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+}
 .stage-view > section > header > p {
   margin-left: 4px;
 }
@@ -3472,14 +3485,6 @@ body {
 @media only screen and (max-width: 719px) {
   .stage-view > section > .warning {
     margin-top: 6px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 17px;
-    background: #FFFFFF;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
   }
 }
 .stage-view > section > .info-container {
@@ -3499,14 +3504,6 @@ body {
 @media only screen and (max-width: 719px) {
   .stage-view > section > .info-container {
     margin-top: 6px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 17px;
-    background: #FFFFFF;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
   }
 }
 .stage-view > section > .dancing-mate-container {
@@ -3534,6 +3531,15 @@ body {
   background-clip: text;
   text-fill-color: transparent;
   margin-left: 4px;
+}
+.stage-view > section > .dancing-mate-container > header > i {
+  margin: 0px 8px;
+  color: #747373;
+}
+.stage-view > section > .dancing-mate-container > header > span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #747373;
 }
 .stage-view > section > .dancing-mate-container > .mate-list {
   display: grid;
@@ -3624,6 +3630,15 @@ body {
   background-clip: text;
   text-fill-color: transparent;
   margin-left: 4px;
+}
+.stage-view > section > .resting-mate-container > header > i {
+  margin: 0px 8px;
+  color: #747373;
+}
+.stage-view > section > .resting-mate-container > header > span {
+  font-weight: 400;
+  font-size: 12px;
+  color: #747373;
 }
 .stage-view > section > .resting-mate-container > .mate-list {
   display: grid;
