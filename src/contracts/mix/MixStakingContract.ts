@@ -14,6 +14,10 @@ class MixStakingContract extends Contract {
         return BigNumber.from(await this.runMethod("mixNeeds"));
     }
 
+    public async returnMixTime(): Promise<BigNumber> {
+        return BigNumber.from(await this.runMethod("returnMixTime"));
+    }
+
     public async stakingBlocks(nft: string, id: BigNumberish): Promise<BigNumber> {
         return BigNumber.from(await this.runMethod("stakingBlocks", nft, id));
     }
