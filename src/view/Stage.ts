@@ -94,7 +94,7 @@ export default class Stage implements View {
                     el("hr"),
                     el(".resting-mate-container",
                         el("header",
-                            el("h6", "대기중인 클럽메이트"),
+                            el("h6", "쉬고 있는 클럽메이트"),
                             this.stageUpCount = el("p", ""),
                         ),
                         this.offStageMates = el(".mate-list",
