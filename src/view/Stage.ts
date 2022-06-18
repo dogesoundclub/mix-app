@@ -33,6 +33,9 @@ export default class Stage implements View {
     private stageUpCount: DomNode;
     private stageDownCount: DomNode;
 
+    private emptyOnMate: DomNode;
+    private emptyOffMate: DomNode;
+
     private stageUpButton: DomNode;
     private stageDownButton: DomNode;
 
@@ -57,6 +60,7 @@ export default class Stage implements View {
                         this.mixNeedsDisplay = el("p", "현재 캐릭터 당 MIX 예치양 : ... mix"),
                         this.returnMixTimeDisplay = el("p", "현재 예치 기간 : ... block (... day)"),
                     ),
+                    el("hr"),
                     el(".dancing-mate-container",
                         el("header",
                             el("h6", "춤추고 있는 클럽메이트"),
@@ -64,6 +68,7 @@ export default class Stage implements View {
                         ),
                         this.onStageMates = el(".mate-list",
                         ),
+                        this.emptyOnMate = el("p.empty", ""),
                         this.stageDownButton = el(".button-container",
                             el("a", {
                                 click: async () => {
@@ -94,6 +99,7 @@ export default class Stage implements View {
                         ),
                         this.offStageMates = el(".mate-list",
                         ),
+                        this.emptyOffMate = el("p.empty", ""),
                         this.stageUpButton = el(".button-container",
                             el("a", {
                                 click: async () => {
@@ -240,6 +246,14 @@ export default class Stage implements View {
 
             this.stageUpCount.empty().appendText(`${unstakingCount}개`);
             this.stageDownCount.empty().appendText(`${stakingCount}개`);
+
+            if (unstakingCount === 0) {
+                this.emptyOffMate.empty().appendText("쉬고있는 클럽메이트가 없습니다.");
+            }
+
+            if (stakingCount === 0) {
+                this.emptyOnMate.empty().appendText("춤추고 잇는 클럽메이트가 없습니다. \n춤추러 가자 클럽메이트!");
+            }
         }
     }
 

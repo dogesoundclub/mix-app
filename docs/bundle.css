@@ -3543,6 +3543,16 @@ body {
   max-height: 520px !important;
   overflow: scroll;
 }
+.stage-view > section > .dancing-mate-container > .empty {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 70px 0px;
+}
 .stage-view > section > .dancing-mate-container > .button-container {
   position: sticky;
   display: flex;
@@ -3567,6 +3577,7 @@ body {
   height: 52px;
   max-width: 420px;
   margin-top: 40px;
+  margin-bottom: 20px;
 }
 .stage-view > section > .dancing-mate-container > .button-container > a > img {
   margin-right: 8px;
@@ -3586,7 +3597,7 @@ body {
   width: 100%;
   height: 1px;
   background: #3C3C3C;
-  margin: 60px 0px;
+  margin: 20px 0px;
 }
 .stage-view > section > .resting-mate-container {
   margin-top: 30px;
@@ -3626,6 +3637,16 @@ body {
   .stage-view > section > .resting-mate-container > .mate-list {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.stage-view > section > .resting-mate-container > .empty {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 70px 0px;
 }
 .stage-view > section > .resting-mate-container > .button-container {
   display: flex;
