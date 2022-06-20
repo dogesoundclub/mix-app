@@ -1872,6 +1872,14 @@ body {
   display: flex;
   align-items: center;
   height: 44px;
+  margin-left: 8px;
+}
+@media only screen and (max-width: 719px) {
+  .layout > footer > .sidebar > .content > .term {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 .layout > footer > .sidebar > .content > .term > a {
   display: block;
