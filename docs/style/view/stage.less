@@ -136,6 +136,14 @@
                 margin-top           : 12px;
                 max-height           : 520px !important;
                 overflow             : scroll;
+
+                ::-webkit-scrollbar {
+                    width: 14px;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    background: #F9D833;
+                }
             }
 
             >.empty {
@@ -147,6 +155,22 @@
                 text-align : center;
                 color      : #FFFFFF;
                 margin     : 70px 0px;
+            }
+
+            >.warning {
+                margin-top             : 12px;
+                font-weight            : 400;
+                font-size              : 12px;
+                line-height            : 17px;
+                background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip        : text;
+                text-fill-color        : transparent;
+
+                @media @phone {
+                    margin-top: 6px;
+                }
             }
 
             >.button-container {
@@ -172,7 +196,7 @@
                     width                  : 100%;
                     height                 : 52px;
                     max-width              : 420px;
-                    margin-top             : 40px;
+                    margin-top             : 20px;
                     margin-bottom          : 20px;
 
                     >img {
@@ -204,7 +228,7 @@
 
         >.resting-mate-container {
             margin-top: 30px;
-            max-height: 650px;
+            max-height: 700px;
 
             >header {
                 display    : flex;
@@ -250,6 +274,14 @@
                 max-height           : 520px !important;
                 overflow             : scroll;
 
+                ::-webkit-scrollbar {
+                    width: 14px;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    background: #F9D833;
+                }
+
                 @media @phone {
                     grid-template-columns: repeat(2, 1fr);
                 }
@@ -264,6 +296,22 @@
                 text-align : center;
                 color      : #FFFFFF;
                 margin     : 70px 0px;
+            }
+
+            >.warning {
+                margin-top             : 12px;
+                font-weight            : 400;
+                font-size              : 12px;
+                line-height            : 17px;
+                background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip        : text;
+                text-fill-color        : transparent;
+
+                @media @phone {
+                    margin-top: 6px;
+                }
             }
 
             >.button-container {
@@ -285,10 +333,10 @@
                     width          : 100%;
                     height         : 52px;
                     max-width      : 420px;
-                    margin-top     : 40px;
+                    margin-top     : 20px;
 
                     >img {
-                        margin-right: 8px;
+                        margin-right: 16px;
                     }
                 }
             }

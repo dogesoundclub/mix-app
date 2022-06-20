@@ -822,7 +822,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -999;
+  z-index: 1;
+  pointer-events: none;
 }
 .stage-mate-item > .dancing-container > img {
   position: absolute;
@@ -940,7 +941,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -999;
+  z-index: 1;
+  pointer-events: none;
 }
 .stage-emate-item > .dancing-container > img {
   position: absolute;
@@ -1058,7 +1060,8 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -999;
+  z-index: 1;
+  pointer-events: none;
 }
 .stage-bmcs-item > .dancing-container > img {
   position: absolute;
@@ -3549,6 +3552,12 @@ body {
   max-height: 520px !important;
   overflow: scroll;
 }
+.stage-view > section > .dancing-mate-container > .mate-list ::-webkit-scrollbar {
+  width: 14px;
+}
+.stage-view > section > .dancing-mate-container > .mate-list ::-webkit-scrollbar-thumb {
+  background: #F9D833;
+}
 .stage-view > section > .dancing-mate-container > .empty {
   font-family: 'Noto Sans KR';
   font-style: normal;
@@ -3558,6 +3567,22 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin: 70px 0px;
+}
+.stage-view > section > .dancing-mate-container > .warning {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .dancing-mate-container > .warning {
+    margin-top: 6px;
+  }
 }
 .stage-view > section > .dancing-mate-container > .button-container {
   position: sticky;
@@ -3582,7 +3607,7 @@ body {
   width: 100%;
   height: 52px;
   max-width: 420px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .stage-view > section > .dancing-mate-container > .button-container > a > img {
@@ -3607,7 +3632,7 @@ body {
 }
 .stage-view > section > .resting-mate-container {
   margin-top: 30px;
-  max-height: 650px;
+  max-height: 700px;
 }
 .stage-view > section > .resting-mate-container > header {
   display: flex;
@@ -3648,6 +3673,12 @@ body {
   max-height: 520px !important;
   overflow: scroll;
 }
+.stage-view > section > .resting-mate-container > .mate-list ::-webkit-scrollbar {
+  width: 14px;
+}
+.stage-view > section > .resting-mate-container > .mate-list ::-webkit-scrollbar-thumb {
+  background: #F9D833;
+}
 @media only screen and (max-width: 719px) {
   .stage-view > section > .resting-mate-container > .mate-list {
     grid-template-columns: repeat(2, 1fr);
@@ -3662,6 +3693,22 @@ body {
   text-align: center;
   color: #FFFFFF;
   margin: 70px 0px;
+}
+.stage-view > section > .resting-mate-container > .warning {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .resting-mate-container > .warning {
+    margin-top: 6px;
+  }
 }
 .stage-view > section > .resting-mate-container > .button-container {
   display: flex;
@@ -3682,9 +3729,9 @@ body {
   width: 100%;
   height: 52px;
   max-width: 420px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .stage-view > section > .resting-mate-container > .button-container > a > img {
-  margin-right: 8px;
+  margin-right: 16px;
 }
 

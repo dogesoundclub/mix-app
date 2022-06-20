@@ -71,6 +71,7 @@ export default class Stage implements View {
                         this.onStageMates = el(".mate-list",
                         ),
                         this.emptyOnMate = el("p.empty", ""),
+                        el(".warning", msg("MINING_V1_DESC3")),
                         this.stageDownButton = el(".button-container",
                             el("a", {
                                 click: async () => {
@@ -104,6 +105,7 @@ export default class Stage implements View {
                         this.offStageMates = el(".mate-list",
                         ),
                         this.emptyOffMate = el("p.empty", ""),
+                        el(".warning", msg("MINING_V1_DESC3")),
                         this.stageUpButton = el(".button-container",
                             el("a", {
                                 click: async () => {
@@ -169,6 +171,7 @@ export default class Stage implements View {
             await Wallet.connect();
         }
         const walletAddress = await Wallet.loadAddress();
+        // "0x5d3c6e36538f485c3483b1c0d3e27a3416e16217";
         if (walletAddress !== undefined) {
             const promises: Promise<void>[] = [];
 
