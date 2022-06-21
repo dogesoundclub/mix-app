@@ -1,3 +1,4 @@
+import { utils } from "ethers";
 import { DomNode, el } from "skydapp-browser";
 import CommonUtil from "../../CommonUtil";
 import MixStakingContract from "../../contracts/mix/MixStakingContract";
@@ -14,7 +15,7 @@ export default class StageMateItem extends DomNode {
     private remains: DomNode | undefined;
     private imageDisplay: DomNode;
 
-    constructor(stage: Stage, public id: number, public mix: number, public name: string, private currentBlock: number, public isDancing: boolean) {
+    constructor(stage: Stage, public id: number, public name: string, private currentBlock: number, public isDancing: boolean) {
         super(".stage-mate-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),
@@ -129,15 +130,10 @@ export default class StageMateItem extends DomNode {
         );
         this.setDanding();
         this.loadBar();
-        this.loadStakingMix();
     }
 
     public stakingBlock: number = 0;
     public returnMixTimes: number = 0;
-
-    public async loadStakingMix() {
-
-    }
 
     public async loadBar() {
 
@@ -149,11 +145,12 @@ export default class StageMateItem extends DomNode {
         this.remains?.empty().appendText(CommonUtil.numberWithCommas(String(this.stakingBlock + this.returnMixTimes - this.currentBlock)));
     }
 
-    public setDanding() {
+    public async setDanding() {
         if (this.isDancing) {
+            const mix = utils.formatEther(await MixStakingContract.stakingAmounts(MateContract.address, this.id));
             this.dancingDisplay.append(
                 el("img", { src: "/images/shared/img/stage-background.gif", alt: "daning" }),
-                el("p.mix", `${this.mix}`),
+                el("p.mix", `${parseFloat(mix).toFixed(1)}`),
             )
         }
     }

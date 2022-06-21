@@ -55,7 +55,6 @@ export default class Stage implements View {
                         //el("p", "(v2)"),
                     ),
                     el("p", "보유하고 있는 캐릭터를 클럽 스테이지 위로 올려 춤을 추게 하거나, 스테이지 아래에서 쉬게 할 수 있습니다. 무대 위로 올라간 캐릭터는 인싸가 되어 도지사운드클럽에서 진행하는 모든 거버넌스에서 기존보다 2배의 보팅 파워를 얻게 됩니다.\n\n도지사운드클럽의 커뮤니티 토큰인 MIX를 일정 기간 예치해야 캐릭터를 스테이지에 올릴 수 있습니다. 예치에 필요한 MIX의 양은 전체 믹스의 발행량, 락업되어있는 믹스의 양, 발행된 도지사운드클럽의 PFP 개수를 통해 계산됩니다. 예치 기간은 현재 1개월입니다. 예치 기간은 DSC 거버넌스를 통해 변경될 수 있습니다. 예치한 시점에서 정해진 예치 기간이 끝나면 믹스를 돌려받을 수 있습니다."),
-                    el(".warning", msg("MINING_V1_DESC3")),
                     el(".info-container",
                         this.mixNeedsDisplay = el("p", "현재 캐릭터 당 MIX 예치양 : ... mix"),
                         this.returnMixTimeDisplay = el("p", "현재 예치 기간 : ... block (... day)"),
@@ -222,7 +221,7 @@ export default class Stage implements View {
             let stakingCount = 0;
             let unstakingCount = 0;
             for (const stakingMate of this.stakingMates) {
-                this.onStageMates.append(new StageMateItem(this, stakingMate, 300, mateNames[stakingMate], currentBlock, true));
+                this.onStageMates.append(new StageMateItem(this, stakingMate, mateNames[stakingMate], currentBlock, true));
                 stakingCount += 1;
             }
 
@@ -237,7 +236,7 @@ export default class Stage implements View {
             }
 
             for (const unstakingMate of this.unstakingMates) {
-                this.offStageMates.append(new StageMateItem(this, unstakingMate, 300, mateNames[unstakingMate], currentBlock, false));
+                this.offStageMates.append(new StageMateItem(this, unstakingMate, mateNames[unstakingMate], currentBlock, false));
                 unstakingCount += 1;
             }
 
