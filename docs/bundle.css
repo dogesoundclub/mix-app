@@ -3463,13 +3463,13 @@ body {
 .stage-view > section > header > h1 {
   font-weight: 500;
   font-size: 28px;
+  margin-bottom: 10px;
 }
 @media only screen and (max-width: 719px) {
   .stage-view > section > header > h1 {
     font-size: 20px;
     line-height: 23px;
     color: #FFFFFF;
-    margin-bottom: 10px;
   }
 }
 .stage-view > section > header > p {
@@ -3577,7 +3577,7 @@ body {
   margin: 70px 0px;
 }
 .stage-view > section > .dancing-mate-container > .warning {
-  margin-top: 12px;
+  margin-top: 4px;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
@@ -3703,7 +3703,7 @@ body {
   margin: 70px 0px;
 }
 .stage-view > section > .resting-mate-container > .warning {
-  margin-top: 12px;
+  margin-top: 4px;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;

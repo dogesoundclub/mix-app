@@ -47,6 +47,10 @@ class MixStakingContract extends Contract {
     public async withdrawMix(nfts: string[], ids: BigNumberish[]) {
         await this.runWalletMethod("withdrawMix", nfts, ids);
     }
+
+    public async stakingAmounts() {
+        await this.runWalletMethod("stakingAmounts");
+    }
 }
 
 export default new MixStakingContract();

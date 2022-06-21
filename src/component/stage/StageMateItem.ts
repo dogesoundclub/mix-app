@@ -129,10 +129,15 @@ export default class StageMateItem extends DomNode {
         );
         this.setDanding();
         this.loadBar();
+        this.loadStakingMix();
     }
 
     public stakingBlock: number = 0;
     public returnMixTimes: number = 0;
+
+    public async loadStakingMix() {
+
+    }
 
     public async loadBar() {
 

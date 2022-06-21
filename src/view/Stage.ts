@@ -68,10 +68,10 @@ export default class Stage implements View {
                             el("i", "|"),
                             el("span", "다중선택 가능"),
                         ),
+                        el(".warning", msg("MINING_V1_DESC4")),
                         this.onStageMates = el(".mate-list",
                         ),
                         this.emptyOnMate = el("p.empty", ""),
-                        el(".warning", msg("MINING_V1_DESC3")),
                         this.stageDownButton = el(".button-container",
                             el("a", {
                                 click: async () => {
@@ -102,10 +102,10 @@ export default class Stage implements View {
                             el("i", "|"),
                             el("span", "다중선택 가능"),
                         ),
+                        el(".warning", msg("MINING_V1_DESC4")),
                         this.offStageMates = el(".mate-list",
                         ),
                         this.emptyOffMate = el("p.empty", ""),
-                        el(".warning", msg("MINING_V1_DESC3")),
                         this.stageUpButton = el(".button-container",
                             el("a", {
                                 click: async () => {
