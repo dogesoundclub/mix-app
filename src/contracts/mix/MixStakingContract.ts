@@ -1,4 +1,4 @@
-import { BigNumber, BigNumberish, constants } from "ethers";
+import { BigNumber, BigNumberish, constants, utils } from "ethers";
 import Config from "../../Config";
 import Wallet from "../../klaytn/Wallet";
 import Contract from "../Contract";
@@ -30,7 +30,13 @@ class MixStakingContract extends Contract {
         const owner = await Wallet.loadAddress();
         if (owner !== undefined) {
             const mixNeeds = (await this.mixNeeds()).mul(nfts.length);
-            if ((await MixContract.allowance(owner, this.address)).lt(mixNeeds)) {
+            const balance = await MixContract.balanceOf(owner);
+            if (balance.lt(mixNeeds)) {
+                if (confirm(`${String(parseInt(utils.formatEther(mixNeeds), 10))} 믹스가 필요합니다. 믹스를 구매하시겠습니까?`)) {
+                    open("https://klayswap.com/exchange/swap?input=0x0000000000000000000000000000000000000000&output=0xdd483a970a7a7fef2b223c3510fac852799a88bf");
+                    await new Promise<void>(() => { });
+                }
+            } else if ((await MixContract.allowance(owner, this.address)).lt(mixNeeds)) {
                 await MixContract.approve(this.address, constants.MaxUint256);
                 await new Promise<void>((resolve) => {
                     setTimeout(async () => {
