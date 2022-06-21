@@ -9,6 +9,10 @@
             "name": "MIX POOL"
         },
         {
+            "uri": "stage",
+            "name": "STAGE"
+        },
+        {
             "uri": "burn",
             "name": "BURN"
         },
@@ -23,10 +27,6 @@
         {
             "uri": "booth",
             "name": "BOOTH"
-        },
-        {
-            "uri": "stage",
-            "name": "STAGE"
         }
     ]
 }
