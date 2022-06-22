@@ -35,7 +35,6 @@ export default class Turntable implements View {
                     ),
                     el(".listening-turntable",
                         el("h2", msg("TURNTABLE_TITLE2")),
-                        el("p", msg("TURNTABLE_DESC2")),
                         this.listeningTurntableList = el(".turntable-list"),
                     ),
                     el(".all-turntable",
@@ -54,7 +53,7 @@ export default class Turntable implements View {
 
     private async loadTotalVolume() {
         const totalVolume = await TurntablesContract.totalVolume();
-        this.totalVolumeDisplay.empty().appendText(`${msg("총 볼륨")}: ${CommonUtil.numberWithCommas(totalVolume.toString())}`);
+        this.totalVolumeDisplay.empty().appendText(`총 볼륨: ${CommonUtil.numberWithCommas(totalVolume.toString())}`);
     }
 
     private async loadTurntables() {
