@@ -3566,6 +3566,11 @@ body {
 .stage-view > section > .dancing-mate-container > .mate-list ::-webkit-scrollbar-thumb {
   background: #F9D833;
 }
+@media only screen and (max-width: 719px) {
+  .stage-view > section > .dancing-mate-container > .mate-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .stage-view > section > .dancing-mate-container > .empty {
   font-family: 'Noto Sans KR';
   font-style: normal;

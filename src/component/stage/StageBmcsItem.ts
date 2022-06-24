@@ -1,7 +1,9 @@
+import { utils } from "ethers";
 import { DomNode, el } from "skydapp-browser";
 import CommonUtil from "../../CommonUtil";
 import MixStakingContract from "../../contracts/mix/MixStakingContract";
 import BiasContract from "../../contracts/nft/BiasContract";
+import MateContract from "../../contracts/nft/MateContract";
 import Stage from "../../view/Stage";
 import Alert from "../shared/dialogue/Alert";
 
@@ -154,11 +156,12 @@ export default class StageBmcsItem extends DomNode {
         this.imageDisplay.domElement.src = metadata.image;
     }
 
-    public setDanding() {
+    public async setDanding() {
         if (this.isDancing) {
+            const mix = utils.formatEther(await MixStakingContract.stakingAmounts(MateContract.address, this.id));
             this.dancingDisplay.append(
                 el("img", { src: "/images/shared/img/stage-background.gif", alt: "daning" }),
-                el("p.mix", `${this.mix}`),
+                el("p.mix", `${parseFloat(mix).toFixed(1)}`),
             )
         }
     }
