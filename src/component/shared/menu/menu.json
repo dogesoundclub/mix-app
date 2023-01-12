@@ -1,32 +1,16 @@
 {
-    "menu": [
-        {
-            "uri": "",
-            "name": "ABOUT"
-        },
-        {
-            "uri": "mining",
-            "name": "MIX POOL"
-        },
-        {
-            "uri": "stage",
-            "name": "STAGE"
-        },
-        {
-            "uri": "burn",
-            "name": "BURN"
-        },
-        {
-            "uri": "governance",
-            "name": "GOVERNANCE"
-        },
-        {
-            "uri": "turntable",
-            "name": "TURNTABLE"
-        },
-        {
-            "uri": "booth",
-            "name": "BOOTH"
-        }
-    ]
+  "menu": [
+    {
+      "uri": "",
+      "name": "ABOUT"
+    },
+    {
+      "uri": "mining",
+      "name": "MIX POOL"
+    },
+    {
+      "uri": "stage",
+      "name": "STAGE"
+    }
+  ]
 }

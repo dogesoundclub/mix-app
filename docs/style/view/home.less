@@ -1,235 +1,234 @@
 .home-view {
-    >header {
-        max-width: 1440px;
-        margin   : auto;
-        height   : 100vh;
+  > header {
+    max-width: 1440px;
+    margin: auto;
+    height: 100vh;
 
-        @media @phone {
-            height : 560px;
-            padding: 20px;
-        }
-
-        >.overview-container {
-            margin-top: 70px;
-            max-width : 561px;
-            display   : flex;
-
-            @media @phone {
-                margin-top: 30px;
-            }
-
-            >.content {
-                >h3 {
-                    font-size  : 14px;
-                    line-height: 20px;
-                }
-
-                >p {
-                    font-size  : 24px;
-                    line-height: 35px;
-                }
-            }
-
-            >hr {
-                border    : none;
-                width     : 1px;
-                height    : 48px;
-                background: #FFFFFF;
-            }
-        }
-
-        >.desc-container {
-            margin-top: 248px;
-
-            @media @phone {
-                margin-top: 154px;
-            }
-
-            >img {
-                width : 110px;
-                height: 90px;
-
-                @media @phone {
-                    width : 64px;
-                    height: 52px;
-                }
-            }
-
-            >h1 {
-                font-size    : 40px;
-                line-height  : 58px;
-                margin-top   : 20px;
-                margin-bottom: 10px;
-
-                @media @phone {
-                    font-weight: 500;
-                    font-size  : 24px;
-                    line-height: 35px;
-                }
-            }
-
-            >p {
-                font-weight: 400;
-                font-size  : 14px;
-                line-height: 20px;
-                color      : #747373;
-
-                @media @phone {
-                    font-weight: 400;
-                    font-size  : 12px;
-                    line-height: 17px;
-                }
-            }
-
-            >.button-container {
-                display: flex;
-                margin : 20px 0px;
-
-                @media @phone {
-                    margin: 10px 0px;
-                }
-
-                >a {
-                    display        : flex;
-                    justify-content: center;
-                    display        : block;
-                    text-align     : center;
-                    max-width      : 177px;
-                    width          : 100%;
-                    margin-right   : 20px;
-                    background     : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
-                    border-radius  : 8px;
-                    padding        : 13px 0px;
-                    font-weight    : 500;
-                    font-size      : 14px;
-                    line-height    : 20px;
-                    color          : #161616;
-
-                    @media @phone {
-                        max-width : 155px;
-                        padding   : 11px 0px;
-                        width     : 100%;
-                        text-align: center;
-                    }
-                }
-
-                >.outline {
-                    font-weight            : 500;
-                    font-size              : 14px;
-                    line-height            : 20px;
-                    border-radius          : 8px;
-                    border                 : 1px solid #F3C754;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    background-clip        : text;
-                    text-fill-color        : transparent;
-                }
-            }
-
-            >.add-mix {
-                font-weight            : 500;
-                font-size              : 14px;
-                line-height            : 20px;
-                text-decoration        : underline;
-                background-image       : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
-                background             : linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip        : text;
-                text-fill-color        : transparent;
-            }
-        }
-
-        >.scroll-container {
-            display        : flex;
-            justify-content: center;
-            width          : 100%;
-            margin-top     : 70px;
-
-            @media @phone {
-                display: none;
-            }
-        }
+    @media @phone {
+      height: 560px;
+      padding: 20px;
     }
 
-    >article {
-        background-color: #161616;
+    > .overview-container {
+      margin-top: 70px;
+      max-width: 561px;
+      display: flex;
+
+      @media @phone {
+        margin-top: 30px;
+      }
+
+      > .content {
+        > h3 {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        > p {
+          font-size: 24px;
+          line-height: 35px;
+        }
+      }
+
+      > hr {
+        border: none;
+        width: 1px;
+        height: 48px;
+        background: #ffffff;
+      }
+    }
+
+    > .desc-container {
+      margin-top: 248px;
+
+      @media @phone {
+        margin-top: 154px;
+      }
+
+      > img {
+        width: 110px;
+        height: 90px;
 
         @media @phone {
-            padding: 8px;
+          width: 64px;
+          height: 52px;
+        }
+      }
+
+      > h1 {
+        font-size: 40px;
+        line-height: 58px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+        @media @phone {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 35px;
+        }
+      }
+
+      > p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #747373;
+
+        @media @phone {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 17px;
+        }
+      }
+
+      > .button-container {
+        display: flex;
+        margin: 20px 0px;
+
+        @media @phone {
+          margin: 10px 0px;
         }
 
+        > a {
+          display: flex;
+          justify-content: center;
+          display: block;
+          text-align: center;
+          max-width: 177px;
+          width: 100%;
+          margin-right: 20px;
+          background: linear-gradient(108.53deg, #f3c754 0%, #e58f35 100%);
+          border-radius: 8px;
+          padding: 13px 0px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          color: #161616;
 
-        >.pool-container {
-            max-width: 1440px;
-            margin   : auto;
-            padding  : 76px 0px;
+          @media @phone {
+            max-width: 155px;
+            padding: 11px 0px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        > .outline {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 20px;
+          border-radius: 8px;
+          border: 1px solid #f3c754;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          cursor: not-allowed;
+        }
+      }
+
+      > .add-mix {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: underline;
+        background-image: linear-gradient(108.53deg, #f3c754 0%, #e58f35 100%);
+        background: linear-gradient(108.53deg, #f3c754 0%, #e58f35 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+
+    > .scroll-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 70px;
+
+      @media @phone {
+        display: none;
+      }
+    }
+  }
+
+  > article {
+    background-color: #161616;
+
+    @media @phone {
+      padding: 8px;
+    }
+
+    > .pool-container {
+      max-width: 1440px;
+      margin: auto;
+      padding: 76px 0px;
+
+      @media @phone {
+        padding: 24px 0px;
+      }
+
+      > h2 {
+        padding-bottom: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 29px;
+
+        @media @phone {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 23px;
+        }
+      }
+
+      > section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+
+        @media @phone {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        > .info-card {
+          background: #1d1d1d;
+          border: 1px solid #3c3c3c;
+          box-sizing: border-box;
+          border-radius: 8px;
+          padding: 30px;
+
+          @media @phone {
+            padding: 16px 20px;
+          }
+
+          > h3 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 29px;
 
             @media @phone {
-                padding: 24px 0px;
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 23px;
             }
+          }
 
-            >h2 {
-                padding-bottom: 20px;
-                font-weight   : 500;
-                font-size     : 20px;
-                line-height   : 29px;
+          > p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 23px;
+            margin-top: 6px;
+            color: #747373;
 
-                @media @phone {
-                    font-weight: 500;
-                    font-size  : 16px;
-                    line-height: 23px;
-                }
+            @media @phone {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 17px;
             }
-
-            >section {
-                display              : grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap             : 20px;
-
-                @media @phone {
-                    grid-template-columns: repeat(1, 1fr);
-                }
-
-
-                >.info-card {
-                    background   : #1D1D1D;
-                    border       : 1px solid #3C3C3C;
-                    box-sizing   : border-box;
-                    border-radius: 8px;
-                    padding      : 30px;
-
-                    @media @phone {
-                        padding: 16px 20px;
-                    }
-
-                    >h3 {
-                        font-weight: 500;
-                        font-size  : 20px;
-                        line-height: 29px;
-
-                        @media @phone {
-                            font-weight: 500;
-                            font-size  : 16px;
-                            line-height: 23px;
-                        }
-                    }
-
-                    >p {
-                        font-weight: 400;
-                        font-size  : 16px;
-                        line-height: 23px;
-                        margin-top : 6px;
-                        color      : #747373;
-
-                        @media @phone {
-                            font-weight: 400;
-                            font-size  : 12px;
-                            line-height: 17px;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }

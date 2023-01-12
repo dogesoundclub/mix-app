@@ -22,40 +22,37 @@ import MiningV1 from "./view/MiningV1";
 import Stage from "./view/Stage";
 
 (async () => {
-    msg.language = BrowserInfo.language;
-    msg.parseCSV((await superagent.get("/msg.csv")).text);
+  msg.parseCSV((await superagent.get("/msg.csv")).text);
 
-    SkyRouter.route("**", Layout);
-    SkyRouter.route("", Home);
+  SkyRouter.route("**", Layout);
+  SkyRouter.route("", Home);
 
-    SkyRouter.route("governance", Governance);
-    SkyRouter.route("governance/{proposalId}", Proposal, [
-        "governance/propose",
-    ]);
-    SkyRouter.route("governance/propose", Propose);
+  SkyRouter.route("governance", Governance);
+  SkyRouter.route("governance/{proposalId}", Proposal, ["governance/propose"]);
+  SkyRouter.route("governance/propose", Propose);
 
-    SkyRouter.route("mining", Mining);
-    SkyRouter.route("mining/v1", MiningV1);
-    SkyRouter.route("burn", Burn);
-    SkyRouter.route("booth", Booth);
+  SkyRouter.route("mining", Mining);
+  SkyRouter.route("mining/v1", MiningV1);
+  SkyRouter.route("burn", Burn);
+  SkyRouter.route("booth", Booth);
 
-    SkyRouter.route("turntable", Turntable);
-    SkyRouter.route("turntable/buy", BuyTurntable);
-    SkyRouter.route("turntable/{id}", TurntableDetail, ["turntable/buy"]);
-    SkyRouter.route("turntable/{id}/update", Update);
-    SkyRouter.route("turntable/{id}/addmates", AddMates);
-    SkyRouter.route("turntable/{id}/removemates", RemoveMates);
-    SkyRouter.route("turntable/{id}/miningmates", MiningMates);
-    SkyRouter.route("turntable/{id}/mateholders", MateHolders);
+  SkyRouter.route("turntable", Turntable);
+  SkyRouter.route("turntable/buy", BuyTurntable);
+  SkyRouter.route("turntable/{id}", TurntableDetail, ["turntable/buy"]);
+  SkyRouter.route("turntable/{id}/update", Update);
+  SkyRouter.route("turntable/{id}/addmates", AddMates);
+  SkyRouter.route("turntable/{id}/removemates", RemoveMates);
+  SkyRouter.route("turntable/{id}/miningmates", MiningMates);
+  SkyRouter.route("turntable/{id}/mateholders", MateHolders);
 
-    SkyRouter.route("stage", Stage);
+  SkyRouter.route("stage", Stage);
 
-    if (sessionStorage.__spa_path) {
-        SkyRouter.go(sessionStorage.__spa_path);
-        sessionStorage.removeItem("__spa_path");
-    }
+  if (sessionStorage.__spa_path) {
+    SkyRouter.go(sessionStorage.__spa_path);
+    sessionStorage.removeItem("__spa_path");
+  }
 
-    if (await Wallet.connected() !== true) {
-        await Wallet.connect();
-    }
+  if ((await Wallet.connected()) !== true) {
+    await Wallet.connect();
+  }
 })();

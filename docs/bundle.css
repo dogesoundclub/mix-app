@@ -1982,7 +1982,7 @@ body {
   border: none;
   width: 1px;
   height: 48px;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 .home-view > header > .desc-container {
   margin-top: 248px;
@@ -2045,7 +2045,7 @@ body {
   max-width: 177px;
   width: 100%;
   margin-right: 20px;
-  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  background: linear-gradient(108.53deg, #f3c754 0%, #e58f35 100%);
   border-radius: 8px;
   padding: 13px 0px;
   font-weight: 500;
@@ -2066,19 +2066,20 @@ body {
   font-size: 14px;
   line-height: 20px;
   border-radius: 8px;
-  border: 1px solid #F3C754;
+  border: 1px solid #f3c754;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  cursor: not-allowed;
 }
 .home-view > header > .desc-container > .add-mix {
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   text-decoration: underline;
-  background-image: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
-  background: linear-gradient(108.53deg, #F3C754 0%, #E58F35 100%);
+  background-image: linear-gradient(108.53deg, #f3c754 0%, #e58f35 100%);
+  background: linear-gradient(108.53deg, #f3c754 0%, #e58f35 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -2137,8 +2138,8 @@ body {
   }
 }
 .home-view > article > .pool-container > section > .info-card {
-  background: #1D1D1D;
-  border: 1px solid #3C3C3C;
+  background: #1d1d1d;
+  border: 1px solid #3c3c3c;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 30px;
