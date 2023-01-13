@@ -12,7 +12,7 @@ export default class Home implements View {
   private container: DomNode;
   private priceDisplay: DomNode;
   private poolDisplay: DomNode;
-  private burnableDisplay: DomNode;
+  // private burnableDisplay: DomNode;
 
   constructor() {
     Layout.current.title = msg("HOME_TITLE");
@@ -33,13 +33,13 @@ export default class Home implements View {
               ".content",
               el("h3", msg("HOME_OVERVIEW_TITLE2")),
               (this.poolDisplay = el("p", "...MIX"))
-            ),
-            el("hr"),
-            el(
-              ".content",
-              el("h3", msg("HOME_OVERVIEW_TITLE3")),
-              (this.burnableDisplay = el("p", "...MIX"))
             )
+            // el("hr"),
+            // el(
+            //   ".content",
+            //   el("h3", msg("HOME_OVERVIEW_TITLE3")),
+            //   (this.burnableDisplay = el("p", "...MIX"))
+            // )
           ),
           el(
             ".desc-container",
@@ -109,11 +109,11 @@ export default class Home implements View {
     const totalSupply = await MixContract.totalSupply();
 
     if (this.container.deleted !== true) {
-      this.burnableDisplay
-        .empty()
-        .appendText(
-          `${CommonUtil.numberWithCommas(utils.formatEther(burnable))} MIX`
-        );
+      // this.burnableDisplay
+      //   .empty()
+      //   .appendText(
+      //     `${CommonUtil.numberWithCommas(utils.formatEther(burnable))} MIX`
+      //   );
       this.poolDisplay
         .empty()
         .appendText(

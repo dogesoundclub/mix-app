@@ -1814,6 +1814,9 @@ body {
 .layout > header > .nav > a > .logo {
   display: flex;
 }
+.layout > header > .nav > a > img {
+  height: 24px;
+}
 .layout > header > .nav > .menu-button {
   float: right;
   display: none;
@@ -1858,7 +1861,7 @@ body {
 .layout > footer {
   margin-top: 60px;
   background: #000000;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .layout > footer > .sidebar > .content {
   display: flex;
