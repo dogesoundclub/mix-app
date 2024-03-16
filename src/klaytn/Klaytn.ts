@@ -2,7 +2,7 @@ import { BigNumber } from "@ethersproject/bignumber";
 
 class Klaytn {
 
-    private caver = new (window as any).Caver(new (window as any).Caver.providers.HttpProvider("https://klaytn-mainnet-rpc.allthatnode.com:8551"));
+    private caver = new (window as any).Caver(new (window as any).Caver.providers.HttpProvider("https://public-en-cypress.klaytn.net"));
 
     public createContract(address: string, abi: any) {
         return this.caver.contract.create(abi, address);
