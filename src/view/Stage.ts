@@ -1,4 +1,4 @@
-import { formatEther } from "ethers";
+import { utils } from "ethers";
 import { DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
 import CommonUtil from "../CommonUtil";
@@ -110,7 +110,7 @@ export default class Stage implements View {
                                 click: async () => {
                                     if (this.selectedUnstakings.length > 0) {
                                         const mix = await MixStakingContract.mixNeeds();
-                                        new Confirm("클럽 무대 위로 올리기", `총 ${CommonUtil.numberWithCommas(formatEther(mix.mul(this.selectedUnstakings.length)))} 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?`, "확인", async () => {
+                                        new Confirm("클럽 무대 위로 올리기", `총 ${CommonUtil.numberWithCommas(utils.formatEther(mix.mul(this.selectedUnstakings.length)))} 믹스를 스테이킹하고 캐릭터를 클럽 위로 올립니다. 일정 수수료가 청구될 수 있습니다. 그래도 진행하시겠습니까?`, "확인", async () => {
                                             const nfts: string[] = [];
                                             const ids: number[] = [];
                                             for (const data of this.selectedUnstakings) {
@@ -160,7 +160,7 @@ export default class Stage implements View {
     }
 
     private async loadInfos() {
-        this.mixNeedsDisplay.empty().appendText(`현재 캐릭터 당 MIX 예치양 : ${CommonUtil.numberWithCommas(formatEther(await MixStakingContract.mixNeeds()))} mix`);
+        this.mixNeedsDisplay.empty().appendText(`현재 캐릭터 당 MIX 예치양 : ${CommonUtil.numberWithCommas(utils.formatEther(await MixStakingContract.mixNeeds()))} mix`);
         const block = (await MixStakingContract.returnMixTime()).toNumber();
         this.returnMixTimeDisplay.empty().appendText(`현재 예치 기간 : ${block} block (${block / 86400} day)`);
     }

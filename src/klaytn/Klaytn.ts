@@ -1,17 +1,16 @@
-import { ethers } from "ethers";
+import { ethers, BigNumber } from "ethers";
 
 class Klaytn {
 
-    private provider = new ethers.JsonRpcProvider("https://public-en-cypress.klaytn.net");
+    private provider = new ethers.providers.JsonRpcProvider("https://public-en-cypress.klaytn.net");
 
     public createContract(address: string, abi: any) {
         return new ethers.Contract(address, abi, this.provider);
     }
 
-    public async balanceOf(address: string): Promise<BigInt> {
+    public async balanceOf(address: string): Promise<BigNumber> {
         const balance = await this.provider.getBalance(address);
-        // Converts the returned BigNumber to a string, then to a BigInt
-        return BigInt(balance.toString());
+        return BigNumber.from(balance.toString());
     }
 
     public async loadBlockNumber(): Promise<number> {
