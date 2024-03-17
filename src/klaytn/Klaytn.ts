@@ -1,19 +1,21 @@
-import { BigNumber } from "@ethersproject/bignumber";
+import { ethers } from "ethers";
 
 class Klaytn {
 
-    private caver = new (window as any).Caver(new (window as any).Caver.providers.HttpProvider("https://public-en-cypress.klaytn.net"));
+    private provider = new ethers.JsonRpcProvider("https://public-en-cypress.klaytn.net");
 
     public createContract(address: string, abi: any) {
-        return this.caver.contract.create(abi, address);
+        return new ethers.Contract(address, abi, this.provider);
     }
 
-    public async balanceOf(address: string) {
-        return BigNumber.from(await this.caver.klay.getBalance(address));
+    public async balanceOf(address: string): Promise<BigInt> {
+        const balance = await this.provider.getBalance(address);
+        // Converts the returned BigNumber to a string, then to a BigInt
+        return BigInt(balance.toString());
     }
 
-    public async loadBlockNumber() {
-        return await this.caver.klay.getBlockNumber();
+    public async loadBlockNumber(): Promise<number> {
+        return await this.provider.getBlockNumber();
     }
 }
 
