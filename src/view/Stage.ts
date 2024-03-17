@@ -46,6 +46,7 @@ export default class Stage implements View {
     private selectedUnstakings: { address: string, id: number }[] = [];
 
     constructor() {
+        console.log("MixStakingContract, MateContract, EMatesContract, BiasContract: ",MixStakingContract, MateContract, EMatesContract, BiasContract);
         Layout.current.title = "Stage";
         Layout.current.content.append(
             this.container = el(".stage-view",
