@@ -47,6 +47,9 @@ export default class Stage implements View {
 
     constructor() {
         console.log("MixStakingContract, MateContract, EMatesContract, BiasContract: ",MixStakingContract, MateContract, EMatesContract, BiasContract);
+        console.log("MixStakingContract.mixNeeds: ", MixStakingContract.mixNeeds);
+        console.log("MateContract.balanceOf: ", MateContract.balanceOf);
+
         Layout.current.title = "Stage";
         Layout.current.content.append(
             this.container = el(".stage-view",
