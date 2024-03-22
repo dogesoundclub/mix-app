@@ -15,7 +15,7 @@ export default class StageMateItem extends DomNode {
     stakingBlock: number;
     returnMixTimes: number;
     loadBar(): Promise<void>;
-    setDanding(): void;
+    setDancing(): void;
     deselect(): void;
 }
 //# sourceMappingURL=StageMateItem.d.ts.map

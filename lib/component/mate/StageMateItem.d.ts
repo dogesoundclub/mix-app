@@ -7,7 +7,7 @@ export default class StageMateItem extends DomNode {
     private checkbox;
     private dancingDisplay;
     constructor(id: number, mix: number, name: string, isDancing: boolean);
-    setDanding(): void;
+    setDancing(): void;
     deselect(): void;
 }
 //# sourceMappingURL=StageMateItem.d.ts.map

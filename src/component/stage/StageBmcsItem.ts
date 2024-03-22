@@ -133,7 +133,7 @@ export default class StageBmcsItem extends DomNode {
 
     public async init() {
         this.loadImage();
-        this.setDanding();
+        this.setDancing();
         this.loadBar();
     }
 
@@ -156,7 +156,7 @@ export default class StageBmcsItem extends DomNode {
         this.imageDisplay.domElement.src = metadata.image;
     }
 
-    public async setDanding() {
+    public async setDancing() {
         if (this.isDancing) {
             const mix = utils.formatEther(await MixStakingContract.stakingAmounts(MateContract.address, this.id));
             this.dancingDisplay.append(

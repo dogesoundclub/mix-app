@@ -17,7 +17,7 @@ export default class StageBmcsItem extends DomNode {
     returnMixTimes: number;
     loadBar(): Promise<void>;
     loadImage(): Promise<void>;
-    setDanding(): void;
+    setDancing(): void;
     deselect(): void;
 }
 //# sourceMappingURL=StageBmcsItem.d.ts.map

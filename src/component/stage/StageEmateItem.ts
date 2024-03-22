@@ -129,7 +129,7 @@ export default class StageEmateItem extends DomNode {
                 el("p", `#${id} ${name}`),
             ),
         );
-        this.setDanding();
+        this.setDancing();
         this.loadBar();
     }
 
@@ -146,7 +146,7 @@ export default class StageEmateItem extends DomNode {
         this.remains?.empty().appendText(CommonUtil.numberWithCommas(String(this.stakingBlock + this.returnMixTimes - this.currentBlock)));
     }
 
-    public async setDanding() {
+    public async setDancing() {
         if (this.isDancing) {
             const mix = utils.formatEther(await MixStakingContract.stakingAmounts(MateContract.address, this.id));
             this.dancingDisplay.append(
