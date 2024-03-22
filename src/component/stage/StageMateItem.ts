@@ -24,16 +24,19 @@ export default class StageMateItem extends DomNode {
         this.append(
             (this.dancingDisplay = el(".dancing-container")),
             (this.imageDisplay = el("img", {
-                src: `https://storage.googleapis.com/dsc-mate/336/dscMate-${id}.png`,
+                src: `https://api.dogesound.club/mate/images/dscMate-${id}.png`,
                 alt: "mate-mock",
                 click: () => this.handleImageClick(stage, id, isDancing)
             })),
             el(".checkbox-container",
-                (this.checkbox = el("input", {
-                    type: "checkbox",
-                    id: `mate${id}`,
-                })),
-                el("label", { for: `mate${id}` }, `#${id}`)
+                el(".checkbox-label-container",
+                    (this.checkbox = el("input", {
+                        type: "checkbox",
+                        id: `mate${id}`,
+                    })),
+                    el("label", { for: `mate${id}` }),
+                    el("span", `#${id}`) // 메이트 번호를 `span`으로 변경
+                )
             )
         );
         if (isDancing) {
@@ -42,6 +45,7 @@ export default class StageMateItem extends DomNode {
         this.setDancing();
         this.loadBar();
     }
+    
 
     private handleImageClick(stage: Stage, id: number, isDancing: boolean) {
       // 먼저, 춤추는 상태일 때만 진행률을 계산합니다.

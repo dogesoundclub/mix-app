@@ -58,4 +58,20 @@ module.exports = {
       process: 'process/browser',
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'docs'),
+    },
+    compress: true,
+    port: 8080,
+    open: true,
+    proxy: {
+      // RPC 요청을 위한 프록시 설정 추가
+      '/api': {
+        target: 'https://klaytn-pokt.nodies.app', // 대상 RPC 서버 URL
+        changeOrigin: true, // true로 설정하여 origin 헤더를 target URL 호스트로 변경
+        pathRewrite: {'^/api': ''}, // /api로 시작하는 경로를 공백으로 변경하여 실제 요청 경로 조정
+      },
+    },
+  },
 };

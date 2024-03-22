@@ -15,7 +15,12 @@ export default abstract class Contract extends EventContainer {
 
     constructor(public address: string, private abi: any) {
         super();
+        // 컨트랙트 객체 생성 시 로깅을 추가합니다.
         this.contract = Klaytn.createContract(address, abi);
+        console.log(`Contract created with address: ${address}`, this.contract);
+        if (!this.contract) {
+            console.error("Contract creation failed.");
+        }
     }
 
     private findMethodABI(name: string) {
@@ -32,14 +37,30 @@ export default abstract class Contract extends EventContainer {
             }
             if (this.walletContract === undefined) {
                 this.walletContract = ExtWallet.createContract(this.address, this.abi);
+                console.log(`ExtWallet Contract created with address: ${this.address}`, this.walletContract);
             }
             return this.walletContract;
         }
     }
 
     protected async runMethod(methodName: string, ...params: any[]) {
-        return await this.contract.methods[methodName](...params).call();
+        console.log(`Calling contract method: ${methodName}`, params);
+        try {
+            // ethers.js의 컨트랙트 메소드 호출 방식으로 변경
+            const method = this.contract[methodName];
+            if (method === undefined) {
+                console.error(`Method ${methodName} not found in contract`);
+                return;
+            }
+            const result = await method(...params);
+            console.log(`Method call result: ${methodName}`, result);
+            return result;
+        } catch (error) {
+            console.error(`Error calling contract method: ${methodName}`, error);
+            throw error;
+        }
     }
+    
 
     private async runWalletMethodWithGas(methodName: string, gas: number, ...params: any[]) {
         if (ExtWallet.installed === true) {

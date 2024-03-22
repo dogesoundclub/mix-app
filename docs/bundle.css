@@ -865,9 +865,10 @@ body {
 .stage-mate-item > .checkbox-container {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  align-content: center;
-  margin-top: 20px;
+  align-items: center;
+  /* 변경: flex-end에서 center로 변경하여 수직 중앙 정렬 */
+  margin-top: 12px;
+  /* 간격 조정: 필요에 따라 조절 */
 }
 .stage-mate-item > .checkbox-container input[type=checkbox] {
   display: none;
@@ -875,6 +876,8 @@ body {
 .stage-mate-item > .checkbox-container > input[type=checkbox] + label {
   display: block;
   cursor: pointer;
+  margin-right: 30px;
+  /* 메이트 번호와의 좌우 간격 추가 */
 }
 .stage-mate-item > .checkbox-container input[type=checkbox] + label {
   cursor: pointer;
@@ -887,6 +890,46 @@ body {
   background-size: auto 100%;
 }
 .stage-mate-item > .checkbox-container input[type=checkbox]:checked + label {
+  background-image: url('/images/shared/img/check-on.png');
+  background-position: left center;
+  background-size: auto 100%;
+}
+/* 추가된 .checkbox-label-container 스타일 */
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 변경: flex-end에서 center로 변경하여 수직 중앙 정렬 */
+  margin-top: 12px;
+  /* 간격 조정: 필요에 따라 조절 */
+}
+.checkbox-label-container {
+  display: flex;
+  align-items: center;
+}
+.checkbox-label-container input[type=checkbox] {
+  display: none;
+}
+.checkbox-label-container label {
+  cursor: pointer;
+  margin-right: 8px;
+  /* 체크박스와 라벨 사이의 간격 조절 */
+}
+.checkbox-label-container span {
+  margin-left: 8px;
+  /* 라벨과 메이트 번호 사이의 간격 조절 */
+}
+/* 체크박스 관련 스타일 */
+.checkbox-container input[type=checkbox] + label {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url('/images/shared/img/check-off.png');
+  background-position: left center;
+  background-size: auto 100%;
+}
+.checkbox-container input[type=checkbox]:checked + label {
   background-image: url('/images/shared/img/check-on.png');
   background-position: left center;
   background-size: auto 100%;
