@@ -15,7 +15,7 @@ export default class StageBmcsItem extends DomNode {
     private remains: DomNode | undefined;
     private imageDisplay: DomNode<HTMLImageElement>;
 
-    constructor(stage: Stage, public id: number, public mix: number, public name: string, private currentBlock: number, public isDancing: boolean) {
+    constructor(stage: Stage, public id: number, public name: string, private currentBlock: number, public isDancing: boolean) {
         super(".stage-bmcs-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),

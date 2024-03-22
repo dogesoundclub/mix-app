@@ -16,7 +16,7 @@ export default class StageEmateItem extends DomNode {
     private remains: DomNode | undefined;
     private imageDisplay: DomNode<HTMLImageElement>;
 
-    constructor(stage: Stage, public id: number, public mix: number, public name: string, private currentBlock: number, public isDancing: boolean) {
+    constructor(stage: Stage, public id: number, public name: string, private currentBlock: number, public isDancing: boolean) {
         super(".stage-emate-item");
         this.append(
             this.dancingDisplay = el(".dancing-container"),

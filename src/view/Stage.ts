@@ -219,38 +219,38 @@ export default class Stage implements View {
 
             await Promise.all(promises);
 
-            const mateNames = await (await fetch("https://api.dogesound.club/mate/names")).json();
             const currentBlock = await Klaytn.loadBlockNumber();
-
+    
+            // 여기서부터 mateNames를 사용하는 부분을 제거합니다.
             let stakingCount = 0;
             let unstakingCount = 0;
             for (const stakingMate of this.stakingMates) {
-                this.onStageMates.append(new StageMateItem(this, stakingMate, mateNames[stakingMate], currentBlock, true));
+                this.onStageMates.append(new StageMateItem(this, stakingMate, `#${stakingMate}`, currentBlock, true));
                 stakingCount += 1;
             }
-
+    
             for (const stakingEmate of this.stakingEmates) {
-                this.onStageMates.append(new StageEmateItem(this, stakingEmate, 300, "", currentBlock, true));
+                this.onStageMates.append(new StageEmateItem(this, stakingEmate, `#${stakingEmate}`, currentBlock, true));
                 stakingCount += 1;
-            }
-
+            }                                                                                                                           
+    
             for (const stakingBmcs of this.stakingBmcss) {
-                this.onStageMates.append(new StageBmcsItem(this, stakingBmcs, 300, "", currentBlock, true));
+                this.onStageMates.append(new StageBmcsItem(this, stakingBmcs, `#${stakingBmcs}`, currentBlock, true));
                 stakingCount += 1;
             }
-
+    
             for (const unstakingMate of this.unstakingMates) {
-                this.offStageMates.append(new StageMateItem(this, unstakingMate, mateNames[unstakingMate], currentBlock, false));
+                this.offStageMates.append(new StageMateItem(this, unstakingMate, `#${unstakingMate}`, currentBlock, false));
                 unstakingCount += 1;
             }
 
             for (const unstakingEmate of this.unstakingEmates) {
-                this.offStageMates.append(new StageEmateItem(this, unstakingEmate, 300, "", currentBlock, false));
+                this.offStageMates.append(new StageEmateItem(this, unstakingEmate, `#${unstakingEmate}`, currentBlock, false));
                 unstakingCount += 1;
             }
 
             for (const unstakingBmcs of this.unstakingBmcss) {
-                this.offStageMates.append(new StageBmcsItem(this, unstakingBmcs, 300, "", currentBlock, false));
+                this.offStageMates.append(new StageBmcsItem(this, unstakingBmcs, `#${unstakingBmcs}`, currentBlock, false));
                 unstakingCount += 1;
             }
 
