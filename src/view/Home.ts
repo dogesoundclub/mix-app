@@ -10,8 +10,8 @@ import MixContract from "../contracts/mix/MixContract";
 
 export default class Home implements View {
   private container: DomNode;
-  private priceDisplay: DomNode;
-  private poolDisplay: DomNode;
+  // private priceDisplay: DomNode;
+  // private poolDisplay: DomNode;
   // private burnableDisplay: DomNode;
 
   constructor() {
@@ -23,17 +23,17 @@ export default class Home implements View {
           "header",
           el(
             ".overview-container",
-            el(
-              ".content",
-              el("h3", msg("HOME_OVERVIEW_TITLE1")),
-              (this.priceDisplay = el("p", "...원"))
-            ),
-            el("hr"),
-            el(
-              ".content",
-              el("h3", msg("HOME_OVERVIEW_TITLE2")),
-              (this.poolDisplay = el("p", "...MIX"))
-            )
+            // el(
+            //   ".content",
+            //   el("h3", msg("HOME_OVERVIEW_TITLE1")),
+            //   (this.priceDisplay = el("p", "...원"))
+            // ),
+            // el("hr"),
+            // el(
+            //   ".content",
+            //   el("h3", msg("HOME_OVERVIEW_TITLE2")),
+            //   (this.poolDisplay = el("p", "...MIX"))
+            // )
             // el("hr"),
             // el(
             //   ".content",
@@ -93,34 +93,34 @@ export default class Home implements View {
         )
       ))
     );
-    this.loadPrice();
+    // this.loadPrice();
   }
 
-  private async loadPrice() {
-    const result = await superagent.get("https://api.dogesound.club/mix/price");
-    if (this.container.deleted !== true) {
-      this.priceDisplay
-        .empty()
-        .appendText(`${CommonUtil.numberWithCommas(result.text)} 원`);
-    }
+  // private async loadPrice() {
+  //   const result = await superagent.get("https://api.dogesound.club/mix/price");
+  //   if (this.container.deleted !== true) {
+  //     this.priceDisplay
+  //       .empty()
+  //       .appendText(`${CommonUtil.numberWithCommas(result.text)} 원`);
+  //   }
 
-    const pid = await BurnPoolContract.getPoolId();
-    const burnable = await MixEmitterContract.pendingMix(pid);
-    const totalSupply = await MixContract.totalSupply();
+  //   const pid = await BurnPoolContract.getPoolId();
+  //   const burnable = await MixEmitterContract.pendingMix(pid);
+  //   const totalSupply = await MixContract.totalSupply();
 
-    if (this.container.deleted !== true) {
-      // this.burnableDisplay
-      //   .empty()
-      //   .appendText(
-      //     `${CommonUtil.numberWithCommas(utils.formatEther(burnable))} MIX`
-      //   );
-      this.poolDisplay
-        .empty()
-        .appendText(
-          `${CommonUtil.numberWithCommas(utils.formatEther(totalSupply))} MIX`
-        );
-    }
-  }
+  //   if (this.container.deleted !== true) {
+  //     // this.burnableDisplay
+  //     //   .empty()
+  //     //   .appendText(
+  //     //     `${CommonUtil.numberWithCommas(utils.formatEther(burnable))} MIX`
+  //     //   );
+  //     this.poolDisplay
+  //       .empty()
+  //       .appendText(
+  //         `${CommonUtil.numberWithCommas(utils.formatEther(totalSupply))} MIX`
+  //       );
+  //   }
+  // }
 
   public changeParams(params: ViewParams, uri: string): void {}
 
